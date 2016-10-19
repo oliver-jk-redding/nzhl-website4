@@ -1,0 +1,40 @@
+html {
+	position: relative;
+	z-index: -2;
+	background-color: #1f1f14;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+}
+
+.content-area {
+	min-height: 446px;
+	padding-bottom: 150px;
+}
+
+.full {
+	padding-bottom: 150px;
+}
+
+img {
+	max-width: 100%;
+	padding: 0 0 20px 0;
+}
+
+a.btn {
+	background: $box-color;
+	color: $text-color;
+	padding: 0.8em 1.5em;
+	display: inline-block;
+	text-decoration: none;
+}
+a.btn:hover, a.btn:active {
+	text-decoration: none;
+	color: $link-color;
+}
+
+.dis-b {
+	display: block;
+}

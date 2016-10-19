@@ -1,0 +1,68 @@
+/* Variables */
+
+/* Colours */
+
+$dark-grey: 	#3F3F3E; //63,63,62
+$mid-grey:		#929292; //146,146,146
+$light-grey:	#E7E7E7; //231,231,231
+$navy: 			#18161e;
+$blue: 			#003f4f;
+$mid-blue: 		#386a7a;
+$yellow: 		#ddcf16;
+$red:			#E4003C;
+
+// Scaffolding
+
+$body-bg: #fff;
+
+$text-color: 	$dark-grey;
+
+$header-color:	$dark-grey;
+
+$accent-color: 	$mid-grey;
+
+$box-color:		$light-grey;
+
+$link-color:	$red;
+
+/* Typography */
+
+@font-face {
+	font-family: haas-unica-lt;
+	// src: url('../fonts/webfonts/haas-unica/NeueHaasUnicaPro-Light.otf');
+    // src: url('../fonts/webfonts/haas-unica/NeueHaasUnicaPro-Light.woff');
+}
+
+@font-face {
+	font-family: haas-unica-reg;
+	// src: url('../fonts/webfonts/haas-unica/NeueHaasUnicaPro-Regular.otf');
+	// src: url('../fonts/webfonts/haas-unica/NeueHaasUnicaPro-Regular.woff');
+}
+
+@font-face {
+	font-family: helvetica-neue;
+	src: url('../../fonts/webfonts/helvetica-neue.otf');
+}
+
+$font-stack: Helvetica, Arial, sans-serif;
+$h1-stack: Helvetica, Arial, sans-serif;
+$alt-font-stack: Helvetica, Arial, sans-serif;
+
+$font-base: 16px;
+$font-base-reduced: 12px;
+$font-header: 22px;
+$font-spacing: normal;
+$font-weight: 300;
+$header-weight: 100;
+$line-height: 24px;
+
+/*
+ * Media Queries
+ */
+
+ $large: new-breakpoint(max-width 1200px);
+ $nav-break: new-breakpoint(max-width 730px);
+ $med: new-breakpoint(max-width 790px);
+ $small: new-breakpoint(max-width 660px);
+ $smaller: new-breakpoint(max-width 440px);
+ $xsmall: new-breakpoint(max-width 365px);

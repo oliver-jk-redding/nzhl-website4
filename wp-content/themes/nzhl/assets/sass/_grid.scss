@@ -1,0 +1,36 @@
+
+/*
+ * Grid
+ */
+
+ .page-container {
+ 	@include outer-container;
+ 	@include media($large) {
+ 		padding: 0 1.5em;
+ 	}
+ }
+
+ .full {
+ 	@include span-columns(12);
+ }
+
+ .full .content {
+ 	width: 100%;
+ }
+
+ .content {
+ 	@include span-columns(8);
+ 	padding: 0 0 150px 0;
+ 	@include media($med) {
+ 		@include span-columns(12);
+ 		padding: 0;
+ 	}
+ }
+
+ .sidebar {
+ 	@include span-columns(4);
+ 	@include media($med) {
+ 		@include span-columns(12);
+ 		padding-bottom: 150px;
+ 	}
+ }

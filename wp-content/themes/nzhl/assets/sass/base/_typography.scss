@@ -1,0 +1,131 @@
+// Typography
+
+
+
+body {
+	font-size: $font-base;
+	font-family: $font-stack;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $h1-stack;
+	font-weight: 100;
+	letter-spacing: $font-spacing;
+}
+
+// Headings
+
+h1, .h1 {
+	display: inline-block;
+	margin: 0;
+	font-size: 22px;
+	font-family: $h1-stack;
+	color: $header-color;
+	font-weight: 100;
+ 	width: 100%;
+	border-bottom: 1px solid $accent-color;
+	padding-bottom: 3px;
+}
+
+h2 {
+	margin: 0;
+	font-size: 22px;
+	font-family: $h1-stack;
+	color: $header-color;
+	font-weight: 100;
+ 	width: 100%;
+	padding-bottom: 3px;
+}
+
+h3 {
+	margin: 0;
+	font-size: 22px;
+	font-family: $h1-stack;
+	color: $header-color;
+	font-weight: 100;
+ 	width: 100%;
+	padding-bottom: 3px;
+}
+
+h4 {
+}
+
+h5 {
+	
+}
+
+
+// Body text
+
+p, li {
+	font-family: $font-stack;
+	font-size: $font-base;
+	font-weight: $font-weight;
+	color: $text-color;
+	line-height: $line-height;
+	letter-spacing: $font-spacing;
+}
+
+strong {
+	font-weight: 400;
+}
+
+em {
+	font-style: italic;
+}
+
+a {
+	font-family: $font-stack;
+	font-weight: 300;
+	color: $text-color;
+	letter-spacing: $font-spacing;
+	text-decoration: underline;
+
+	&:hover {
+		color: $link-color;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+// Other text
+
+.content p a {
+	font-weight: 300;
+}
+
+#sidebar-news li {
+	a {
+		font-size: $font-base;
+		font-family: $font-stack;
+ 		font-weight: 300;
+ 		color: $text-color;
+ 		line-height: 24px;
+ 		letter-spacing: $font-spacing;
+ 		text-decoration: none;
+
+ 		&:hover, &:active {
+ 			color: $link-color
+ 		}
+	}	
+}
+
+table tr td {
+	font-size: 16px;
+	font-weight: 300;
+	color: $text-color;
+	line-height: 24px;
+
+	@include media($small) {
+		width: 100%;
+	}
+}
+
+.clearboth {
+	clear: both;
+}
+
+
+

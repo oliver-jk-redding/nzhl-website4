@@ -1,0 +1,243 @@
+.logo-box {
+		position: relative;
+		display: inline-block;
+		float: left;
+		width: 50px;
+		height: 100%;
+		padding: 10px 0;
+		z-index: 1;
+
+	a {
+		display: block;
+		background: url('../img/nzhl-logo-white-nb-fillb-100x100.png') center no-repeat;
+		background-size: contain;
+		width: 100%;
+		height: 100%;
+		border: 1px solid black;
+		border-style: hidden;
+		border-radius: 50%;
+	}
+}
+
+header.page-header {
+	margin: 0;
+	width: 100vw;
+	position: relative;
+	height: 70px;
+	background-color: black;
+
+	.topbox {
+		max-width: 1200px;
+		height: 100%;
+		margin: 0 auto;
+
+		div#header-search {
+			position: absolute;
+			right: 0;
+
+			div#search-icon {
+				display: none;
+
+				@include media($nav-break) {
+					display: block;
+					opacity: 1;
+					position: relative;
+					color: #fff;
+					font-size: 30px;
+					margin: 15px 35px;
+
+					@include media($small) {
+						font-size: 26px;
+						margin: 12px 35px;
+					}
+					@include media($smaller) {
+						font-size: 22px;
+						margin: 8px 26px;
+					}
+					@include media($xsmall) {
+						font-size: 20px;
+						margin: 7px 26px;
+					}
+
+					&:before {
+						content: '\f002';
+						font-family: 'FontAwesome';
+						transition: all 0.5s;
+						transition-delay: 0.15s;
+					}
+				}
+			}
+
+			#searchform {
+				transition: all 0.5s;
+				transition-delay: 0.15s;
+
+				@include media($nav-break) {
+					display: none;
+					opacity: 0;
+					transform: translateX(20px);
+
+					transition: all 0s;
+					transition-delay: 0s;
+				}
+
+				input[type=text] {
+					height: 30px;
+					width: 200px;
+					padding: 3px 33px 3px 10px;
+					margin: 15px 15px 0 0;
+					border: none;
+
+					@include media($nav-break) {
+						opacity: 0;
+					}
+				}
+
+				.fa.fa-search {
+					position: absolute;
+					display: inline;
+					left: 176px;
+					top: 22px;
+					overflow: hidden;
+					color: $text-color;
+
+					transition: all 0.5s;
+					transition-delay: 0.15s;
+
+					input[type=submit] {
+						position: absolute;
+						display: inline;
+						width: 0;
+						height: 30px;
+						opacity: 0;
+						left: -10px;
+						top: -7px;
+						margin: 0;
+						padding: 3px 17px;
+						border: none;
+					}
+				}
+			}
+		}
+
+
+		div#header-search.active {
+
+			div#search-icon {
+				display: none;
+			}
+
+			#searchform {
+				display: block!important;
+				opacity: 1!important;
+				position: fixed;
+				left: -20px;
+				width: 100%;
+				height: 100%;
+				z-index: 100;
+				background-color: rgba(26,26,26,0.5);
+
+				transition: all 0.5s;
+				transition-delay: 0.15s;
+
+				input[type=text] {
+					opacity: 1!important;
+					position: fixed;
+					left: 0;
+					width: 100%;
+					height: 85px;
+					background-color: #fff;
+					padding: 3px 91px 3px 24px;
+					margin: 0;
+
+					font-size: 40px;
+					font-weight: $header-weight;
+					font-family: $h1-stack;
+					letter-spacing: $font-spacing;
+					color: $text-color;
+
+					transition: all 0.5s;
+					transition-delay: 0.15s;
+
+					@include media($small) {
+						font-size: 30px;
+						height: 66px;
+						padding-right: 86px;
+					}
+					@include media($smaller) {
+						font-size: 22px;
+						height: 54px;
+						padding-right: 66px;
+					}
+					@include media($xsmall) {
+						font-size: 20px;
+						height: 49px;
+					}
+				}
+
+				.fa.fa-search {
+					color: #3E46FF;
+					font-size: 30px;
+					top: 24px;
+					right: 35px;
+					left: auto;
+
+					@include media($small) {
+						font-size: 26px;
+						top: 20px;
+					}
+					@include media($smaller) {
+						font-size: 22px;
+						top: 15px;
+						right: 26px;
+					}
+					@include media($xsmall) {
+						font-size: 20px;
+						top: 13px;
+					}
+
+					input[type=submit] {
+						left: -3px;
+						top: 1px;
+					}
+				}
+			}
+		}
+
+		a {
+			@include media($nav-break) {
+				display:block;
+				margin: 151px 32px 0 0;
+				text-align:right;
+				float: right;
+				font-weight: 600;
+				font-size: 1.6em;
+				font-family: $h1-stack;
+				letter-spacing: $font-spacing;
+				text-decoration: none;
+				color: $text-color;
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			@include media($small) {
+				margin: 141px 32px 0 0;
+			}
+
+			@include media($smaller) {
+				margin: 107px 32px 0 0;
+				font-size: 1.4em;
+			}
+
+			@include media($xsmall) {
+				margin: 95px 32px 0 0;
+				font-size: 1.2em;
+			}
+
+		}
+	}
+
+
+}
