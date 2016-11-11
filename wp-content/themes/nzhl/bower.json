@@ -8,7 +8,8 @@
   "dependencies": {
     "bourbon": "~4.2.1",
     "neat": "~1.7.2",
-    "bi-app-sass": "latest"
+    "bi-app-sass": "latest",
+    "parallax.js": "^1.4.2"
   },
   "resolutions": {
     "bourbon": "~4.2.1"

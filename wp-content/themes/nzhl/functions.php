@@ -152,6 +152,9 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_register_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
 
+		wp_register_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
+		wp_enqueue_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
+
 		wp_register_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
 
@@ -187,6 +190,8 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_register_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
 
+		wp_register_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
+		wp_enqueue_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
 
 		wp_register_script( 'isotope.js', get_template_directory_uri() . '/assets/js/vendor/isotope/isotope.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'isotope.js', get_template_directory_uri() . '/assets/js/vendor/isotope/isotope.js', array( 'jquery' ), '2.8.2', true );
