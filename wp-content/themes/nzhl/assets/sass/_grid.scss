@@ -4,9 +4,12 @@
  */
 
  .page-container {
- 	@include outer-container;
- 	@include media($large) {
- 		padding: 0 1.5em;
+  background-color: $bg-color;
+  box-shadow: $shadow;
+  padding: 30px 50px;
+  @include outer-container;
+  @include media($large) {
+    padding: 0 1.5em;
  	}
  }
 

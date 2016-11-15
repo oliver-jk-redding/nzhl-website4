@@ -1,5 +1,23 @@
  $ = jQuery;
 
+ if(!$(location).attr('href').includes('?')) {
+	 $(window).scroll(function() {
+	 	if($(window).scrollTop() >= 400) {
+	 		$('#masthead').css({
+	 			'position': 'fixed',
+	 			'margin-top': '0px'
+	 		});
+	 	}
+	 	else {
+	 		$('#masthead').css({
+	 			'position': 'relative',
+	 			'margin-top': '400px'
+	 		});
+	 	}
+	 });
+}
+
+
  $(document).ready(function() {
 
 	$('a').each(function() {
@@ -25,15 +43,14 @@ if (siteDomain == 'nzhobbitleague.com') {
 		return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
 	};
 
+	// $('#nav-icon').click(function(){
+	// 	$(this).toggleClass('open');
+	// });
 
 	$('#hideshow').addClass('js');
-	$('#navmenu').click(function(){
-		// $('#navmenu i.fa').toggleClass('fa-times fa-bars');
-		$(this).html(function(i, text){
-			return text === 'Close' ? 'Menu' : 'Close';
-		});
-
-		$('#hideshow').slideFadeToggle();
+	$('#nav-icon').click(function(){
+		$('#hideshow').slideFadeToggle('fast', 'linear');
+		$(this).toggleClass('open');
 	});
 
 
@@ -364,6 +381,8 @@ if (siteDomain == 'nzhobbitleague.com') {
 		$('.faculty-list').isotope('layout');
 
 	});
+
+
 
 
 

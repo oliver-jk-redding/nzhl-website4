@@ -1877,12 +1877,6 @@ html {
 /* Colours */
 /* Typography */
 @font-face {
-  font-family: haas-unica-lt; }
-
-@font-face {
-  font-family: haas-unica-reg; }
-
-@font-face {
   font-family: helvetica-neue;
   src: url("../../fonts/webfonts/helvetica-neue.otf"); }
 
@@ -2068,10 +2062,10 @@ table {
 
 body {
   font-size: 16px;
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: "Noto Sans", Arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Serif", Arial, sans-serif;
   font-weight: 100;
   letter-spacing: normal; }
 
@@ -2079,7 +2073,7 @@ h1, .h1 {
   display: inline-block;
   margin: 0;
   font-size: 22px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Serif", Arial, sans-serif;
   color: #3F3F3E;
   font-weight: 100;
   width: 100%;
@@ -2089,7 +2083,7 @@ h1, .h1 {
 h2 {
   margin: 0;
   font-size: 22px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Serif", Arial, sans-serif;
   color: #3F3F3E;
   font-weight: 100;
   width: 100%;
@@ -2098,14 +2092,14 @@ h2 {
 h3 {
   margin: 0;
   font-size: 22px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Serif", Arial, sans-serif;
   color: #3F3F3E;
   font-weight: 100;
   width: 100%;
   padding-bottom: 3px; }
 
 p, li {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
   color: #3F3F3E;
@@ -2119,13 +2113,13 @@ em {
   font-style: italic; }
 
 a {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", Arial, sans-serif;
   font-weight: 300;
   color: #3F3F3E;
   letter-spacing: normal;
   text-decoration: underline; }
   a:hover {
-    color: #E4003C; }
+    color: #cd0d12; }
   a:focus {
     outline: none; }
 
@@ -2134,14 +2128,14 @@ a {
 
 #sidebar-news li a {
   font-size: 16px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", Arial, sans-serif;
   font-weight: 300;
   color: #3F3F3E;
   line-height: 24px;
   letter-spacing: normal;
   text-decoration: none; }
   #sidebar-news li a:hover, #sidebar-news li a:active {
-    color: #E4003C; }
+    color: #cd0d12; }
 
 table tr td {
   font-size: 16px;
@@ -2157,8 +2151,8 @@ table tr td {
 
 html {
   position: relative;
-  z-index: -2;
-  background-color: #1f1f14; }
+  background-color: #f8f8f8;
+  background-image: url(../img/middle-earth-map2.jpg); }
 
 body {
   position: relative;
@@ -2184,7 +2178,7 @@ a.btn {
 
 a.btn:hover, a.btn:active {
   text-decoration: none;
-  color: #E4003C; }
+  color: #cd0d12; }
 
 .dis-b {
   display: block; }
@@ -2196,6 +2190,9 @@ a.btn:hover, a.btn:active {
  * Grid
  */
 .page-container {
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 70px #888;
+  padding: 30px 50px;
   max-width: 75em;
   margin-left: auto;
   margin-right: auto; }
@@ -2268,84 +2265,80 @@ html {
 /*--------------------------------------------------------------
 	6.1 Layout and Structure
 	--------------------------------------------------------------*/
-.logo-box {
-  position: relative;
-  display: inline-block;
-  float: left;
-  width: 50px;
-  height: 100%;
-  padding: 10px 0;
-  z-index: 1; }
-  .logo-box a {
-    display: block;
-    background: url("../img/nzhl-logo-white-nb-fillb-100x100.png") center no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    border-style: hidden;
-    border-radius: 50%; }
+div#banner {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  box-shadow: 0px 0px 70px #888; }
+
+div#banner-logo {
+  background: url("../img/hero-logo-b-copy3.png") center no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  margin-top: 100px; }
 
 header.page-header {
-  margin: 0;
-  width: 100vw;
-  position: relative;
-  height: 70px;
-  background-color: black; }
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  height: 90px; }
+  header.page-header.with-banner {
+    position: relative;
+    margin-top: 400px; }
   header.page-header .topbox {
+    position: relative;
+    background-color: black;
     max-width: 1200px;
     height: 100%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 0 50px;
+    box-shadow: 0px 3px 10px #888; }
+    @media screen and (max-width: 1200px) {
+      header.page-header .topbox {
+        padding: 0 1.5em; } }
+    header.page-header .topbox .logo-box {
+      position: relative;
+      display: inline-block;
+      float: left;
+      width: 70px;
+      height: 100%;
+      padding: 10px 0; }
+      header.page-header .topbox .logo-box a.logo {
+        display: block;
+        background: url("../img/nzhl-logo-white-nb-fillb-100x100.png") center no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+        border-style: hidden;
+        border-radius: 50%; }
+    header.page-header .topbox a.name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ebebe0;
+      text-decoration: none;
+      margin-left: 15px;
+      top: 49%;
+      transform: translateY(-50%);
+      position: absolute;
+      font-family: "Noto Serif", Arial, sans-serif; }
     header.page-header .topbox div#header-search {
       position: absolute;
       right: 0; }
       header.page-header .topbox div#header-search div#search-icon {
         display: none; }
-        @media screen and (max-width: 730px) {
-          header.page-header .topbox div#header-search div#search-icon {
-            display: block;
-            opacity: 1;
-            position: relative;
-            color: #fff;
-            font-size: 30px;
-            margin: 15px 35px; } }
-  @media screen and (max-width: 730px) and (max-width: 660px) {
-    header.page-header .topbox div#header-search div#search-icon {
-      font-size: 26px;
-      margin: 12px 35px; } }
-  @media screen and (max-width: 730px) and (max-width: 440px) {
-    header.page-header .topbox div#header-search div#search-icon {
-      font-size: 22px;
-      margin: 8px 26px; } }
-  @media screen and (max-width: 730px) and (max-width: 365px) {
-    header.page-header .topbox div#header-search div#search-icon {
-      font-size: 20px;
-      margin: 7px 26px; } }
-        @media screen and (max-width: 730px) {
-            header.page-header .topbox div#header-search div#search-icon:before {
-              content: '\f002';
-              font-family: 'FontAwesome';
-              transition: all 0.5s;
-              transition-delay: 0.15s; } }
       header.page-header .topbox div#header-search #searchform {
         transition: all 0.5s;
         transition-delay: 0.15s; }
-        @media screen and (max-width: 730px) {
-          header.page-header .topbox div#header-search #searchform {
-            display: none;
-            opacity: 0;
-            transform: translateX(20px);
-            transition: all 0s;
-            transition-delay: 0s; } }
         header.page-header .topbox div#header-search #searchform input[type=text] {
           height: 30px;
           width: 200px;
           padding: 3px 33px 3px 10px;
           margin: 15px 15px 0 0;
           border: none; }
-          @media screen and (max-width: 730px) {
-            header.page-header .topbox div#header-search #searchform input[type=text] {
-              opacity: 0; } }
         header.page-header .topbox div#header-search #searchform .fa.fa-search {
           position: absolute;
           display: inline;
@@ -2375,7 +2368,6 @@ header.page-header {
       left: -20px;
       width: 100%;
       height: 100%;
-      z-index: 100;
       background-color: rgba(26, 26, 26, 0.5);
       transition: all 0.5s;
       transition-delay: 0.15s; }
@@ -2390,169 +2382,109 @@ header.page-header {
         margin: 0;
         font-size: 40px;
         font-weight: 100;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: "Noto Serif", Arial, sans-serif;
         letter-spacing: normal;
         color: #3F3F3E;
         transition: all 0.5s;
         transition-delay: 0.15s; }
-        @media screen and (max-width: 660px) {
-          header.page-header .topbox div#header-search.active #searchform input[type=text] {
-            font-size: 30px;
-            height: 66px;
-            padding-right: 86px; } }
-        @media screen and (max-width: 440px) {
-          header.page-header .topbox div#header-search.active #searchform input[type=text] {
-            font-size: 22px;
-            height: 54px;
-            padding-right: 66px; } }
-        @media screen and (max-width: 365px) {
-          header.page-header .topbox div#header-search.active #searchform input[type=text] {
-            font-size: 20px;
-            height: 49px; } }
       header.page-header .topbox div#header-search.active #searchform .fa.fa-search {
         color: #3E46FF;
         font-size: 30px;
         top: 24px;
         right: 35px;
         left: auto; }
-        @media screen and (max-width: 660px) {
-          header.page-header .topbox div#header-search.active #searchform .fa.fa-search {
-            font-size: 26px;
-            top: 20px; } }
-        @media screen and (max-width: 440px) {
-          header.page-header .topbox div#header-search.active #searchform .fa.fa-search {
-            font-size: 22px;
-            top: 15px;
-            right: 26px; } }
-        @media screen and (max-width: 365px) {
-          header.page-header .topbox div#header-search.active #searchform .fa.fa-search {
-            font-size: 20px;
-            top: 13px; } }
         header.page-header .topbox div#header-search.active #searchform .fa.fa-search input[type=submit] {
           left: -3px;
           top: 1px; }
-    @media screen and (max-width: 730px) {
-      header.page-header .topbox a {
-        display: block;
-        margin: 151px 32px 0 0;
-        text-align: right;
-        float: right;
-        font-weight: 600;
-        font-size: 1.6em;
-        font-family: Helvetica, Arial, sans-serif;
-        letter-spacing: normal;
-        text-decoration: none;
-        color: #3F3F3E; }
-        header.page-header .topbox a:focus {
-          outline: none; } }
-    @media screen and (max-width: 660px) {
-      header.page-header .topbox a {
-        margin: 141px 32px 0 0; } }
-    @media screen and (max-width: 440px) {
-      header.page-header .topbox a {
-        margin: 107px 32px 0 0;
-        font-size: 1.4em; } }
-    @media screen and (max-width: 365px) {
-      header.page-header .topbox a {
-        margin: 95px 32px 0 0;
-        font-size: 1.2em; } }
 
 .nav-collapse {
   margin: 0; }
 
-#navmenu {
-  display: none; }
-  @media screen and (max-width: 730px) {
-    #navmenu {
-      display: block; } }
-
 #hideshow.js {
   display: block; }
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 1024px) {
     #hideshow.js {
-      display: none; } }
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%; } }
 
 ul.main-nav {
   list-style: none;
   float: right;
   text-align: right;
-  margin: 13px 0 15px 0;
+  margin: 0;
   padding: 0;
   width: auto; }
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 1024px) {
     ul.main-nav {
-      margin: 15px 9px 0 0;
-      padding: 0;
+      margin-top: 90px;
+      position: absolute;
+      text-align: left;
       width: 100%;
-      display: block;
-      list-style: none; } }
-  @media screen and (max-width: 365px) {
-    ul.main-nav li#menu-item-2555 {
-      z-index: 0; } }
+      left: 0;
+      padding: 0;
+      background-color: #333333; } }
   ul.main-nav li {
     display: inline-block;
     float: left;
-    margin: 0 16px; }
+    margin: 0 2vw; }
     ul.main-nav li.current_page_item a, ul.main-nav li.current-page-ancestor a, ul.main-nav li.current-menu-ancestor a, ul.main-nav li.current-menu-parent a {
-      color: #E4003C; }
+      color: #cd0d12; }
     ul.main-nav li:last-child {
       margin-right: 0; }
-    @media screen and (max-width: 730px) {
+    @media screen and (max-width: 1024px) {
       ul.main-nav li {
         display: block;
-        margin: 0 0 10px;
-        width: 33%;
-        padding: 0; } }
-    @media screen and (max-width: 660px) {
-      ul.main-nav li {
-        width: 50%; } }
-    @media screen and (max-width: 365px) {
-      ul.main-nav li {
-        width: 100%; } }
+        margin: 0;
+        width: 100%;
+        float: initial;
+        border-bottom: solid 1px #f8f8f8; }
+        ul.main-nav li.current_page_item a, ul.main-nav li.current-page-ancestor a, ul.main-nav li.current-menu-ancestor a, ul.main-nav li.current-menu-parent a {
+          background-color: #cd0d12;
+          color: #f8f8f8; } }
     ul.main-nav li a {
       font-weight: 500;
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: normal;
       text-decoration: none;
-      color: #3F3F3E;
-      font-family: Helvetica, Arial, sans-serif; }
-      ul.main-nav li a:hover {
-        color: #E4003C; }
+      color: #ebebe0;
+      font-family: "Noto Sans", Arial, sans-serif;
+      line-height: 90px;
+      display: block; }
+      @media screen and (max-width: 1024px) {
+        ul.main-nav li a {
+          color: black;
+          line-height: 20px;
+          color: #f8f8f8;
+          padding: 1.5em; } }
+    ul.main-nav li:hover a {
+      color: #cd0d12; }
+      @media screen and (max-width: 1024px) {
+        ul.main-nav li:hover a {
+          color: #f8f8f8; } }
   ul.main-nav li.menu-item-has-children {
-    position: relative;
-    z-index: 1; }
+    position: relative; }
     ul.main-nav li.menu-item-has-children:hover ul.sub-menu {
       opacity: 1;
       visibility: visible;
       transform: translateY(0); }
     ul.main-nav li.menu-item-has-children ul.sub-menu {
       opacity: 0;
-      z-index: -1;
       visibility: hidden;
       transform: translateY(10px);
       position: absolute;
-      top: calc(100% + 10px);
+      top: calc(100% + -15px);
       left: auto;
-      left: -51px;
       width: 150px;
       background: #E7E7E7;
-      padding: 7px 19px;
+      padding: 7px 0 11px 0;
       margin: 0;
-      transition: all 0.2s ease; }
-      ul.main-nav li.menu-item-has-children ul.sub-menu:before {
-        content: '\f0d8';
-        display: block;
-        font-family: 'FontAwesome';
-        position: absolute;
-        top: -16px;
-        text-align: left;
-        left: 7px;
-        font-size: 60px;
-        color: #E7E7E7;
-        padding: 0 50px;
-        z-index: -1; }
+      box-shadow: 0 0 15px 0 #888;
+      transition: all 0.3s ease; }
       ul.main-nav li.menu-item-has-children ul.sub-menu li {
-        padding: 8px 0;
+        padding: 8px 19px;
         margin: 0;
         line-height: 1em;
         width: 100%;
@@ -2565,64 +2497,73 @@ ul.main-nav {
           letter-spacing: normal;
           text-decoration: none;
           color: #3F3F3E;
-          font-family: Helvetica, Arial, sans-serif; }
+          font-family: "Noto Sans", Arial, sans-serif;
+          line-height: initial; }
           ul.main-nav li.menu-item-has-children ul.sub-menu li a:hover {
-            color: #E4003C; }
+            color: #cd0d12; }
         ul.main-nav li.menu-item-has-children ul.sub-menu li.current-menu-item a {
-          color: #E4003C; }
-      @media screen and (max-width: 730px) {
-        ul.main-nav li.menu-item-has-children ul.sub-menu {
-          position: absolute;
-          /* width: 100%; */
-          left: auto;
-          top: 100%;
-          right: 0; }
-          ul.main-nav li.menu-item-has-children ul.sub-menu:before {
-            display: none; } }
+          color: #cd0d12; }
+        ul.main-nav li.menu-item-has-children ul.sub-menu li:hover {
+          background-color: #cd0d12; }
+          ul.main-nav li.menu-item-has-children ul.sub-menu li:hover a {
+            color: #f8f8f8; }
 
-@media screen and (min-width: 1100px) {
-  .nav-collapse {
-    display: inline-block !important;
-    position: relative;
-    z-index: 10;
-    float: right; } }
+#nav-icon {
+  display: none;
+  width: 28px;
+  height: 19px;
+  position: relative;
+  float: right;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .5s ease-in-out;
+  cursor: pointer; }
+  @media screen and (max-width: 1024px) {
+    #nav-icon {
+      display: block; } }
+
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #f8f8f8;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out; }
+
+#nav-icon span:nth-child(1) {
+  top: 0px; }
+
+#nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
+  top: 8px; }
+
+#nav-icon span:nth-child(4) {
+  top: 16px; }
+
+#nav-icon.open span:nth-child(1) {
+  top: 8px;
+  width: 0%;
+  left: 50%; }
+
+#nav-icon.open span:nth-child(2) {
+  transform: rotate(45deg); }
+
+#nav-icon.open span:nth-child(3) {
+  transform: rotate(-45deg); }
+
+#nav-icon.open span:nth-child(4) {
+  top: 8px;
+  width: 0%;
+  left: 50%; }
 
 /*--------------------------------------------------------------
 	6.4 Page Templates
 	--------------------------------------------------------------*/
-#home .splash-image-container {
-  position: fixed;
-  z-index: 100;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh; }
-  #home .splash-image-container .splash-image {
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/wallpaper-pics/wallpaper-3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer; }
-  #home .splash-image-container #nzhl-logo {
-    background-image: url(../img/hero-logo-b-copy3.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    position: absolute;
-    width: 100vw;
-    height: 15vw;
-    top: 40%;
-    transform: translateY(-60%); }
-  #home .splash-image-container .splash-nav {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 60px;
-    background-color: black; }
+#home {
+  height: 2000px; }
 
 /*--------------------------------------------------------------
 	6.5 Sidebar
@@ -2776,7 +2717,7 @@ a.milestone-link[href='']{
     padding-bottom: 3px;
     font-size: 22px;
     font-weight: 100;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Noto Serif", Arial, sans-serif;
     letter-spacing: normal;
     color: #3F3F3E;
     border-bottom: 1px solid #929292; }
@@ -2786,9 +2727,9 @@ a.milestone-link[href='']{
       display: inline-block;
       font-size: 12px;
       font-weight: 300;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: "Noto Sans", Arial, sans-serif;
       letter-spacing: normal;
-      color: #E4003C;
+      color: #cd0d12;
       text-decoration: none; }
   .sidebar .yellow-box {
     background-color: #F0F0F0;
@@ -2803,12 +2744,12 @@ a.milestone-link[href='']{
     .sidebar .yellow-box a {
       font-size: 22px;
       font-weight: 100;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: "Noto Serif", Arial, sans-serif;
       letter-spacing: normal;
       color: #3F3F3E;
       text-decoration: none; }
       .sidebar .yellow-box a:hover, .sidebar .yellow-box a:active {
-        color: #E4003C; }
+        color: #cd0d12; }
     .sidebar .yellow-box .fa-lg {
       display: none; }
     .sidebar .yellow-box h3:last-child {
@@ -2817,7 +2758,7 @@ a.milestone-link[href='']{
 .home-sub-nav {
   padding: 30px 20px 15px 20px; }
   .home-sub-nav ul {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Noto Sans", Arial, sans-serif;
     font-weight: 300;
     font-size: 1.4375em;
     margin: 0 0 0 24px; }
@@ -2832,7 +2773,7 @@ a.milestone-link[href='']{
         color: #3F3F3E;
         text-decoration: underline; }
         .home-sub-nav ul li a:hover {
-          color: #E4003C; }
+          color: #cd0d12; }
 
 .side-content .cats {
   margin: 0;
@@ -2845,7 +2786,7 @@ a.milestone-link[href='']{
 .side-content ul.fa-ul {
   margin-left: 15px; }
   .side-content ul.fa-ul .fa-li {
-    color: #E4003C;
+    color: #cd0d12;
     left: -1.7em; }
 
 .side-content ul.tags {
@@ -2872,7 +2813,7 @@ a.milestone-link[href='']{
 
 #sidebar-news h4.widget-title {
   font-size: 22px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Serif", Arial, sans-serif;
   color: #3F3F3E;
   font-weight: 100;
   width: 100%;
@@ -2906,7 +2847,7 @@ a.milestone-link[href='']{
 .featured-widget p {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", Arial, sans-serif;
   font-size: 17px;
   font-weight: 300;
   color: #3F3F3E;
@@ -2930,7 +2871,7 @@ a.milestone-link[href='']{
       font-size: 1em; } }
 
 .featured-widget a:hover {
-  color: #E4003C; }
+  color: #cd0d12; }
 
 .featured-widget a:after {
   content: '\f105';
@@ -2964,7 +2905,7 @@ footer.site-footer {
   bottom: 0;
   background: #E7E7E7;
   padding: 15px 0 22px;
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: "Noto Sans", Arial, sans-serif; }
   footer.site-footer p {
     font-size: 12px;
     font-weight: 300;
