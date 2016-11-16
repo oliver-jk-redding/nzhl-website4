@@ -2,21 +2,21 @@
 
 /* Colours */
 
-$dark-grey: 	#3F3F3E; //63,63,62
-$mid-grey:		#929292; //146,146,146
-$light-grey:	#E7E7E7; //231,231,231
-$navy: 			#18161e;
-$blue: 			#003f4f;
-$mid-blue: 		#386a7a;
-$yellow: 		#ddcf16;
+$navy:      #18161e;
+$blue:      #003f4f;
+$mid-blue:    #386a7a;
+$yellow:    #ddcf16;
 
 
 $red:      #cd0d12;
 // $red:      #E4003C;
-// $red:			#9d0a0e;
+// $red:      #9d0a0e;
 $bg-color:  #f8f8f8;
 $nav-color: #ebebe0;
 $shadow: 0px 0px 70px #888;
+$dark-grey: lighten(black, 20%);
+$mid-grey:    lighten($dark-grey, 10%);
+$light-grey:  #E7E7E7; //231,231,231
 // $shadow: 0px 0px 40px #c0c0c0;
 
 // Scaffolding

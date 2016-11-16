@@ -55,7 +55,7 @@ if (siteDomain == 'nzhobbitleague.com') {
 
 
 	$('li.menu-item-has-children').on('click', '> a', function(event) {
-		if ( $(window).width() <= 790 ) {
+		if ( $(window).width() <= 1024 ) {
 			event.preventDefault();
 			$(this).siblings('ul.sub-menu').toggle();
 		}
@@ -65,12 +65,10 @@ if (siteDomain == 'nzhobbitleague.com') {
 
 	$('div#header-search').on('click', 'div#search-icon', function(event) {
 		event.preventDefault();
-		if($(window).width() <= 730) {
-			$('div#header-search').toggleClass('active');
-			$('.topbox').toggleClass('search-active');
-			$('#s').focus();
-		}
-	});
+		$('div#header-search').toggleClass('active');
+		$('.topbox').toggleClass('search-active');
+		$('#s').focus();
+});
 
 	$('#searchform').on('click', function(event) {
 		if($('div#header-search').hasClass('active')) {

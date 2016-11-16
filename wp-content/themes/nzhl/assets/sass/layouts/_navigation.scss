@@ -51,8 +51,10 @@ ul.main-nav {
 		text-align: left;
 		width: 100%;
 		left: 0;
-		padding: 0;
-		background-color: lighten(black, 20%);
+		padding: 2px 0 0 0;
+		background-color: $mid-grey;
+		max-height: 500px;
+		overflow-y: scroll;
 	}
 	@include media($xsmall) {
 		li#menu-item-2555 {
@@ -109,7 +111,7 @@ ul.main-nav {
 				color: black;
 				line-height: 20px;
 				color: $bg-color;
-				padding: 1.5em;
+				padding: 1.2em 1.5em;
 			}
 		}
 
@@ -126,17 +128,18 @@ ul.main-nav {
 		// z-index: 1;
 
 		&:hover {
-			ul.sub-menu {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0);
+			@media(min-width: 1025px) {
+				ul.sub-menu {
+					opacity: 1;
+					visibility: visible;
+					transform: translateY(0);
+				}
 			}
 		}
 
 
 		ul.sub-menu {
 			opacity: 0;
-			// z-index: -1;
 			visibility: hidden;
 			transform: translateY(10px);
 
@@ -186,7 +189,9 @@ ul.main-nav {
 					font-family: $font-stack;
 					line-height: initial;
 					&:hover {
-						color: $link-color;
+						@media(min-width: 1025px) {
+							color: $link-color;
+						}
 					}
 				}
 
@@ -195,23 +200,45 @@ ul.main-nav {
 				}
 
 				&:hover {
-					background-color: $red;
-					a { color: $bg-color; }
+					@media(min-width: 1025px) {
+						background-color: $red;
+						a { color: $bg-color; }
+					}
 				}
 
 			}
 
 			// Mobile submenu
 			@include media($nav-break) {
-				// position: absolute;
-				// width: 100%;
-				// left: auto;
-				// top: 100%;
-				// right: 0;
+				display: none;
+				width: 100%;
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+				position: relative;
+				top: 0;
+				background: $box-color;
+				padding: 0;
+				margin: 0;
+				box-shadow: none;
+				border-top: solid 1px $bg-color;
+				border-bottom: none;
 
-				// &.show-submenu {
-					// display: block;
-				// }
+				transition: all 0.3s ease;
+
+				li {
+					padding: 0;
+
+					a{
+						padding: 0.8em 3em;
+						background-color: $box-color;
+					}
+
+					&.current_page_item a, &.current-page-ancestor a, &.current-menu-ancestor a, &.current-menu-parent a {
+						background-color: $link-color;
+						color: $bg-color;
+					}
+				}
 
 				&:before {
 					// display: none;
@@ -292,12 +319,14 @@ ul.main-nav {
 }
 
 #nav-icon.open span:nth-child(1) {
+	background: $link-color;
   top: 8px;
   width: 0%;
   left: 50%;
 }
 
 #nav-icon.open span:nth-child(2) {
+	background: $link-color;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -305,6 +334,7 @@ ul.main-nav {
 }
 
 #nav-icon.open span:nth-child(3) {
+	background: $link-color;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
@@ -312,6 +342,7 @@ ul.main-nav {
 }
 
 #nav-icon.open span:nth-child(4) {
+	background: $link-color;
   top: 8px;
   width: 0%;
   left: 50%;

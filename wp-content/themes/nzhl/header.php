@@ -59,13 +59,13 @@ echo getenv('WP_ENV');
 				</div>
 				<a class="name" href='<?php echo get_site_url(); ?>'>The New Zealand Hobbit League</a>
 
-				<!-- <div id="header-search"> -->
-					<!-- <div id="search-icon"> -->
+				<div id="header-search">
+					<div id="search-icon">
 						<!-- <span class="dashicons dashicons-search"></span> -->
-					<!-- </div>/#header-search-icon -->
+					</div><!-- header-search-icon -->
 
-					<?php //get_search_form(); ?>
-				<!-- </div>/#header-search -->
+					<?php get_search_form(); ?>
+				</div><!-- #header-search -->
 
 				<!-- <a id ="navmenu" href="#">Menu</a> -->
 				<!-- <div id="device_menu_trigger"> -->
