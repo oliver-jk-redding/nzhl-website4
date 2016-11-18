@@ -1,20 +1,39 @@
  $ = jQuery;
 
- if(!$(location).attr('href').includes('?')) {
-	 $(window).scroll(function() {
-	 	if($(window).scrollTop() >= 400) {
-	 		$('#masthead').css({
-	 			'position': 'fixed',
-	 			'margin-top': '0px'
-	 		});
-	 	}
-	 	else {
-	 		$('#masthead').css({
-	 			'position': 'relative',
-	 			'margin-top': '400px'
-	 		});
-	 	}
-	 });
+activateScrollListener();
+
+function activateScrollListener() {
+	if(!$(location).attr('href').includes('?') && $(window).width() > 790) {
+	  $(window).scroll(scrollHander);
+	}
+	else {
+		$(window).off('scroll', scrollHander);
+	}
+}
+
+function scrollHander() {
+	fixHeader();
+}
+
+function fixHeader() {
+	if($(window).scrollTop() >= 400) {
+		$('#masthead').css({
+			'position': 'fixed',
+			'margin-top': '0px'
+		});
+		$('.page-container').css({
+			'padding-top': '560px'
+		});
+	}
+	else {
+		$('#masthead').css({
+			'position': 'relative',
+			'margin-top': '400px'
+		});
+		$('.page-container').css({
+			'padding-top': '50px'
+		});
+	}
 }
 
 
@@ -37,6 +56,21 @@ if (siteDomain == 'nzhobbitleague.com') {
 	});
 }
 
+$(window).resize(function() {
+	if(!$(location).attr('href').includes('?')) {
+		window.scrollTo(0,0);
+		if($(window).width() > 790) {
+			fixHeader();
+		}
+		else {
+			$('#masthead').css({
+				'position': 'fixed',
+				'margin-top': '0px'
+			});
+		}
+		activateScrollListener();
+	}
+});
 
 
 	$.fn.slideFadeToggle  = function(speed, easing, callback) {

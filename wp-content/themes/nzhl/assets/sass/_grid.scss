@@ -7,6 +7,7 @@
   background-color: $bg-color;
   box-shadow: $shadow;
   padding: 30px 50px;
+  padding-top: 140px;
   @include outer-container;
   @include media($large) {
     padding: 0 1.5em;

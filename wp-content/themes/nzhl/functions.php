@@ -693,6 +693,7 @@ function add_favicons() {?>
 	function searchfilter($query) {
 
 		if ($query->is_search && !is_admin() ) {
+			$query->set('post_type', 'post');
 			$query->set('posts_per_page', 12);
 		}
 
