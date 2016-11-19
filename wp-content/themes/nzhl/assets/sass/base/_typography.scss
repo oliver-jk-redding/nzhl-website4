@@ -51,7 +51,7 @@ h4 {
 }
 
 h5 {
-	
+
 }
 
 
@@ -64,6 +64,7 @@ p, li {
 	color: $text-color;
 	line-height: $line-height;
 	letter-spacing: $font-spacing;
+	list-style: none;
 }
 
 strong {
@@ -79,7 +80,7 @@ a {
 	font-weight: 300;
 	color: $text-color;
 	letter-spacing: $font-spacing;
-	text-decoration: underline;
+	text-decoration: none;
 
 	&:hover {
 		color: $link-color;
@@ -109,7 +110,7 @@ a {
  		&:hover, &:active {
  			color: $link-color
  		}
-	}	
+	}
 }
 
 table tr td {

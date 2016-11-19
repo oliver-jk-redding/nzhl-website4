@@ -12,7 +12,7 @@
 <?php tha_content_after(); ?>
 <?php tha_footer_before(); ?>
 <footer class="site-footer full">
-	<div class="page-container">
+	<!-- <div class="page-container"> -->
 
 		<p>&copy; New Zealand Hobbit League</p>
 
@@ -21,7 +21,7 @@
 
 </ul>
 
-</div>
+<!-- </div> -->
 </footer>
 <?php tha_footer_after(); ?>
 </div><!-- .wrap -->

@@ -44,7 +44,7 @@ echo getenv('WP_ENV');
 		<?php tha_header_before(); ?>
 
 		<?php if (is_front_page()) { ?>
-		<div id="banner" class="parallax-window" data-parallax="scroll" data-image-src="wp-content/themes/nzhl/assets/img/wallpaper-pics/wallpaper-3.jpg" data-position="center center" data-speed="0.2" role="banner"></div>
+		<div id="banner" class="parallax-window" data-parallax="scroll" data-image-src="wp-content/themes/nzhl/assets/img/wallpaper-pics/wallpaper-3.jpg" data-position="center center" data-speed="0.3" role="banner"></div>
 		<div id="banner-logo"></div>
 		<header id="masthead" class="page-header with-banner">
 		<?php } else { ?>

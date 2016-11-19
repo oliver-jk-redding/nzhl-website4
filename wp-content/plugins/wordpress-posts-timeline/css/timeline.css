@@ -1,0 +1,146 @@
+/*
+
+Structural CSS for the Timeline
+Modify at your own risk!
+
+by Wylie Hobbs
+CSS version 1.1
+
+ */
+#timeline {
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#timeline ul{
+    width:100%;
+    margin:0 auto;
+    position:relative;
+    display:inline-block;
+    list-style: none;
+    background:url('../img/ul-bg.png') center top repeat-y;
+    padding: 0;
+}
+
+#timeline ul li{
+    display: block;
+    position: relative;
+    width: 50%;
+    clear:both;
+    color: #ffffff;
+}
+
+#timeline ul li .timeline-text{
+        float:left;
+        font-size:16px;
+        line-height:20px;
+/*        margin-left:10px;
+        margin-right:10px !important;*/
+    }
+
+#timeline .innerblock {
+    background-color: #386a7a;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+}
+
+#timeline .innerblock a h3 {
+    color: #ffffff;
+    margin: 0 0 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+#timeline ul li:nth-child(even){
+    float: right;
+}
+#timeline ul li:nth-child(even) > div{
+    display: block;
+    float:left;
+    background:url('../img/li-bg.png') left center no-repeat;
+    margin-left:-10px;
+    padding-left:40px;
+}
+
+#timeline .timeline-date{
+    text-align: left;
+/*        margin-left:20px;
+    margin-right:20px !important;*/
+}
+#timeline ul li:nth-child(even) > div .timeline-date{
+    text-align: left;
+}
+
+#timeline ul li:nth-child(odd){
+    float: left;
+    text-align: left;
+}
+#timeline ul li:nth-child(odd) > div{
+    display:block;
+    background:url('../img/li-bg.png') right center no-repeat;
+    margin-right:-10px;
+    padding-right:40px;
+}
+
+#timeline ul li:nth-child(odd) > div .timeline-text{
+    float:left;
+    text-align: left;
+/*        margin-right:10px;
+    margin-left: 10px;*/
+}
+    
+#timeline ul .timeline-image{
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    height: auto;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 600px) {
+    #timeline ul li{
+        width: 100%;
+    }
+
+    #timeline ul li:after {
+        content: url('../img/li-bg.png');
+        display: block;
+        height: 0;
+        position: absolute;
+        width: 0;
+        overflow:hidden;
+        bottom: 0;
+        left: 50%;
+        margin: 0 0 -5px -5px;
+        z-index: 99;
+        border-top: 5px #ddcf16 solid;
+        border-left: 5px transparent solid;
+        border-right: 5px transparent solid;
+    }
+
+    #timeline ul li:nth-child(even) > div{
+        margin-left:0px;
+        padding-left:0px
+    }
+
+    #timeline ul li:nth-child(odd) > div{
+        margin-right:0px;
+        padding-right:0px;
+    }
+        
+    #timeline ul .timeline-image{
+        width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+        height: auto;
+        overflow-x: hidden;
+    }
+}
+
+/*a.milestone-link[href='']{
+    pointer-events: none;
+}*/

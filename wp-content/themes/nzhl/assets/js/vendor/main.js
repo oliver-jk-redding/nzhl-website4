@@ -16,21 +16,24 @@ function scrollHander() {
 }
 
 function fixHeader() {
-	if($(window).scrollTop() >= 400) {
+	if($(window).scrollTop() >= $(window).height()) {
 		$('#masthead').css({
 			'position': 'fixed',
 			'margin-top': '0px'
 		});
 		$('.page-container').css({
-			'padding-top': '560px'
+			'margin-top': '100vh',
+			'padding-top': '150px'
 		});
 	}
 	else {
 		$('#masthead').css({
 			'position': 'relative',
-			'margin-top': '400px'
+			// 'margin-top': '400px'
+			'margin-top': '100vh'
 		});
 		$('.page-container').css({
+			'margin-top': 0,
 			'padding-top': '50px'
 		});
 	}

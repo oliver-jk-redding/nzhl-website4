@@ -621,6 +621,18 @@ function modify__excerpt_read_more_link($more) {
 	return '... <a class="more-link" href="' . get_permalink() . '">Read more</a>';
 }
 
+// Changing excerpt length
+function new_excerpt_length($length) {
+return 15;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
+// Changing excerpt more
+function new_excerpt_more($more) {
+return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 add_action('wp_head', 'add_favicons');
 function add_favicons() {?>
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri();?>/images/favicon.ico" type="image/x-icon" />
@@ -732,6 +744,54 @@ add_filter( 'wp_calculate_image_srcset', function( $sources )
 	return $sources;
 
 }, PHP_INT_MAX );
+
+
+// if (function_exists('register_field_group')) {
+// 	register_field_group(array (
+// 		'id' => 'acf_featured-image',
+// 		'title' => 'Featured Image',
+// 		'fields' => array (
+// 			array (
+// 				'key' => 'field_562cbea91702c',
+// 				'label' => 'Featured Image',
+// 				'name' => 'featured_image',
+// 				'type' => 'image',
+// 				'save_format' => 'id',
+// 				'preview_size' => 'thumbnail',
+// 				'library' => 'all',
+// 				'required' => 1
+// 			),
+// 		),
+// 		'location' => array (
+// 			array (
+// 				array (
+// 					'param' => 'post_type',
+// 					'operator' => '==',
+// 					'value' => 'Event',
+// 					'order_no' => 0,
+// 					'group_no' => 0,
+// 				),
+// 			),
+// 			array (
+// 				array (
+// 					'param' => 'post_type',
+// 					'operator' => '==',
+// 					'value' => 'post',
+// 					'order_no' => 0,
+// 					'group_no' => 1,
+// 				),
+// 			),
+// 		),
+// 		'options' => array (
+// 			'position' => 'side',
+// 			'layout' => 'default',
+// 			'hide_on_screen' => array (
+// 			),
+// 		),
+// 		'menu_order' => 0,
+// 	));
+
+// }
 
 
 

@@ -2104,7 +2104,8 @@ p, li {
   font-weight: 300;
   color: #333333;
   line-height: 24px;
-  letter-spacing: normal; }
+  letter-spacing: normal;
+  list-style: none; }
 
 strong {
   font-weight: 400; }
@@ -2117,7 +2118,7 @@ a {
   font-weight: 300;
   color: #333333;
   letter-spacing: normal;
-  text-decoration: underline; }
+  text-decoration: none; }
   a:hover {
     color: #cd0d12; }
   a:focus {
@@ -2282,7 +2283,8 @@ div#banner-logo {
   width: 100%;
   height: 200px;
   position: absolute;
-  margin-top: 100px; }
+  margin-top: 100px;
+  margin-top: 25vh; }
   @media screen and (max-width: 790px) {
     div#banner-logo {
       display: none; } }
@@ -2291,22 +2293,23 @@ header.page-header {
   width: 100%;
   margin: 0 auto;
   position: fixed;
-  height: 90px; }
+  height: 90px;
+  background-color: black;
+  box-shadow: 0px 3px 10px #888;
+  z-index: 100; }
   header.page-header.with-banner {
     position: relative;
-    margin-top: 400px; }
+    margin-top: 100vh; }
     @media screen and (max-width: 790px) {
       header.page-header.with-banner {
         position: fixed;
         margin-top: 0; } }
   header.page-header .topbox {
     position: relative;
-    background-color: black;
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
-    padding: 0 50px;
-    box-shadow: 0px 3px 10px #888; }
+    padding: 0 50px; }
     @media screen and (max-width: 1200px) {
       header.page-header .topbox {
         padding: 0 1.5em; } }
@@ -2637,8 +2640,93 @@ ul.main-nav {
 /*--------------------------------------------------------------
 	6.4 Page Templates
 	--------------------------------------------------------------*/
-#home {
-  height: 2000px; }
+#home .content .post-content {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 22vw;
+  background-color: #333333;
+  margin: 15px 0; }
+  #home .content .post-content .post-image-container {
+    display: inline-block;
+    float: left;
+    width: 60%;
+    height: 22vw;
+    overflow: hidden; }
+    #home .content .post-content .post-image-container .post-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; }
+  #home .content .post-content .post-categories {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    display: inline-block; }
+    #home .content .post-content .post-categories li a {
+      display: block;
+      padding: 5px 10px;
+      color: #333333;
+      list-style: none;
+      background-color: #ddcf16; }
+  #home .content .post-content .post-details {
+    display: inline-block;
+    width: 40%;
+    padding: 20px;
+    position: relative;
+    height: 100%; }
+    #home .content .post-content .post-details .post-title {
+      background-color: #cd0d12;
+      padding: 5px;
+      padding-left: 20px;
+      display: block;
+      width: 120%;
+      margin-left: -20px; }
+      #home .content .post-content .post-details .post-title h3 {
+        color: #f8f8f8;
+        font-family: "Noto Serif", Arial, sans-serif;
+        display: inline-block;
+        max-height: 63px;
+        overflow: hidden; }
+    #home .content .post-content .post-details .post-date {
+      display: block;
+      color: #f8f8f8;
+      font-size: 12px;
+      margin: 20px 0; }
+    #home .content .post-content .post-details .post-excerpt p {
+      color: #f8f8f8; }
+    #home .content .post-content .post-details .post-read-more {
+      display: block;
+      position: absolute;
+      width: 100%;
+      padding: 0 20px;
+      left: 0;
+      bottom: 20px; }
+      #home .content .post-content .post-details .post-read-more a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #4d4d4d;
+        color: #f8f8f8;
+        padding: 10px 30px;
+        text-align: center; }
+        #home .content .post-content .post-details .post-read-more a:hover {
+          background-color: #e50f14; }
+  #home .content .post-content:hover {
+    background-color: #404040;
+    transition: all 0.5s ease; }
+    #home .content .post-content:hover .post-image {
+      -webkit-filter: brightness(105%);
+      transform: scale(1.05);
+      transition: all 0.5s ease; }
+    #home .content .post-content:hover .post-title {
+      background-color: #e50f14;
+      transition: all 0.5s ease; }
 
 /*--------------------------------------------------------------
 	6.5 Sidebar
@@ -2977,6 +3065,7 @@ a.milestone-link[href='']{
  */
 footer.site-footer {
   position: absolute;
+  position: relative;
   bottom: 0;
   background: #E7E7E7;
   padding: 15px 0 22px;
