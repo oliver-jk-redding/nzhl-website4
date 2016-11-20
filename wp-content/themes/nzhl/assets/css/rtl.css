@@ -2659,7 +2659,9 @@ ul.main-nav {
       display: block;
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center; }
+      background-position: center;
+      transition: all 0.5s linear;
+      transform: scale3d(1, 1, 1); }
   #home .content .post-content .post-categories {
     position: absolute;
     list-style: none;
@@ -2668,12 +2670,16 @@ ul.main-nav {
     left: 0;
     bottom: 0;
     display: inline-block; }
-    #home .content .post-content .post-categories li a {
-      display: block;
-      padding: 5px 10px;
-      color: #333333;
-      list-style: none;
-      background-color: #ddcf16; }
+    #home .content .post-content .post-categories li {
+      display: inline-block; }
+      #home .content .post-content .post-categories li a {
+        display: block;
+        padding: 5px 10px;
+        color: #333333;
+        list-style: none;
+        background-color: #ddcf16; }
+        #home .content .post-content .post-categories li a:hover {
+          text-decoration: underline; }
   #home .content .post-content .post-details {
     display: inline-block;
     width: 40%;
@@ -2722,8 +2728,7 @@ ul.main-nav {
     transition: all 0.5s ease; }
     #home .content .post-content:hover .post-image {
       -webkit-filter: brightness(105%);
-      transform: scale(1.05);
-      transition: all 0.5s ease; }
+      transform: scale3d(1.1, 1.1, 1); }
     #home .content .post-content:hover .post-title {
       background-color: #e50f14;
       transition: all 0.5s ease; }

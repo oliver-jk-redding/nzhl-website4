@@ -16,9 +16,9 @@ $thumb_url = $thumb_url_array[0];
   <?php if($thumb_id) { ?>
     <div class="post-image-container"><a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $thumb_url; ?>);"></a></div>
   <?php } else { ?>
-    <div class="post-image-container"><a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(wp-content/themes/nzhl/assets/img/hero-logo-weebly-bg.png);"></a></div>
+    <div class="post-image-container"><a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo.jpg);"></a></div>
   <?php } ?>
-  <?php the_category(); ?>
+  <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
   <div class="post-details">
     <a class="post-title" href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
     <span class="post-date"><?php echo get_the_date(); ?></span>

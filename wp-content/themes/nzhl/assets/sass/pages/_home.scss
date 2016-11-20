@@ -20,6 +20,10 @@
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
+          -webkit-transition: all 0.5s linear;
+          transition: all 0.5s linear;
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
         }
       }
       .post-categories {
@@ -31,13 +35,16 @@
         bottom: 0;
         display: inline-block;
         li {
+          display: inline-block;
           a {
             display: block;
             padding: 5px 10px;
             color: $dark-grey;
             list-style: none;
             background-color: $yellow;
-            // opacity: 0.8;
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -99,8 +106,8 @@
         transition: all 0.5s ease;
         .post-image {
           -webkit-filter: brightness(105%);
-          transform: scale(1.05);
-          transition: all 0.5s ease;
+          -webkit-transform: scale3d(1.1, 1.1, 1);
+          transform: scale3d(1.1, 1.1, 1);
         }
         .post-title {
           background-color: lighten($red, 5%);

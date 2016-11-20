@@ -9,6 +9,7 @@
   padding: 30px 50px;
   padding-top: 140px;
   @include outer-container;
+  // @include outer-container(1000px);
   @include media($large) {
     padding: 0 1.5em;
  	}

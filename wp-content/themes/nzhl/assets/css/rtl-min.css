@@ -377,9 +377,10 @@ ul.main-nav li.menu-item-has-children ul.sub-menu li.current_page_item a,ul.main
 #nav-icon.open span:nth-child(2){background:#cd0d12;transform:rotate(45deg)}#nav-icon.open span:nth-child(3){background:#cd0d12;transform:rotate(-45deg)}
 #nav-icon.open span:nth-child(4){background:#cd0d12;top:8px;width:0;left:50%}#home .content .post-content{display:block;position:relative;width:100%;height:22vw;background-color:#333;margin:15px 0}
 #home .content .post-content .post-image-container{display:inline-block;float:left;width:60%;height:22vw;overflow:hidden}
-#home .content .post-content .post-image-container .post-image{width:100%;height:100%;display:block;background-size:cover;background-repeat:no-repeat;background-position:center}
+#home .content .post-content .post-image-container .post-image{width:100%;height:100%;display:block;background-size:cover;background-repeat:no-repeat;background-position:center;transition:all .5s linear;transform:scale3d(1,1,1)}
 #home .content .post-content .post-categories{position:absolute;list-style:none;padding:0;margin:0;left:0;bottom:0;display:inline-block}
-#home .content .post-content .post-categories li a{display:block;padding:5px 10px;color:#333;list-style:none;background-color:#ddcf16}
+#home .content .post-content .post-categories li{display:inline-block}#home .content .post-content .post-categories li a{display:block;padding:5px 10px;color:#333;list-style:none;background-color:#ddcf16}
+#home .content .post-content .post-categories li a:hover{text-decoration:underline}
 #home .content .post-content .post-details{display:inline-block;width:40%;padding:20px;position:relative;height:100%}
 #home .content .post-content .post-details .post-title{background-color:#cd0d12;padding:5px;padding-left:20px;display:block;width:120%;margin-left:-20px}
 #home .content .post-content .post-details .post-title h3{color:#f8f8f8;font-family:"Noto Serif",Arial,sans-serif;display:inline-block;max-height:63px;overflow:hidden}
@@ -388,7 +389,7 @@ ul.main-nav li.menu-item-has-children ul.sub-menu li.current_page_item a,ul.main
 #home .content .post-content .post-details .post-read-more a{display:block;width:100%;height:100%;background-color:#4d4d4d;color:#f8f8f8;padding:10px 30px;text-align:center}
 #home .content .post-content .post-details .post-read-more a:hover{background-color:#e50f14}
 #home .content .post-content:hover{background-color:#404040;transition:all .5s ease}
-#home .content .post-content:hover .post-image{-webkit-filter:brightness(105%);transform:scale(1.05);transition:all .5s ease}
+#home .content .post-content:hover .post-image{-webkit-filter:brightness(105%);transform:scale3d(1.1,1.1,1)}
 #home .content .post-content:hover .post-title{background-color:#e50f14;transition:all .5s ease}
 #timeline{width:90%;margin-left:auto;margin-right:auto}#timeline ul{width:100%;margin:0 auto;position:relative;display:inline-block;list-style:none;background:url("../img/ul-bg.png") center top repeat-y;padding:0}
 #timeline ul li{display:block;position:relative;width:50%;clear:both;color:#fff}#timeline ul li .timeline-text{float:left;font-size:16px;line-height:20px}
