@@ -18,14 +18,13 @@ get_header();?>
     <h1 style="display: none;">The New Zealand Hobbit League</h1>
     <h2>Latest from the NZHL Community</h2>
 
-    <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=10$paged=1' ); ?>
+    <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=3' ); ?>
 
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
       <?php get_template_part( 'page-templates/partials/content', 'front' ); ?>
 
     <?php endwhile; ?>
-
 
   </div>
 

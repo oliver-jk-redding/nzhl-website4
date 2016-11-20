@@ -610,10 +610,10 @@ function friendlyURL($string){
 	return strtolower(trim($string, '-'));
 }
 
-add_filter( 'the_content_more_link', 'modify_read_more_link' );
-function modify_read_more_link() {
-	return '<a class="more-link" href="' . get_permalink() . '">Read more ...</a>';
-}
+// add_filter( 'excerpt_more', 'modify_read_more_link' );
+// function modify_read_more_link() {
+// 	return '<a class="more-link" href="' . get_permalink() . '">Read more ...</a>';
+// }
 
 add_filter('excerpt_more', 'modify__excerpt_read_more_link');
 function modify__excerpt_read_more_link($more) {
@@ -622,16 +622,16 @@ function modify__excerpt_read_more_link($more) {
 }
 
 // Changing excerpt length
-function new_excerpt_length($length) {
-return 15;
-}
 add_filter('excerpt_length', 'new_excerpt_length');
+function new_excerpt_length($length) {
+	return 50;
+}
 
 // Changing excerpt more
-function new_excerpt_more($more) {
-return '...';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
+// function new_excerpt_more($more) {
+// return '...';
+// }
+// add_filter('excerpt_more', 'new_excerpt_more');
 
 add_action('wp_head', 'add_favicons');
 function add_favicons() {?>
