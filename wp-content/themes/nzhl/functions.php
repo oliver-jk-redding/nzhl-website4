@@ -172,10 +172,8 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_enqueue_style( 'some_like_it_neat-style',  get_template_directory_uri() . '/assets/css/style.css' );
 		wp_enqueue_style( 'ss_social_circle',  get_template_directory_uri() . '/assets/fonts/webfonts/ss-social-circle.css' );
 		wp_enqueue_style( 'tooltipster',  get_template_directory_uri() . '/assets/css/vendor/tooltipster.css' );
-		wp_register_style('et-googleFonts-serif', 'https://fonts.googleapis.com/css?family=Noto+Serif');
-		wp_enqueue_style( 'et-googleFonts-serif');
-		wp_register_style('et-googleFonts-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans');
-		wp_enqueue_style( 'et-googleFonts-sans');
+		wp_register_style('et-googleFonts', 'https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans:400,700');
+		wp_enqueue_style( 'et-googleFonts');
 
 		else :
 			// Vendor Scripts
@@ -220,10 +218,8 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_enqueue_style( 'some_like_it_neat-style',  get_template_directory_uri() . '/assets/css/style.css' );
 		wp_enqueue_style( 'ss_social_circle',  get_template_directory_uri() . '/assets/fonts/webfonts/ss-social-circle.css' );
 		wp_enqueue_style( 'tooltipster',  get_template_directory_uri() . '/assets/css/vendor/tooltipster.css' );
-		wp_register_style('et-googleFonts-serif', 'https://fonts.googleapis.com/css?family=Noto+Serif');
-		wp_enqueue_style( 'et-googleFonts-serif');
-		wp_register_style('et-googleFonts-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans');
-		wp_enqueue_style( 'et-googleFonts-sans');
+		wp_register_style('et-googleFonts', 'https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans:400,700');
+		wp_enqueue_style( 'et-googleFonts');
 
 		endif;
 

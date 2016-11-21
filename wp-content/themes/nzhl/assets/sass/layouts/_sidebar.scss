@@ -5,15 +5,28 @@
 .sidebar {
  	position: absolute;
  	top: 0;
- 	right: 50px;
+ 	right: 0;
  	height: 100%;
  	background-color: $yellow;
+ 	// border-right: solid 30px $yellow;
  	// background-color: $mid-grey;
  	// padding: 30px;
  	// width: 280px;
- 	color: whitesmoke!important;
+ 	color: black!important;
 	@include media($large) {
-	  right: 1.5em;
+	  // right: 1.5em;
+	}
+	#sidebar-frontpage {
+		.events-widget {
+			h3 {
+				font-weight: $header-weight;
+				color: $dark-grey;
+				// border-bottom: solid 3px $dark-grey;
+				text-transform: uppercase;
+				font-family: $font-stack;
+				letter-spacing: 0.1em;
+			}
+		}
 	}
 }
 

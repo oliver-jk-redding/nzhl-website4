@@ -34,8 +34,8 @@
  }
 
  .sidebar {
- 	@include span-columns(3.5);
-  padding: 30px 50px;
+ 	@include span-columns(4);
+  padding: 30px 30px;
  	@include media($med) {
  		@include span-columns(12);
  		padding-bottom: 150px;
