@@ -318,7 +318,7 @@ html{position:relative;background-color:#f8f8f8;background-image:url(../img/midd
 body{position:relative;min-height:100vh}.content-area{min-height:446px;padding-bottom:150px}
 .full{padding-bottom:150px}img{max-width:100%;padding:0 0 20px 0}a.btn{background:#e7e7e7;color:#333;padding:.8em 1.5em;display:inline-block;text-decoration:none}
 a.btn:hover,a.btn:active{text-decoration:none;color:#cd0d12}.dis-b{display:block}
-.hide{display:none !important}.page-container{background-color:#f8f8f8;box-shadow:0 0 70px #888;padding:30px 50px;padding-top:140px;max-width:1000px;margin-left:auto;margin-right:auto}
+.hide{display:none !important}.page-container{background-color:#f8f8f8;box-shadow:0 0 70px #888;padding:30px 50px;max-width:1000px;margin-left:auto;margin-right:auto}
 .page-container::after{clear:both;content:"";display:table}
 @media screen and (max-width:1200px){.page-container{padding:0 1.5em}}.full{float:left;display:block;margin-right:2.35765%;width:100%}
 .full:last-child{margin-right:0}.full .content{width:100%}.content{float:left;display:block;margin-right:2.35765%;width:65.88078%;padding:0 0 150px 0}
@@ -386,8 +386,9 @@ ul.main-nav li.menu-item-has-children ul.sub-menu li.current_page_item a,ul.main
 #home .content .post-content .post-heading{display:block;width:100%;height:auto;position:relative;background-color:#333}
 #home .content .post-content .post-heading .post-title{background-color:#333;display:block;width:100%;padding:10px 20px}
 #home .content .post-content .post-heading .post-title h3{color:#f8f8f8;font-family:"Noto Serif",Arial,sans-serif;display:inline;max-height:63px;overflow:hidden;padding:0}
-#home .content .post-content .post-heading .post-title .post-author{color:#f8f8f8;font-size:12px;margin-left:10px}
-#home .content .post-content .post-heading .post-date{display:block;color:#f8f8f8;font-size:12px;padding:15px 20px;padding-top:0}
+#home .content .post-content .post-heading .post-title .post-author,#home .content .post-content .post-heading .post-title .post-location{color:#f8f8f8;font-size:12px;margin-left:10px}
+#home .content .post-content .post-heading .post-title .post-location{text-transform:uppercase}
+#home .content .post-content .post-heading .post-date{display:block;color:#f8f8f8;font-size:14px;padding:15px 20px;padding-top:0}
 #home .content .post-content .post-details{display:block;width:100%;padding:10px 20px;padding-bottom:20px;position:relative;height:auto;background-color:#f8f8f8;background-color:#e7e7e7}
 #home .content .post-content .post-details .post-excerpt p{color:#000;margin-top:0;margin-bottom:5px}
 #home .content .post-content .post-details .post-excerpt p .more-link{color:#cd0d12}

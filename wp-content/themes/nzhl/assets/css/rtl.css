@@ -2194,7 +2194,6 @@ a.btn:hover, a.btn:active {
   background-color: #f8f8f8;
   box-shadow: 0px 0px 70px #888;
   padding: 30px 50px;
-  padding-top: 140px;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto; }
@@ -2703,14 +2702,16 @@ ul.main-nav {
           max-height: 63px;
           overflow: hidden;
           padding: 0; }
-        #home .content .post-content .post-heading .post-title .post-author {
+        #home .content .post-content .post-heading .post-title .post-author, #home .content .post-content .post-heading .post-title .post-location {
           color: #f8f8f8;
           font-size: 12px;
           margin-left: 10px; }
+        #home .content .post-content .post-heading .post-title .post-location {
+          text-transform: uppercase; }
       #home .content .post-content .post-heading .post-date {
         display: block;
         color: #f8f8f8;
-        font-size: 12px;
+        font-size: 14px;
         padding: 15px 20px;
         padding-top: 0; }
     #home .content .post-content .post-details {
