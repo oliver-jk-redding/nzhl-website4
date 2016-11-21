@@ -2191,6 +2191,7 @@ a.btn:hover, a.btn:active {
  * Grid
  */
 .page-container {
+  position: relative;
   background-color: #f8f8f8;
   box-shadow: 0px 0px 70px #888;
   padding: 30px 50px;
@@ -2238,7 +2239,8 @@ a.btn:hover, a.btn:active {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 31.76157%; }
+  width: 27.49666%;
+  padding: 30px 50px; }
   .sidebar:last-child {
     margin-right: 0; }
   @media screen and (max-width: 790px) {
@@ -2641,6 +2643,12 @@ ul.main-nav {
 	--------------------------------------------------------------*/
 #home .content {
   font-size: 0; }
+  #home .content h2 {
+    color: #333333;
+    text-align: right;
+    border-bottom: solid 3px #333333;
+    font-weight: 600;
+    letter-spacing: 0.1em; }
   #home .content .post-content {
     display: inline-block;
     position: relative;
@@ -2883,194 +2891,15 @@ a.milestone-link[href='']{
  * Sidebar
  */
 .sidebar {
-  float: right; }
-  .sidebar div, .sidebar nav {
-    margin: 0 0 20px; }
-  .sidebar li, .sidebar p {
-    font-size: 16px;
-    margin: 0 0 5px;
-    line-height: 24px;
-    letter-spacing: normal; }
-  .sidebar h3 {
-    padding-bottom: 3px;
-    font-size: 22px;
-    font-weight: 100;
-    font-family: "Noto Serif", Arial, sans-serif;
-    letter-spacing: normal;
-    color: #333333;
-    border-bottom: 1px solid #4d4d4d; }
-  .sidebar .news-widget {
-    margin-top: 20px; }
-    .sidebar .news-widget a {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 300;
-      font-family: "Noto Sans", Arial, sans-serif;
-      letter-spacing: normal;
-      color: #cd0d12;
-      text-decoration: none; }
-  .sidebar .yellow-box {
-    background-color: #F0F0F0;
-    height: 220px;
-    padding: 24px; }
-    .sidebar .yellow-box h3 {
-      border-bottom: 1px solid #4d4d4d;
-      padding-bottom: 9px;
-      margin-bottom: 13px; }
-    .sidebar .yellow-box p {
-      margin-top: 0 !important; }
-    .sidebar .yellow-box a {
-      font-size: 22px;
-      font-weight: 100;
-      font-family: "Noto Serif", Arial, sans-serif;
-      letter-spacing: normal;
-      color: #333333;
-      text-decoration: none; }
-      .sidebar .yellow-box a:hover, .sidebar .yellow-box a:active {
-        color: #cd0d12; }
-    .sidebar .yellow-box .fa-lg {
-      display: none; }
-    .sidebar .yellow-box h3:last-child {
-      display: none; }
-
-.home-sub-nav {
-  padding: 30px 20px 15px 20px; }
-  .home-sub-nav ul {
-    font-family: "Noto Sans", Arial, sans-serif;
-    font-weight: 300;
-    font-size: 1.4375em;
-    margin: 0 0 0 24px; }
-    .home-sub-nav ul li {
-      margin-bottom: 12px;
-      padding: 0 0 0 0; }
-      .home-sub-nav ul li .fa-li {
-        width: 1em;
-        left: -1.3em;
-        /*text-decoration: underline;*/ }
-      .home-sub-nav ul li a {
-        color: #333333;
-        text-decoration: underline; }
-        .home-sub-nav ul li a:hover {
-          color: #cd0d12; }
-
-.side-content .cats {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.side-content ul li {
-  margin-bottom: 6px; }
-
-.side-content ul.fa-ul {
-  margin-left: 15px; }
-  .side-content ul.fa-ul .fa-li {
-    color: #cd0d12;
-    left: -1.7em; }
-
-.side-content ul.tags {
-  list-style: none;
-  padding: 0; }
-
-@media screen and (max-width: 790px) {
-  #sidebar-frontpage .yellow-box {
-    display: none; } }
-
-.widget_archive {
-  margin-bottom: 20px; }
-  .widget_archive p {
-    font-size: 16px;
-    margin-bottom: 16px;
-    line-height: 1.4; }
-  .widget_archive a.more-link {
-    margin: 0; }
-  .widget_archive ul {
-    padding-left: 0px !important;
-    list-style-type: none; }
-    .widget_archive ul li {
-      margin-bottom: 3px; }
-
-#sidebar-news h4.widget-title {
-  font-size: 22px;
-  font-family: "Noto Serif", Arial, sans-serif;
-  color: #333333;
-  font-weight: 100;
-  width: 100%;
-  border-bottom: 1px solid #4d4d4d;
-  padding-bottom: 3px;
-  margin: 0 0 23px 0; }
-
-.featured-widget {
-  margin-bottom: 20px; }
-  @media screen and (max-width: 790px) {
-    .featured-widget {
-      width: 100%;
-      float: none;
-      display: inline-block; }
-      .featured-widget.widget-first {
-        margin-right: 2%; }
-      .featured-widget:after {
-        display: block;
-        content: '';
-        clear: both; } }
-  @media screen and (max-width: 365px) {
-    .featured-widget {
-      width: 100%;
-      float: none; }
-      .featured-widget.widget-first {
-        margin-right: 0; } }
-
-.featured-widget h4 {
-  display: none; }
-
-.featured-widget p {
-  margin: 0;
-  padding: 0;
-  font-family: "Noto Sans", Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 300;
-  color: #333333;
-  margin: 0 !important; }
-
-.featured-widget a {
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 300;
-  color: #333333;
-  padding: 18px;
-  height: 60px;
-  width: 100%;
-  background-color: #F0F0F0;
-  display: block; }
+  position: absolute;
+  top: 0;
+  right: 50px;
+  height: 100%;
+  background-color: #ddcf16;
+  color: whitesmoke !important; }
   @media screen and (max-width: 1200px) {
-    .featured-widget a {
-      font-size: 0.8em; } }
-  @media screen and (max-width: 790px) {
-    .featured-widget a {
-      font-size: 1em; } }
-
-.featured-widget a:hover {
-  color: #cd0d12; }
-
-.featured-widget a:after {
-  content: '\f105';
-  font-size: 30px;
-  display: inline-block;
-  font-family: 'FontAwesome';
-  position: relative;
-  bottom: 1px;
-  float: right; }
-
-.ethics-page-fellows-list p {
-  margin: 0 0 10px 0;
-  list-style-type: none; }
-
-.ethics-page-fellows-list ol {
-  padding-left: 0; }
-
-.sidebar-ethics-page {
-  padding-left: 30px;
-  border-left: solid 1px #ddd;
-  margin-bottom: 20px; }
+    .sidebar {
+      right: 1.5em; } }
 
 /*--------------------------------------------------------------
 	6.6 Footer

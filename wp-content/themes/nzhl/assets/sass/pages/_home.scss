@@ -1,6 +1,13 @@
 #home {
   .content {
     font-size: 0;
+    h2 {
+      color: $dark-grey;
+      text-align: right;
+      border-bottom: solid 3px $dark-grey;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
     .post-content {
       display: inline-block;
       position: relative;

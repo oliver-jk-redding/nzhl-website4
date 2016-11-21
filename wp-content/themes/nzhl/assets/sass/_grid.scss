@@ -4,6 +4,7 @@
  */
 
  .page-container {
+  position: relative;
   background-color: $bg-color;
   box-shadow: $shadow;
   padding: 30px 50px;
@@ -33,7 +34,8 @@
  }
 
  .sidebar {
- 	@include span-columns(4);
+ 	@include span-columns(3.5);
+  padding: 30px 50px;
  	@include media($med) {
  		@include span-columns(12);
  		padding-bottom: 150px;

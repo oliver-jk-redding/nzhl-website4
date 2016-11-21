@@ -24,7 +24,7 @@ $eventDate = '21-6-2016';
     </div>
   <?php } else { ?>
     <div class="post-image-container">
-      <a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo.jpg);"></a>
+      <a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg);"></a>
       <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
     </div>
   <?php } ?>

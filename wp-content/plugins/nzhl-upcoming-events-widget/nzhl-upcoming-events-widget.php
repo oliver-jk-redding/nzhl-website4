@@ -12,12 +12,12 @@
  *
  * @wordpress-plugin
  * Plugin Name:       NZHL Upcoming Events
- * Plugin URI:        http://drewlondon.co.uk
- * Description:       NZHL Upcoming Events Widget for Sidebaer
+ * Plugin URI:        http://oliverredding.com
+ * Description:       NZHL Upcoming Events Widget for Sidebar
  * Version:           1.0.0
  * Author:            Ollie Redding
  * Author URI:        http://oliverredding.com
- * Text Domain:       bv-panoramic-outlook-toc
+ * Text Domain:       Oliver Redding
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /lang
@@ -44,7 +44,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
      *
      * @var      string
      */
-    protected $widget_slug = 'ati-latest-news-widget';
+    protected $widget_slug = 'nzhl-upcoming-events-widget';
     /*--------------------------------------------------*/
 	/* Constructor
 	/*--------------------------------------------------*/
@@ -64,7 +64,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
 			__( 'NZHL_Upcoming_Events', $this->get_widget_slug() ),
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
-				'description' => __( 'A widget which shows a list of the upcoming evnets for the next year.', $this->get_widget_slug() )
+				'description' => __( 'A widget which shows a list of the upcoming events for the next year.', $this->get_widget_slug() )
 				)
 			);
 		// Register admin styles and scripts
@@ -113,19 +113,18 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		$widget_string = $before_widget;
 
 		// TODO: Here is where you manipulate your widget's values based on their input fields
-		query_posts('category_name=Events&orderby=date&order=DESC&posts_per_page=1');
+		query_posts('category_name=Event&orderby=date&order=DESC&posts_per_page=3');
+
+		$widget_heading = "<div class='side-content events-widget'>
+		<h3>Upcoming Events</h3>";
 
 		if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-		$mycontent = getWordsWithImage(get_the_content(), 12);
-
-		$widget_string .= "<div class='side-content news-widget'>
-		<h3>Latest News</h3>
-		<p><strong>" . get_the_title() . "</strong></p> " . apply_filters('the_content', $mycontent) . "
-		<a href='news/'>Read more</a>
-	</div>";
+		$event_info .= "<h4 class='wg-event-title'>" . get_the_title() . "</h4><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span><span class='wg-event-location'>" . get_field('location') . "</span><a class='wg-event-link' href='" . get_permalink() . "'>Read more</a>";
 
 	endwhile; endif;
+
+	$widget_string = $widget_heading.$event_info."</div>";
 
 	ob_start();
 	include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );
