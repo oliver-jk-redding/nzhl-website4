@@ -20,11 +20,16 @@
 		.events-widget {
 			h3 {
 				font-weight: $header-weight;
-				color: $dark-grey;
-				// border-bottom: solid 3px $dark-grey;
-				text-transform: uppercase;
 				font-family: $font-stack;
-				letter-spacing: 0.1em;
+				font-size: 22px;
+				text-align: center;
+				padding: 5px;
+				padding-bottom: 26px;
+				color: $dark-grey;
+			}
+			.wg-event-img {
+				width: 100px;
+				height: 80px;
 			}
 		}
 	}

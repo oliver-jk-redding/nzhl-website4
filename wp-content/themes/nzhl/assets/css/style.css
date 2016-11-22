@@ -2644,12 +2644,12 @@ ul.main-nav {
 #home .content {
   font-size: 0; }
   #home .content h2 {
-    color: #333333;
     font-weight: 700;
     font-family: "Noto Sans", Arial, sans-serif;
     font-size: 22px;
     text-align: center;
     padding: 5px;
+    padding-bottom: 26px;
     color: #333333; }
   #home .content .post-content {
     display: inline-block;
@@ -2658,8 +2658,38 @@ ul.main-nav {
     font-size: 0;
     width: 100%;
     height: auto;
-    margin: 15px 0;
-    border-top: solid 1px #E7E7E7; }
+    margin-bottom: 6px;
+    border-top: solid 1px #E7E7E7;
+    padding-top: 5px; }
+    #home .content .post-content .post-heading {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: relative; }
+      #home .content .post-content .post-heading .post-title {
+        display: block;
+        width: 100%;
+        padding: 10px 0; }
+        #home .content .post-content .post-heading .post-title h3 {
+          font-family: "Noto Serif", Arial, sans-serif;
+          display: inline;
+          padding: 0;
+          font-size: 28px; }
+        #home .content .post-content .post-heading .post-title .post-author, #home .content .post-content .post-heading .post-title .post-location {
+          font-size: 12px;
+          margin-left: 10px;
+          vertical-align: super; }
+        #home .content .post-content .post-heading .post-title .post-location {
+          text-transform: uppercase; }
+      #home .content .post-content .post-heading .post-date {
+        display: block;
+        font-size: 14px;
+        padding: 15px 0;
+        padding-top: 0; }
+      #home .content .post-content .post-heading:hover {
+        transition: all 0.5s ease; }
+        #home .content .post-content .post-heading:hover .post-title h3, #home .content .post-content .post-heading:hover .post-author, #home .content .post-content .post-heading:hover .post-location, #home .content .post-content .post-heading:hover .post-date {
+          color: #cd0d12; }
     #home .content .post-content .post-image-container {
       display: block;
       width: 100%;
@@ -2675,6 +2705,9 @@ ul.main-nav {
         background-position: center;
         transition: all 0.5s linear;
         transform: scale3d(1, 1, 1); }
+        #home .content .post-content .post-image-container .post-image:hover {
+          -webkit-filter: brightness(105%);
+          transform: scale3d(1.1, 1.1, 1); }
       #home .content .post-content .post-image-container .post-categories {
         position: absolute;
         list-style: none;
@@ -2695,29 +2728,6 @@ ul.main-nav {
             font-size: 12px; }
             #home .content .post-content .post-image-container .post-categories li a:hover {
               text-decoration: underline; }
-    #home .content .post-content .post-heading {
-      display: block;
-      width: 100%;
-      height: auto;
-      position: relative; }
-      #home .content .post-content .post-heading .post-title {
-        display: block;
-        width: 100%;
-        padding: 10px 0; }
-        #home .content .post-content .post-heading .post-title h3 {
-          font-family: "Noto Serif", Arial, sans-serif;
-          display: inline;
-          padding: 0; }
-        #home .content .post-content .post-heading .post-title .post-author, #home .content .post-content .post-heading .post-title .post-location {
-          font-size: 12px;
-          margin-left: 10px; }
-        #home .content .post-content .post-heading .post-title .post-location {
-          text-transform: uppercase; }
-      #home .content .post-content .post-heading .post-date {
-        display: block;
-        font-size: 14px;
-        padding: 15px 0;
-        padding-top: 0; }
     #home .content .post-content .post-details {
       display: block;
       width: 100%;
@@ -2733,13 +2743,6 @@ ul.main-nav {
           color: #cd0d12; }
           #home .content .post-content .post-details .post-excerpt p .more-link:hover {
             text-decoration: underline; }
-    #home .content .post-content:hover .post-image {
-      -webkit-filter: brightness(105%);
-      transform: scale3d(1.1, 1.1, 1); }
-    #home .content .post-content:hover .post-heading {
-      transition: all 0.5s ease; }
-      #home .content .post-content:hover .post-heading .post-title {
-        transition: all 0.5s ease; }
   #home .content .pagination {
     font-size: 20px; }
 
@@ -2891,10 +2894,15 @@ a.milestone-link[href='']{
   color: black !important; }
   .sidebar #sidebar-frontpage .events-widget h3 {
     font-weight: 700;
-    color: #333333;
-    text-transform: uppercase;
     font-family: "Noto Sans", Arial, sans-serif;
-    letter-spacing: 0.1em; }
+    font-size: 22px;
+    text-align: center;
+    padding: 5px;
+    padding-bottom: 26px;
+    color: #333333; }
+  .sidebar #sidebar-frontpage .events-widget .wg-event-img {
+    width: 100px;
+    height: 80px; }
 
 /*--------------------------------------------------------------
 	6.6 Footer

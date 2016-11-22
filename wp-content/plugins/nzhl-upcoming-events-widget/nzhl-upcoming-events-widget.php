@@ -120,7 +120,16 @@ class NZHL_Upcoming_Events extends WP_Widget {
 
 		if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-		$event_info .= "<h4 class='wg-event-title'>" . get_the_title() . "</h4><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span><span class='wg-event-location'>" . get_field('location') . "</span><a class='wg-event-link' href='" . get_permalink() . "'>Read more</a>";
+		$thumb_id = get_post_thumbnail_id();
+		if($thumb_id) {
+		  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+		  $thumb_url = $thumb_url_array[0];
+		}
+		else {
+		  $thumb_url = 'wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg';
+		}
+
+		$event_info .= "<div class='wg-event-img' style='background-image: url(" . $thumb_url . ");'></div><h4 class='wg-event-title'>" . get_the_title() . "</h4><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span><span class='wg-event-location'>" . get_field('location') . "</span><a class='wg-event-link' href='" . get_permalink() . "'>Read more</a>";
 
 	endwhile; endif;
 

@@ -2,7 +2,6 @@
   .content {
     font-size: 0;
     h2 {
-      color: $dark-grey;
       // border-bottom: solid 3px $dark-grey;
       font-weight: $header-weight;
       // letter-spacing: 0.1em;
@@ -15,6 +14,7 @@
       // margin-top: 20px;
       // background-color: $box-color;
       padding: 5px;
+      padding-bottom: 26px;
       color: $dark-grey;
     }
     .post-content {
@@ -24,10 +24,57 @@
       font-size: 0;
       width: 100%;
       height: auto;
-      margin: 15px 0;
+      // margin: 15px 0;
+      margin-bottom: 6px;
       // background-color: $bg-color;
       // padding: 10px;
       border-top: solid 1px $light-grey;
+      padding-top: 5px;
+      .post-heading {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        // background-color: $dark-grey;
+        .post-title {
+          // background-color: $dark-grey;
+          display: block;
+          width: 100%;
+          // padding: 10px 20px;
+          padding: 10px 0;
+          h3 {
+            // color: $bg-color;
+            font-family: $h1-stack;
+            display: inline;
+            padding: 0;
+            font-size: 28px;
+            // color: $red;
+          }
+          .post-author, .post-location {
+            // color: $bg-color;
+            font-size: 12px;
+            margin-left: 10px;
+            vertical-align: super;
+          }
+          .post-location {
+            text-transform: uppercase;
+          }
+        }
+        .post-date {
+          display: block;
+          // color: $bg-color;
+          font-size: 14px;
+          padding: 15px 0;
+          // padding: 15px 20px;
+          padding-top: 0;
+        }
+        &:hover {
+          transition: all 0.5s ease;
+          .post-title h3, .post-author, .post-location, .post-date {
+            color: $link-color;
+          }
+        }
+      }
       .post-image-container {
         display: block;
         width: 100%;
@@ -45,6 +92,11 @@
           transition: all 0.5s linear;
           -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
+          &:hover {
+            -webkit-filter: brightness(105%);
+            -webkit-transform: scale3d(1.1, 1.1, 1);
+            transform: scale3d(1.1, 1.1, 1);
+          }
         }
         .post-categories {
           position: absolute;
@@ -69,43 +121,6 @@
               }
             }
           }
-        }
-      }
-      .post-heading {
-        display: block;
-        width: 100%;
-        height: auto;
-        position: relative;
-        // background-color: $dark-grey;
-        .post-title {
-          // background-color: $dark-grey;
-          display: block;
-          width: 100%;
-          // padding: 10px 20px;
-          padding: 10px 0;
-          h3 {
-            // color: $bg-color;
-            font-family: $h1-stack;
-            display: inline;
-            padding: 0;
-            // color: $red;
-          }
-          .post-author, .post-location {
-            // color: $bg-color;
-            font-size: 12px;
-            margin-left: 10px;
-          }
-          .post-location {
-            text-transform: uppercase;
-          }
-        }
-        .post-date {
-          display: block;
-          // color: $bg-color;
-          font-size: 14px;
-          padding: 15px 0;
-          // padding: 15px 20px;
-          padding-top: 0;
         }
       }
       .post-details {
@@ -134,18 +149,18 @@
       }
       &:hover {
         .post-image {
-          -webkit-filter: brightness(105%);
-          -webkit-transform: scale3d(1.1, 1.1, 1);
-          transform: scale3d(1.1, 1.1, 1);
+          // -webkit-filter: brightness(105%);
+          // -webkit-transform: scale3d(1.1, 1.1, 1);
+          // transform: scale3d(1.1, 1.1, 1);
         }
         .post-heading {
         // background-color: lighten($dark-grey, 5%);
-        transition: all 0.5s ease;
+        // transition: all 0.5s ease;
         // background-color: darken($red, 7%);
           .post-title {
             // background-color: darken($red, 7%);
             // background-color: lighten($dark-grey, 5%);
-            transition: all 0.5s ease;
+            // transition: all 0.5s ease;
           }
         }
       }

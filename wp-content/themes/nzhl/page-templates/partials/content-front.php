@@ -8,11 +8,13 @@
 
 <?php
 $thumb_id = get_post_thumbnail_id();
-$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-$thumb_url = $thumb_url_array[0];
-$eventDate2 = get_field('event_date');
-// $eventDate2 = json_encode(explode('-', $eventDate2));
-$eventDate = '21-6-2016';
+if($thumb_id) {
+  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+  $thumb_url = $thumb_url_array[0];
+}
+else {
+  $thumb_url = 'wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg';
+}
 ?>
 
 <div class="post-content">
@@ -35,17 +37,10 @@ $eventDate = '21-6-2016';
     <?php } ?>
   </div>
 
-  <?php if($thumb_id) { ?>
-    <div class="post-image-container">
-      <a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $thumb_url; ?>);"></a>
-      <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
-    </div>
-  <?php } else { ?>
-    <div class="post-image-container">
-      <a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg);"></a>
-      <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
-    </div>
-  <?php } ?>
+  <div class="post-image-container">
+    <a class="post-image" href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $thumb_url; ?>);"></a>
+    <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
+  </div>
 
   <div class="post-details">
     <div class="post-excerpt">
