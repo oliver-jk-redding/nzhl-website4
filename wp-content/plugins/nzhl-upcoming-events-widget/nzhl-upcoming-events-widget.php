@@ -129,7 +129,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		  $thumb_url = 'wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg';
 		}
 
-		$event_info .= "<div class='wg-event-img' style='background-image: url(" . $thumb_url . ");'></div><h4 class='wg-event-title'>" . get_the_title() . "</h4><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span><span class='wg-event-location'>" . get_field('location') . "</span><a class='wg-event-link' href='" . get_permalink() . "'>Read more</a>";
+		$event_info .= "<div class='wg-event-container'><a class='wg-event-img' href='" . get_permalink() . "' style='background-image: url(" . $thumb_url . ");'></a><div class='wg-event-details'><div><h4 class='wg-event-title'>" . get_the_title() . "</h4></div><div><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span></div><div><span class='wg-event-location'>" . get_field('location') . "</span></div><div style='margin-top: 5px;'><a class='wg-event-link' href='" . get_permalink() . "'>Read more</a></div></div></div>";
 
 	endwhile; endif;
 

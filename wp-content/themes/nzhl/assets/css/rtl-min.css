@@ -411,7 +411,13 @@ ul.main-nav li.menu-item-has-children ul.sub-menu li.current_page_item a,ul.main
 #timeline ul .timeline-image{width:100%;margin-left:auto;margin-right:auto;height:auto;overflow-x:hidden}
 }.sidebar{position:absolute;top:0;right:0;height:100%;background-color:#ddcf16;color:black !important}
 .sidebar #sidebar-frontpage .events-widget h3{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;text-align:center;padding:5px;padding-bottom:26px;color:#333}
-.sidebar #sidebar-frontpage .events-widget .wg-event-img{width:100px;height:80px}
+.sidebar #sidebar-frontpage .events-widget .wg-event-container{position:relative;background:black;height:0;width:100%;padding-bottom:56.25%;margin-bottom:10px}
+.sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-img{display:inline-block;width:100%;padding-bottom:56.25%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.6}
+.sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details{position:absolute;top:0;left:0;padding:10px;color:#f8f8f8}
+.sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-title{display:inline-block;background-color:#cd0d12;font-size:20px;margin:10px 0;padding:0 5px}
+.sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-date{display:inline-block;background-color:#333;font-size:12px;padding:0 5px}
+.sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-location{display:inline-block;background-color:#4d4d4d;font-size:14px;clear:both;padding:0 5px}
+.sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-link{color:#cd0d12;font-size:14px;background-color:#f8f8f8;padding:0 5px}
 footer.site-footer{position:absolute;position:relative;bottom:0;background:#e7e7e7;padding:15px 0 22px;font-family:"Noto Sans",Arial,sans-serif}
 footer.site-footer p{font-size:12px;font-weight:300;color:#333;line-height:24px;margin:0}
 footer.site-footer ul{padding:0;list-style:none;margin:0}footer.site-footer ul li{margin-top:9px;line-height:6px}
