@@ -26,6 +26,9 @@
 				padding: 5px;
 				padding-bottom: 26px;
 				color: $dark-grey;
+				// border-bottom: solid 1px lighten($mid-grey, 30%);
+				border-bottom: solid 1px $mid-grey;
+				margin-bottom: 25px;
 			}
 			.wg-event-container {
 				position: relative;
@@ -34,6 +37,7 @@
 				width: 100%;
 				padding-bottom: 56.25%;
 				margin-bottom: 10px;
+				overflow: hidden;
 				.wg-event-img {
 					display: inline-block;
 					width: 100%;
@@ -41,7 +45,12 @@
 					background-size: cover;
 					background-repeat: no-repeat;
 					background-position: center;
-					opacity: 0.6;
+					opacity: 0.8;
+					-webkit-transition: all 0.5s linear;
+					transition: all 0.5s linear;
+					-webkit-transform: scale3d(1, 1, 1);
+					transform: scale3d(1, 1, 1);
+					z-index: 1;
 				}
 				.wg-event-details {
 					position: absolute;
@@ -49,12 +58,20 @@
 					left: 0;
 					padding: 10px;
 					color: $bg-color;
+					width: 100%;
+					z-index: 2;
+					&:hover + .wg-event-img {
+						-webkit-filter: brightness(105%);
+						-webkit-transform: scale3d(1.1, 1.1, 1);
+						transform: scale3d(1.1, 1.1, 1);
+					}
 					div .wg-event-title {
 						display: inline-block;
 						background-color: $red;
 						font-size: 20px;
 						margin: 10px 0;
 						padding: 0 5px;
+						font-weight: 700;
 					}
 					div .wg-event-date {
 						display: inline-block;
@@ -70,10 +87,15 @@
 						padding: 0 5px;
 					}
 					div .wg-event-link {
-						color: $red;
-						font-size: 14px;
-						background-color: $bg-color;
+						color: #000;
+						font-size: 12px;
+						background-color: $light-grey;
 						padding: 0 5px;
+						text-transform: uppercase;
+						&:hover {
+							background-color: $red;
+							color: $bg-color;
+						}
 					}
 				}
 			}

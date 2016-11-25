@@ -2666,6 +2666,8 @@ ul.main-nav {
       width: 100%;
       height: auto;
       position: relative; }
+      #home .content .post-content .post-heading:hover {
+        background-color: #f1f1f1; }
       #home .content .post-content .post-heading .post-title {
         display: block;
         width: 100%;
@@ -2899,14 +2901,17 @@ a.milestone-link[href='']{
     text-align: center;
     padding: 5px;
     padding-bottom: 26px;
-    color: #333333; }
+    color: #333333;
+    border-bottom: solid 1px #4d4d4d;
+    margin-bottom: 25px; }
   .sidebar #sidebar-frontpage .events-widget .wg-event-container {
     position: relative;
     background: black;
     height: 0;
     width: 100%;
     padding-bottom: 56.25%;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    overflow: hidden; }
     .sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-img {
       display: inline-block;
       width: 100%;
@@ -2914,19 +2919,28 @@ a.milestone-link[href='']{
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      opacity: 0.6; }
+      opacity: 0.8;
+      transition: all 0.5s linear;
+      transform: scale3d(1, 1, 1);
+      z-index: 1; }
     .sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details {
       position: absolute;
       top: 0;
       left: 0;
       padding: 10px;
-      color: #f8f8f8; }
+      color: #f8f8f8;
+      width: 100%;
+      z-index: 2; }
+      .sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details:hover + .wg-event-img {
+        -webkit-filter: brightness(105%);
+        transform: scale3d(1.1, 1.1, 1); }
       .sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-title {
         display: inline-block;
         background-color: #cd0d12;
         font-size: 20px;
         margin: 10px 0;
-        padding: 0 5px; }
+        padding: 0 5px;
+        font-weight: 700; }
       .sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-date {
         display: inline-block;
         background-color: #333333;
@@ -2939,10 +2953,14 @@ a.milestone-link[href='']{
         clear: both;
         padding: 0 5px; }
       .sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-link {
-        color: #cd0d12;
-        font-size: 14px;
-        background-color: #f8f8f8;
-        padding: 0 5px; }
+        color: #000;
+        font-size: 12px;
+        background-color: #E7E7E7;
+        padding: 0 5px;
+        text-transform: uppercase; }
+        .sidebar #sidebar-frontpage .events-widget .wg-event-container .wg-event-details div .wg-event-link:hover {
+          background-color: #cd0d12;
+          color: #f8f8f8; }
 
 /*--------------------------------------------------------------
 	6.6 Footer
