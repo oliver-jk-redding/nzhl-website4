@@ -16,9 +16,9 @@ get_header();?>
   <div class="content">
 
     <h1 style="display: none;">The New Zealand Hobbit League</h1>
-    <h2>Latest from the NZHL Community</h2>
+    <h2>Latest Posts</h2>
 
-    <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=10$paged=1' ); ?>
+    <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=3' ); ?>
 
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
@@ -26,8 +26,9 @@ get_header();?>
 
     <?php endwhile; ?>
 
-
   </div>
+
+  <?php get_sidebar('front'); ?>
 
 </div>
 

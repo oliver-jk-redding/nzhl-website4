@@ -23,7 +23,10 @@ function fixHeader() {
 		});
 		$('.page-container').css({
 			'margin-top': '100vh',
-			'padding-top': '150px'
+			'padding-top': '120px'
+		});
+		$('.sidebar').css({
+			'padding-top': '120px'
 		});
 	}
 	else {
@@ -34,11 +37,13 @@ function fixHeader() {
 		});
 		$('.page-container').css({
 			'margin-top': 0,
-			'padding-top': '50px'
+			'padding-top': '20px'
+		});
+		$('.sidebar').css({
+			'padding-top': '20px'
 		});
 	}
 }
-
 
  $(document).ready(function() {
 
@@ -143,7 +148,7 @@ $(window).resize(function() {
 			// moveFeatured();
 			$('.featured-widget').insertAfter('.intro-image');
 		} else if ( $(window).width() > 790 & !$('aside .featured-widget').length ) {
-			$('.featured-widget').insertBefore('#ati-latest-news-widget-2');
+			$('.featured-widget').insertBefore('#nzhl-upcoming-evets-widget-2');
 		}
 	}
 
