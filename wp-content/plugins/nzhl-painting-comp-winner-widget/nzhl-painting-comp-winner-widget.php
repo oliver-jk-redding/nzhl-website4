@@ -116,16 +116,22 @@ class NZHL_Painting_Comp_Winner extends WP_Widget {
 
 		// query_posts('category_name=Event&orderby=date&order=DESC&posts_per_page=3');
 
-		$last_month_name = Date('F', strtotime(date('F') . " last month"));
+		$currentMonth = Date('F');
 
 		$widget_heading = "<div class='side-content painting-comp-winner-widget nzhl-widget'>
-		<h3>".$last_month_name."'s Painting Competition Winner</h3>";
+		<h3>Monthly Painting Competition</h3>";
 
-	  $thumb_url = 'wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg';
+	  $thumb_url = 'http://localhost:8080/wp-content/uploads/2017/01/orc.jpg';
+	  $firstName = 'Matt';
+	  $lastName = 'Ridgley';
+	  $name = $lastName ? '<span>'.$firstName.'</span>' . " " . '<span>'.$lastName.'</span>' : '<span>'.$firstName.'</span>';
 
-		$widget_string .= $widget_heading."<a class='wg-painting-comp-winner-container' href='http://localhost:3000/?page_id=18'>
-		<div class='wg-painting-comp-winner-img' style='background-image: url(" . $thumb_url . ");'></div>
-		</a>";
+		$widget_string .= $widget_heading."<a class='wg-painting-comp-winner-container' href='http:".home_url()."/?page_id=18'>
+		<img class='wg-painting-comp-winner-img' src='".$thumb_url."' alt='NZHL Monthly Painting Competition Winning Entry'>
+		</a>
+		<p class='congrats-message'>Congratulations to ". $name . " for winning ".$currentMonth."'s painting competition!</p>
+		<p class='enter-link'>Think you can do better? Click <a href='http:".home_url()."/?page_id=18'>here</a> to find out how to enter next month's competition.</p>
+		</div>";
 
 		ob_start();
 		include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );

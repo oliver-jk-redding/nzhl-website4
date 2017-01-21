@@ -4,32 +4,32 @@
  *
  * The WordPress Widget Boilerplate is an organized, maintainable boilerplate for building widgets using WordPress best practices.
  *
- * @package   ATI Social Share Widget
+ * @package   NZHL Tournament Winner
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
  * @copyright 2014 Your Name or Company Name
  *
  * @wordpress-plugin
- * Plugin Name:       ATI Socialshare Widget
- * Plugin URI:        http://drewlondon.co.uk
- * Description:       Share posts through social media
+ * Plugin Name:       NZHL Tournament Winner
+ * Plugin URI:        http://oliverredding.com
+ * Description:       NZHL Tournament Winner Widget for Sidebar
  * Version:           1.0.0
- * Author:            Drew London
- * Author URI:        http://drewlondon.co.uk
- * Text Domain:       ati-socialshare-widget
+ * Author:            Ollie Redding
+ * Author URI:        http://oliverredding.com
+ * Text Domain:       Oliver Redding
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /lang
  * GitHub Plugin URI: https://github.com/<owner>/<repo>
  */
- 
+
  // Prevent direct file access
 if ( ! defined ( 'ABSPATH' ) ) {
 	exit;
 }
 // TODO: change 'Widget_Name' to the name of your plugin
-class ATI_Socialshare_Widget extends WP_Widget {
+class NZHL_Tournament_Winner extends WP_Widget {
     /**
      * @TODO - Rename "widget-name" to the name your your widget
      *
@@ -44,8 +44,8 @@ class ATI_Socialshare_Widget extends WP_Widget {
      *
      * @var      string
      */
-    protected $widget_slug = 'ati-socialshare-widget';
-	/*--------------------------------------------------*/
+    protected $widget_slug = 'nzhl-tournament-winner-widget';
+    /*--------------------------------------------------*/
 	/* Constructor
 	/*--------------------------------------------------*/
 	/**
@@ -61,12 +61,12 @@ class ATI_Socialshare_Widget extends WP_Widget {
 		// TODO: update description
 		parent::__construct(
 			$this->get_widget_slug(),
-			__( 'ATI_Socialshare_Widget', $this->get_widget_slug() ),
+			__( 'NZHL_Tournament_Winner', $this->get_widget_slug() ),
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
-				'description' => __( 'Short description of the widget goes here.', $this->get_widget_slug() )
-			)
-		);
+				'description' => __( 'A widget which features last year\'s League Champion.', $this->get_widget_slug() )
+				)
+			);
 		// Register admin styles and scripts
 		add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
@@ -86,9 +86,9 @@ class ATI_Socialshare_Widget extends WP_Widget {
      * @return    Plugin slug variable.
      */
     public function get_widget_slug() {
-        return $this->widget_slug;
+    	return $this->widget_slug;
     }
-	/*--------------------------------------------------*/
+    /*--------------------------------------------------*/
 	/* Widget API Functions
 	/*--------------------------------------------------*/
 	/**
@@ -98,7 +98,7 @@ class ATI_Socialshare_Widget extends WP_Widget {
 	 * @param array instance The current instance of the widget
 	 */
 	public function widget( $args, $instance ) {
-		
+
 		// Check if there is a cached output
 		$cache = wp_cache_get( $this->get_widget_slug(), 'widget' );
 		if ( !is_array( $cache ) )
@@ -107,25 +107,31 @@ class ATI_Socialshare_Widget extends WP_Widget {
 			$args['widget_id'] = $this->id;
 		if ( isset ( $cache[ $args['widget_id'] ] ) )
 			return print $cache[ $args['widget_id'] ];
-		
+
 
 		extract( $args, EXTR_SKIP );
 		$widget_string = $before_widget;
 
-		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='. get_permalink(); 
-		$twitterURL = 'https://twitter.com/intent/tweet?text='. get_the_title() .'&amp;url='. get_permalink();
-		$linkedinURL = 'http://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink();
-
 		// TODO: Here is where you manipulate your widget's values based on their input fields
-		$widget_string .= "<div class='share'>
-								<p>Share:
-			                        <a href='<?php echo $facebookURL ?>' target='_blank'><i class='icons ss-facebook'></i></a>
-					                <a href='<?php echo $twitterURL ?>' target='_blank'><i class='icons ss-twitter'></i></a>
-					                <a href='<?php echo $linkedinURL ?>' target='_blank'><i class='icons ss-linkedin'></i></a>
-					                <a href='mailto:?subject=<?php bloginfo('name');'><i class='icons ss-mail'></i></a>
-                    			</p>
-                    	</div>";
 
+		// query_posts('category_name=Event&orderby=date&order=DESC&posts_per_page=3');
+
+		$currentYear = Date('Y');
+
+		$widget_heading = "<div class='side-content tournament-winner-widget nzhl-widget'>
+		<h3>".$currentYear." League Champion</h3>";
+
+	  $thumb_url = 'http://localhost:8080/wp-content/uploads/2017/01/matt.jpg';
+	  $firstName = 'Matt';
+	  $lastName = 'Ridgley';
+	  $name = $lastName ? '<span>'.$firstName.'</span>' . " " . '<span>'.$lastName.'</span>' : '<span>'.$firstName.'</span>';
+
+		$widget_string .= $widget_heading."<a class='wg-tournament-winner-container' href='http:".home_url()."/?page_id=18'>
+		<img class='wg-tournament-winner-img' src='".$thumb_url."' alt='NZHL Monthly Painting Competition Winning Entry'>
+		</a>
+		<p class='congrats-message'>Congratulations to ". $name . " for winning this month's Tournamentetition!</p>
+		<p class='enter-link'>Think you can do better? Click <a href='http:".home_url()."/?page_id=18'>here</a> to find out how to enter next month's competition.</p>
+		</div>";
 
 		ob_start();
 		include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );
@@ -135,11 +141,11 @@ class ATI_Socialshare_Widget extends WP_Widget {
 		wp_cache_set( $this->get_widget_slug(), $cache, 'widget' );
 		print $widget_string;
 	} // end widget
-	
-	
-	public function flush_widget_cache() 
+
+
+	public function flush_widget_cache()
 	{
-    	wp_cache_delete( $this->get_widget_slug(), 'widget' );
+		wp_cache_delete( $this->get_widget_slug(), 'widget' );
 	}
 	/**
 	 * Processes the widget's options to be saved.
@@ -161,7 +167,7 @@ class ATI_Socialshare_Widget extends WP_Widget {
 		// TODO: Define default values for your variables
 		$instance = wp_parse_args(
 			(array) $instance
-		);
+			);
 		// TODO: Store the values of the widget in their own variable
 		// Display the admin form
 		include( plugin_dir_path(__FILE__) . 'views/admin.php' );
@@ -183,7 +189,7 @@ class ATI_Socialshare_Widget extends WP_Widget {
 	 */
 	public function activate( $network_wide ) {
 		// TODO define activation functionality here
-		
+
 	} // end activate
 	/**
 	 * Fired when the plugin is deactivated.
@@ -219,4 +225,4 @@ class ATI_Socialshare_Widget extends WP_Widget {
 	} // end register_widget_scripts
 } // end class
 // TODO: Remember to change 'Widget_Name' to match the class name definition
-add_action( 'widgets_init', create_function( '', 'register_widget("ATI_Socialshare_Widget");' ) );
+add_action( 'widgets_init', create_function( '', 'register_widget("NZHL_Tournament_Winner");' ) );

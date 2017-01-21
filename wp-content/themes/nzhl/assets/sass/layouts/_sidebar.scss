@@ -19,7 +19,7 @@
 	#sidebar-frontpage {
 		.widget {
 			border-bottom: solid 1px $light-grey;
-			padding-bottom: 15px;
+			margin-bottom: 10px;
 		}
 		.nzhl-widget {
 			h3 {
@@ -69,7 +69,6 @@
 					height: 100%;
 					z-index: 2;
 					&:hover + .wg-event-img {
-						-webkit-filter: brightness(105%);
 						-webkit-transform: scale3d(1.1, 1.1, 1);
 						transform: scale3d(1.1, 1.1, 1);
 					}
@@ -121,33 +120,76 @@
 		    }
 			}
 		}
-		.painting-comp-winner-widget {
-			.wg-painting-comp-winner-container{
+		.painting-comp-winner-widget, .tournament-winner-widget {
+			background-color: $yellow;
+			h3 {
+				padding-bottom: 0px;
+				margin-bottom: 11px;
+				border-bottom: none;
+			}
+			.wg-painting-comp-winner-container, .wg-tournament-winner-container{
 				position: relative;
 				display: block;
-				height: 0;
-				width: 100%;
-				padding-bottom: 56.25%;
-				margin-bottom: 10px;
+				// height: 0;
+				width: 96%;
+				// padding-bottom: 90%;
+				padding: 0;
+				margin: 0 auto;
 				overflow: hidden;
-				.wg-painting-comp-winner-img {
+				font-size: 0;
+				.wg-painting-comp-winner-img, .wg-tournament-winner-img {
 					width: 100%;
-					padding-bottom: 56.25%;
-					background-size: cover;
-					background-repeat: no-repeat;
-					background-position: center;
+					padding: 0;
+					// padding-bottom: 94%;
+					// background-size: cover;
+					// background-repeat: no-repeat;
+					// background-position: center;
 					-webkit-transition: all 0.5s linear;
 					transition: all 0.5s linear;
 					-webkit-transform: scale3d(1, 1, 1);
 					transform: scale3d(1, 1, 1);
-					z-index: 1;
+					// z-index: 1;
+					height: auto;
 				}
-				&:hover .wg-painting-comp-winner-img {
-					-webkit-filter: brightness(105%);
+				&:hover .wg-painting-comp-winner-img, &:hover .wg-tournament-winner-img {
 					-webkit-transform: scale3d(1.1, 1.1, 1);
 					transform: scale3d(1.1, 1.1, 1);
 				}
 			}
+			.congrats-message {
+				padding: 10px 10px 15px 10px;
+				margin: 0px;
+				margin-top: 5px;
+				line-height: 22px;
+				font-size: 18px;
+				text-align: center;
+				background-color: $dark-grey;
+				color: $bg-color;
+				span {
+					// text-decoration: underline;
+					background-color: $red;
+					padding: 0 5px;
+				}
+			}
+			.enter-link {
+				padding: 10px 10px 13px 10px;
+				background-color: $mid-grey;
+				color: $light-grey;
+				margin: 0;
+				border-top: 5px solid $yellow;
+				line-height: 17px;
+				font-size: 14px;
+				a {
+					color: $light-grey;
+					text-decoration: underline;
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+		.tournament-winner-widget {
+			background-color: $red;
 		}
 	}
 }
