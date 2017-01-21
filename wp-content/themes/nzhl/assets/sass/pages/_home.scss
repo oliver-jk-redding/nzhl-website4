@@ -36,6 +36,7 @@
         height: auto;
         position: relative;
         // background-color: $dark-grey;
+        transition: all 0.3s ease;
         &:hover {
           background-color: lighten($box-color, 4%);
         }
@@ -52,12 +53,14 @@
             padding: 0;
             font-size: 28px;
             // color: $red;
+            transition: all 0.3s ease;
           }
           .post-author, .post-location {
             // color: $bg-color;
             font-size: 12px;
             margin-left: 10px;
             vertical-align: super;
+            transition: all 0.3s ease;
           }
           .post-location {
             text-transform: uppercase;
@@ -70,9 +73,9 @@
           padding: 15px 0;
           // padding: 15px 20px;
           padding-top: 0;
+          transition: all 0.3s ease;
         }
         &:hover {
-          transition: all 0.5s ease;
           .post-title h3, .post-author, .post-location, .post-date {
             color: $link-color;
           }
@@ -150,26 +153,22 @@
           }
         }
       }
-      &:hover {
-        .post-image {
-          // -webkit-filter: brightness(105%);
-          // -webkit-transform: scale3d(1.1, 1.1, 1);
-          // transform: scale3d(1.1, 1.1, 1);
-        }
-        .post-heading {
-        // background-color: lighten($dark-grey, 5%);
-        // transition: all 0.5s ease;
-        // background-color: darken($red, 7%);
-          .post-title {
-            // background-color: darken($red, 7%);
-            // background-color: lighten($dark-grey, 5%);
-            // transition: all 0.5s ease;
-          }
-        }
-      }
     }
-    .pagination {
-      font-size: 20px;
+    .more-posts-link {
+      display: inline-block;
+      position: relative;
+      font-size: 18px;
+      background-color: #4d4d4d;
+      color: #f8f8f8;
+      padding: 10px 30px;
+      text-align: center;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      float: right;
+      margin-top: 20px;
+      &:hover {
+        background-color: $red;
+      }
     }
   }
 }

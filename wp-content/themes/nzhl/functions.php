@@ -743,7 +743,7 @@ add_filter( 'wp_calculate_image_srcset', function( $sources )
 function date_to_string($date) {
 	$date = explode('-', $date);
 	$monthName = DateTime::createFromFormat('!m', $date[1]);
-	$monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+	$monthName = $monthName->format('F');
 	$dateString = $date[0].' '.$monthName.' '.$date[2];
 	return $dateString;
 }
@@ -760,9 +760,9 @@ function date_range_to_string($startDate, $endDate) {
 			$equal = 'year';
 		}
 		$startMonthName = DateTime::createFromFormat('!m', $startDate[1]);
-		$startMonthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+		$startMonthName = $startMonthName->format('F');
 		$endMonthName = DateTime::createFromFormat('!m', $endDate[1]);
-		$endMonthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+		$endMonthName = $endMonthName->format('F');
 		if($equal == 'month and year') {
 			$dateString = $startDate[0].'-'.$endDate[0].' '.$startMonthName.' '.$startDate[2];
 		}

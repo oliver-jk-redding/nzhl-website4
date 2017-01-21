@@ -7,7 +7,7 @@
  	top: 0;
  	right: 0;
  	height: 100%;
- 	background-color: $yellow;
+ 	// background-color: $yellow;
  	// border-right: solid 30px $yellow;
  	// background-color: $mid-grey;
  	// padding: 30px;
@@ -17,7 +17,11 @@
 	  // right: 1.5em;
 	}
 	#sidebar-frontpage {
-		.events-widget {
+		.widget {
+			border-bottom: solid 1px $light-grey;
+			padding-bottom: 15px;
+		}
+		.nzhl-widget {
 			h3 {
 				font-weight: $header-weight;
 				font-family: $font-stack;
@@ -27,9 +31,12 @@
 				padding-bottom: 26px;
 				color: $dark-grey;
 				// border-bottom: solid 1px lighten($mid-grey, 30%);
-				border-bottom: solid 1px $mid-grey;
+				// border-bottom: solid 1px $mid-grey;
+				border-bottom: solid 1px $light-grey;
 				margin-bottom: 25px;
 			}
+		}
+		.events-widget {
 			.wg-event-container {
 				position: relative;
 				background: black;
@@ -59,6 +66,7 @@
 					padding: 10px;
 					color: $bg-color;
 					width: 100%;
+					height: 100%;
 					z-index: 2;
 					&:hover + .wg-event-img {
 						-webkit-filter: brightness(105%);
@@ -97,6 +105,47 @@
 							color: $bg-color;
 						}
 					}
+				}
+			}
+			.download-link {
+				display: block;
+				background-color: $mid-grey;
+				color: $bg-color;
+		    padding: 10px 30px;
+		    text-align: center;
+		    margin-bottom: 10px;
+		    -webkit-transition: all 0.3s ease;
+		    transition: all 0.3s ease;
+		    &:hover {
+		    	background-color: $red;
+		    }
+			}
+		}
+		.painting-comp-winner-widget {
+			.wg-painting-comp-winner-container{
+				position: relative;
+				display: block;
+				height: 0;
+				width: 100%;
+				padding-bottom: 56.25%;
+				margin-bottom: 10px;
+				overflow: hidden;
+				.wg-painting-comp-winner-img {
+					width: 100%;
+					padding-bottom: 56.25%;
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center;
+					-webkit-transition: all 0.5s linear;
+					transition: all 0.5s linear;
+					-webkit-transform: scale3d(1, 1, 1);
+					transform: scale3d(1, 1, 1);
+					z-index: 1;
+				}
+				&:hover .wg-painting-comp-winner-img {
+					-webkit-filter: brightness(105%);
+					-webkit-transform: scale3d(1.1, 1.1, 1);
+					transform: scale3d(1.1, 1.1, 1);
 				}
 			}
 		}

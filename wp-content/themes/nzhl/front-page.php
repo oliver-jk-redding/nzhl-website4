@@ -26,6 +26,8 @@ get_header();?>
 
     <?php endwhile; ?>
 
+    <a href='/blog' class='more-posts-link'>More posts</a>
+
   </div>
 
   <?php get_sidebar('front'); ?>
