@@ -1,0 +1,13 @@
+#blog {
+  .content {
+    h1 {
+      font-weight: $header-weight;
+      font-family: $font-stack;
+      font-size: 22px;
+      text-align: center;
+      padding: 5px;
+      padding-bottom: 26px;
+      color: $dark-grey;
+    }
+  }
+}

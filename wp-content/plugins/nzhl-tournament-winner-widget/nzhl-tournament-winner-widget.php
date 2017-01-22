@@ -118,8 +118,7 @@ class NZHL_Tournament_Winner extends WP_Widget {
 
 		$currentYear = date("Y",strtotime("-1 year"));
 
-		$widget_heading = "<div class='side-content tournament-winner-widget nzhl-widget'>
-		<h3>".$currentYear." League Champion</h3>";
+		$widget_heading = "<h3>".$currentYear." League Champion</h3>";
 
 	  $thumb_url = 'http://localhost:8080/wp-content/uploads/2017/01/santa.jpg';
 	  $firstName = 'Gandalf';
@@ -130,8 +129,7 @@ class NZHL_Tournament_Winner extends WP_Widget {
 		<img class='wg-tournament-winner-img' src='".$thumb_url."' alt='NZHL Monthly League Champion'>
 		</div>
 		<p class='congrats-message'>". $name . "</p>
-		<p class='quote'><span>\"What is this new devilry?\"</span><span>\"A Balrog. A demon of the ancient world. This foe is beyond any of you. Run!\"</span></p>
-		</div>";
+		<p class='quote'><span>\"What is this new devilry?\"</span><span>\"A Balrog. A demon of the ancient world. This foe is beyond any of you. Run!\"</span></p>";
 
 		ob_start();
 		include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );

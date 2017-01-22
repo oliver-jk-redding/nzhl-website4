@@ -37,7 +37,7 @@ and Blueprint http://www.blueprintcss.org/
 	6.4 - Page Templates
 	6.5 - Sidebar
 	6.6 - Footer
-	6.7 - Accessbility
+	6.7 - Post Template
 
 
 	--------------------------------------------------------------*/
@@ -79,7 +79,7 @@ and Blueprint http://www.blueprintcss.org/
 	6.4 Page Templates
 	--------------------------------------------------------------*/
 	@import "pages/home";
-	@import "pages/news";
+	@import "pages/blog";
 	@import "pages/events";
 	@import "pages/partners";
 	@import "pages/faculty";
@@ -89,10 +89,14 @@ and Blueprint http://www.blueprintcss.org/
 	/*--------------------------------------------------------------
 	6.5 Sidebar
 	--------------------------------------------------------------*/
-	@import "layouts/timeline";
 	@import "layouts/sidebar";
 
 	/*--------------------------------------------------------------
 	6.6 Footer
 	--------------------------------------------------------------*/
 	@import "layouts/footer";
+
+	/*--------------------------------------------------------------
+	6.7 Post Template
+	--------------------------------------------------------------*/
+	@import "layouts/post";

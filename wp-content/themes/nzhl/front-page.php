@@ -22,7 +22,7 @@ get_header();?>
 
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-      <?php get_template_part( 'page-templates/partials/content', 'front' ); ?>
+      <?php get_template_part( 'page-templates/partials/content', 'post' ); ?>
 
     <?php endwhile; ?>
 

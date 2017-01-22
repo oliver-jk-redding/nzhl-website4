@@ -113,10 +113,9 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		$widget_string = $before_widget;
 
 		// TODO: Here is where you manipulate your widget's values based on their input fields
-		query_posts('category_name=Event&orderby=date&order=DESC&posts_per_page=2');
+		query_posts('category_name=Events&orderby=date&order=DESC&posts_per_page=2');
 
-		$widget_heading = "<div class='side-content events-widget nzhl-widget'>
-		<h3>Upcoming Events</h3>";
+		$widget_heading = "<h3><a href='/category/events/'>Upcoming Events</a></h3>";
 
 		$event_info = '';
 
@@ -128,12 +127,12 @@ class NZHL_Upcoming_Events extends WP_Widget {
 			  $thumb_url = $thumb_url_array[0];
 			}
 			else {
-			  $thumb_url = 'wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg';
+			  $thumb_url = '/wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg';
 			}
 
 			$event_info .= "<div class='wg-event-container'>
 			<a class='wg-event-details' href='" . get_permalink() . "'>
-			<div><h4 class='wg-event-title'>" . get_the_title() . "</h4></div>
+			<div><h5h4 class='wg-event-title'>" . get_the_title() . "</h4></div>
 			<div><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span></div>
 			<div><span class='wg-event-location'>" . get_field('location') . "</span></div>
 			</a>
@@ -148,7 +147,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		$calendar_link = "<a href='".get_field('nzhl_calendar', 7)."' download class='download-link'>Download the NZHL <b>".date('Y')." Calendar</b></a>";
 		$rankings_link = "<a href='".get_field('nzhl_rankings_table', 7)."' download class='download-link'>Download the NZHL <b>".date('Y')." Table Rankings</b></a>";
 
-		$widget_string .= $widget_heading.$event_info.$calendar_link.$rankings_link."</div>";
+		$widget_string .= $widget_heading.$event_info.$calendar_link.$rankings_link;
 
 		ob_start();
 		include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );

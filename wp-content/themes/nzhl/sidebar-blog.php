@@ -5,12 +5,13 @@
  * @package some_like_it_neat
  */
 ?>
+    <div class="sidebar" id="sidebar-blog">
 
-        <div class="sidebar" id="sidebar-front">
+          <?php if ( ! dynamic_sidebar( 'sidebar-blog' ) ) : ?>
 
-          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-frontpage') ) ?>
 
-        </div>
+          <?php endif; // end sidebar widget area ?>
+      </div>
 
     </div> <!-- END DIV class="full"> -->
 

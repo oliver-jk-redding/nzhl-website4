@@ -1,9 +1,10 @@
  $ = jQuery;
 
 activateScrollListener();
+console.log('pathname: ', location.pathname);
 
 function activateScrollListener() {
-	if(!$(location).attr('href').includes('?') && $(window).width() > 790) {
+	if(location.pathname == ('/') && $(window).width() > 790) {
 	  $(window).scroll(scrollHander);
 	}
 	else {

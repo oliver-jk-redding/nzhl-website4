@@ -20,7 +20,6 @@ echo getenv('WP_ENV');
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<script src="//use.typekit.net/vul4hnx.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	<script>

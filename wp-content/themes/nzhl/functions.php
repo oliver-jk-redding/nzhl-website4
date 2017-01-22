@@ -265,17 +265,6 @@ function some_like_it_neat_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => 'Sidebar Contact Page',
-			'id'            => 'sidebar-contactpage',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h4 class="widget-title">',
-			'after_title'   => '</h4>',
-			)
-		);
-
-	register_sidebar(
-		array(
 			'name'          => 'Sidebar Front Page',
 			'id'            => 'sidebar-frontpage',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -287,23 +276,12 @@ function some_like_it_neat_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => 'Sidebar Social',
-			'id'            => 'sidebar-social',
-			'before_widget' => '',
-			'after_widget'  => '',
-			'before_title'  => '',
-			'after_title'   => '',
-			)
-		);
-
-	register_sidebar(
-		array(
-			'name'          => 'News Page',
-			'id'            => 'sidebar-newspage',
-			'before_widget' => '<li id="option-%2$s" class="">',
-			'after_widget' 	=> "</li>",
-			'before_title' 	=> '<h4 class="widget-title-remove">',
-			'after_title' 	=> '</h4>',
+			'name'          => 'Blog Page',
+			'id'            => 'sidebar-blog',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 			)
 		);
 }
