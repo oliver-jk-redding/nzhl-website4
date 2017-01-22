@@ -16,7 +16,7 @@ get_header();?>
   <div class="content">
 
     <h1 style="display: none;">The New Zealand Hobbit League</h1>
-    <h2>Latest Posts</h2>
+    <h2><a href='/blog'>Latest Posts</a></h2>
 
     <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=3' ); ?>
 

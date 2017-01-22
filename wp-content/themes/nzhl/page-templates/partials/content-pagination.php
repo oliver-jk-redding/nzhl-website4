@@ -23,8 +23,8 @@
       'format' => '/page/%#%',
       'current' => $current_page,
       'total' => $total_pages,
-      'prev_text' => 'Previous',
-      'next_text' => ' Next'
+      'prev_text' => '&laquo; Newer Posts',
+      'next_text' => ' Older Posts &raquo;'
     ));
 
   } ?>

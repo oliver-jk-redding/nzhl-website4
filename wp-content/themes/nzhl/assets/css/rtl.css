@@ -37,8 +37,7 @@ and Blueprint http://www.blueprintcss.org/
 	6.4 - Page Templates
 	6.5 - Sidebar
 	6.6 - Footer
-	6.7 - Post Template
-
+	6.7 - Partials
 
 	--------------------------------------------------------------*/
 /* Vendor Dependancies */
@@ -2619,13 +2618,16 @@ ul.main-nav {
 #home .content {
   font-size: 0; }
   #home .content h2 {
-    font-weight: 700;
-    font-family: "Noto Sans", Arial, sans-serif;
-    font-size: 22px;
-    text-align: center;
     padding: 5px;
     padding-bottom: 26px;
-    color: #333333; }
+    text-align: center; }
+    #home .content h2 a {
+      font-weight: 700;
+      font-family: "Noto Sans", Arial, sans-serif;
+      font-size: 22px;
+      color: #333333; }
+      #home .content h2 a:hover {
+        color: #cd0d12; }
   #home .content .more-posts-link {
     display: inline-block;
     position: relative;
@@ -2671,7 +2673,11 @@ ul.main-nav {
       padding-bottom: 26px;
       border-bottom: solid 1px #E7E7E7;
       margin-bottom: 25px;
-      text-align: center; }
+      text-align: center;
+      font-weight: 700;
+      font-family: "Noto Sans", Arial, sans-serif;
+      font-size: 22px;
+      color: #333333; }
       .sidebar .widget h3 a {
         font-weight: 700;
         font-family: "Noto Sans", Arial, sans-serif;
@@ -2889,7 +2895,7 @@ footer.site-footer {
         text-decoration: none; }
 
 /*--------------------------------------------------------------
-	6.7 Post Template
+	6.7 Patials
 	--------------------------------------------------------------*/
 .post-content {
   display: inline-block;
@@ -2986,5 +2992,12 @@ footer.site-footer {
         color: #cd0d12; }
         .post-content .post-details .post-excerpt p .more-link:hover {
           text-decoration: underline; }
+
+.pagination {
+  margin-top: 15px;
+  text-align: center; }
+  .pagination .page-numbers {
+    margin: 0 10px;
+    font-size: 18px; }
 
 /*# sourceMappingURL=../maps/rtl.css.map */

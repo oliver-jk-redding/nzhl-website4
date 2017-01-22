@@ -373,11 +373,11 @@ ul.main-nav li.menu-item-has-children ul.sub-menu li.current_page_item a,ul.main
 #nav-icon span:nth-child(4){top:16px}#nav-icon.open span:nth-child(1){background:#cd0d12;top:8px;width:0;left:50%}
 #nav-icon.open span:nth-child(2){background:#cd0d12;transform:rotate(45deg)}#nav-icon.open span:nth-child(3){background:#cd0d12;transform:rotate(-45deg)}
 #nav-icon.open span:nth-child(4){background:#cd0d12;top:8px;width:0;left:50%}#home .content{font-size:0}
-#home .content h2{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;text-align:center;padding:5px;padding-bottom:26px;color:#333}
-#home .content .more-posts-link{display:inline-block;position:relative;font-size:18px;background-color:#4d4d4d;color:#f8f8f8;padding:10px 30px;text-align:center;margin-bottom:10px;transition:all .3s ease;float:right;margin-top:20px}
+#home .content h2{padding:5px;padding-bottom:26px;text-align:center}#home .content h2 a{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;color:#333}
+#home .content h2 a:hover{color:#cd0d12}#home .content .more-posts-link{display:inline-block;position:relative;font-size:18px;background-color:#4d4d4d;color:#f8f8f8;padding:10px 30px;text-align:center;margin-bottom:10px;transition:all .3s ease;float:right;margin-top:20px}
 #home .content .more-posts-link:hover{background-color:#cd0d12}#blog .content h1{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;text-align:center;padding:5px;padding-bottom:26px;color:#333}
 .sidebar{position:absolute;top:0;right:0;height:100%;padding-top:120px;color:black !important}
-.sidebar .widget{margin-bottom:10px;border-bottom:solid 1px #e7e7e7}.sidebar .widget h3{padding:5px;padding-bottom:26px;border-bottom:solid 1px #e7e7e7;margin-bottom:25px;text-align:center}
+.sidebar .widget{margin-bottom:10px;border-bottom:solid 1px #e7e7e7}.sidebar .widget h3{padding:5px;padding-bottom:26px;border-bottom:solid 1px #e7e7e7;margin-bottom:25px;text-align:center;font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;color:#333}
 .sidebar .widget h3 a{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;color:#333}
 .sidebar .widget h3 a:hover{color:#cd0d12}.sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container{position:relative;background:black;height:0;width:100%;padding-bottom:56.25%;margin-bottom:10px;overflow:hidden}
 .sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container .wg-event-img{display:inline-block;width:100%;padding-bottom:56.25%;background-size:cover;background-repeat:no-repeat;background-position:center;opacity:.8;transition:all .5s linear;transform:scale3d(1,1,1);z-index:1}
@@ -432,3 +432,4 @@ footer.site-footer ul li a{margin:0;font-size:16px;text-decoration:none}footer.s
 .post-content .post-details{display:block;width:100%;padding:10px 0;padding-bottom:20px;position:relative;height:auto}
 .post-content .post-details .post-excerpt p{color:#000;margin-top:0;margin-bottom:5px}
 .post-content .post-details .post-excerpt p .more-link{color:#cd0d12}.post-content .post-details .post-excerpt p .more-link:hover{text-decoration:underline}
+.pagination{margin-top:15px;text-align:center}.pagination .page-numbers{margin:0 10px;font-size:18px}

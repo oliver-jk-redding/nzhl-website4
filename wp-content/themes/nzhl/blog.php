@@ -8,8 +8,6 @@ get_header(); ?>
   <div class="content">
     <h1><?php the_title(); ?></h1>
 
-    <?php // $the_query = new WP_Query( 'post_type=post&posts_per_page=3&paged=1' ); ?>
-
     <?php
       $page_number = 1;
       $paged = get_query_var('paged');
@@ -17,7 +15,7 @@ get_header(); ?>
 
       $query = array(
         'post_type'=>'post',
-        'posts_per_page'=>4,
+        'posts_per_page'=>5,
         'paged'=>$page_number
       );
       $the_query = new WP_Query( $query );

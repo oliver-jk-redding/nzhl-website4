@@ -37,8 +37,7 @@ and Blueprint http://www.blueprintcss.org/
 	6.4 - Page Templates
 	6.5 - Sidebar
 	6.6 - Footer
-	6.7 - Post Template
-
+	6.7 - Partials
 
 	--------------------------------------------------------------*/
 	/* Vendor Dependancies */
@@ -97,6 +96,7 @@ and Blueprint http://www.blueprintcss.org/
 	@import "layouts/footer";
 
 	/*--------------------------------------------------------------
-	6.7 Post Template
+	6.7 Patials
 	--------------------------------------------------------------*/
 	@import "layouts/post";
+	@import "layouts/pagination";

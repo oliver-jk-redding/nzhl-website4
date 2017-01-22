@@ -29,6 +29,10 @@
 			border-bottom: solid 1px $light-grey;
 			margin-bottom: 25px;
 			text-align: center;
+			font-weight: $header-weight;
+			font-family: $font-stack;
+			font-size: 22px;
+			color: $dark-grey;
 			a {
 				font-weight: $header-weight;
 				font-family: $font-stack;
