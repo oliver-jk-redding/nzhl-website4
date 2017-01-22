@@ -38,8 +38,8 @@
 				</div><!-- .entry-content -->
 
 				<div class="share">
-					<?php 
-					$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='. get_permalink(); 
+					<?php
+					$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='. get_permalink();
 					$twitterURL = 'https://twitter.com/intent/tweet?text='. get_the_title() .'&amp;url='. get_permalink();
 					$linkedinURL = 'http://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink();
 					?>
@@ -47,12 +47,12 @@
 						<a href="<?php echo $facebookURL ?>" target="_blank"><i class="icons ss-facebook"></i></a>
 						<a href="<?php echo $twitterURL ?>" target="_blank"><i class="icons ss-twitter"></i></a>
 						<a href="<?php echo $linkedinURL ?>" target="_blank"><i class="icons ss-linkedin"></i></a>
-						<a href="mailto:?subject=<?php bloginfo('name'); ?>: <?php the_title('','',true)?>&amp;body=<?php 
+						<a href="mailto:?subject=<?php bloginfo('name'); ?>: <?php the_title('','',true)?>&amp;body=<?php
 							the_title('','',true); ?> .... Read More here: <?php the_permalink(); ?>" title="Email to a friend/
 							colleague"><i class="icons ss-mail"></i></a>
 						</p>
 					</div>
-					
+
 					<?php
 					endif; ?>
 

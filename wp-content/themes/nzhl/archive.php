@@ -7,18 +7,18 @@
  * @package some_like_it_neat
  */
 
+$the_query = $wp_query;
 
 get_header(); ?>
 
-	<div id="news" class="full">
+	<div id="blog">
 
 		<div class="content">
 
 		<?php if ( have_posts() ) : ?>
+			<h1 class="page-title">
+		<?php
 
-			<header class="page-header">
-				<h1 class="page-title">
-			<?php
 			if ( function_exists( 'get_the_archive_title' ) ) :
 				echo get_the_archive_title();
 
@@ -94,7 +94,6 @@ get_header(); ?>
 						printf( '<div class="taxonomy-description">%s</div>',     $term_description );
 					endif;
 				?>
-			</header><!-- .page-header -->
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -104,11 +103,14 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'page-templates/partials/content', get_post_format() );
+					// get_template_part( 'page-templates/partials/content', get_post_format() );
+					get_template_part( 'page-templates/partials/content', 'post' );
 				?>
 
 		<?php
 endwhile; ?>
+
+			<?php get_template_part( 'page-templates/partials/content', 'pagination' ); ?>
 
 			<?php else : ?>
 
@@ -120,5 +122,5 @@ endif; ?>
 		</div><!-- #content -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('blog'); ?>
 <?php get_footer(); ?>

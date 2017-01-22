@@ -11,17 +11,31 @@
  */
 get_header();?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+<div id="home">
 
-		<?php get_template_part( 'page-templates/partials/content', 'front' ); ?>
+  <div class="content">
 
-	<?php
-	endwhile; // end of the loop. ?>
+    <h1 style="display: none;">The New Zealand Hobbit League</h1>
+    <h2><a href='/blog'>Latest Posts</a></h2>
 
-<?php //get_sidebar('front'); ?>
+    <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=3' ); ?>
 
-    </div>
+    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+      <?php get_template_part( 'page-templates/partials/content', 'post' ); ?>
+
+    <?php endwhile; ?>
+
+    <a href='/blog' class='more-posts-link'>More posts</a>
+
+  </div>
+
+  <?php get_sidebar('front'); ?>
 
 </div>
+
+</div>
+
+<?php //get_sidebar('front'); ?>
 
 <?php get_footer(); ?>

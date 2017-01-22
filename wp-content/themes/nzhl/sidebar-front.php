@@ -7,13 +7,11 @@
 ?>
 
         <div class="sidebar" id="sidebar-front">
-        
-            <aside id="sidebar-frontpage">
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-frontpage') ) ?>
-            </aside>
- 
-        </div> 
+
+          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-frontpage') ) ?>
+
+        </div>
 
     </div> <!-- END DIV class="full"> -->
 
-</div> <!-- END DIV class="page-container"> -->		
+</div> <!-- END DIV class="page-container"> -->

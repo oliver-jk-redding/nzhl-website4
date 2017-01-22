@@ -4,9 +4,15 @@
  */
 
  .page-container {
- 	@include outer-container;
- 	@include media($large) {
- 		padding: 0 1.5em;
+  position: relative;
+  background-color: $bg-color;
+  box-shadow: $shadow;
+  padding: 30px 50px;
+  padding-top: 120px;
+  // @include outer-container;
+  @include outer-container(1000px);
+  @include media($large) {
+    padding: 0 1.5em;
  	}
  }
 
@@ -20,7 +26,7 @@
 
  .content {
  	@include span-columns(8);
- 	padding: 0 0 150px 0;
+ 	padding: 0 0 20px 0;
  	@include media($med) {
  		@include span-columns(12);
  		padding: 0;
@@ -29,6 +35,7 @@
 
  .sidebar {
  	@include span-columns(4);
+  padding: 30px 50px 30px 10px;
  	@include media($med) {
  		@include span-columns(12);
  		padding-bottom: 150px;

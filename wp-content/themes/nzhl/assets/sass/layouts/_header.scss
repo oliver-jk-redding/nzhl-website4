@@ -1,85 +1,157 @@
-.logo-box {
-		position: relative;
-		display: inline-block;
-		float: left;
-		width: 50px;
-		height: 100%;
-		padding: 10px 0;
-		z-index: 1;
+div#banner {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	z-index: -1;
+	box-shadow: $shadow;
 
-	a {
-		display: block;
-		background: url('../img/nzhl-logo-white-nb-fillb-100x100.png') center no-repeat;
-		background-size: contain;
-		width: 100%;
-		height: 100%;
-		border: 1px solid black;
-		border-style: hidden;
-		border-radius: 50%;
+	@include media($med) {
+		display: none;
+	}
+}
+
+div#banner-logo {
+	background: url('../img/hero-logo-b-copy3.png') center no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	margin-top: 100px;
+	margin-top: 25vh;
+
+	@include media($med) {
+		display: none;
 	}
 }
 
 header.page-header {
-	margin: 0;
-	width: 100vw;
-	position: relative;
-	height: 70px;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	height: 90px;
 	background-color: black;
+	box-shadow: 0px 3px 10px #888;
+	z-index: 100;
+
+	&.with-banner {
+		position: relative;
+		// margin-top: 400px;
+		margin-top: 100vh;
+
+		@include media($med) {
+			position: fixed;
+			margin-top: 0;
+		}
+	}
 
 	.topbox {
-		max-width: 1200px;
+		position: relative;
+		max-width: 1000px;
 		height: 100%;
 		margin: 0 auto;
+		padding: 0 20px;
+
+		@include media($large) {
+			padding: 0 1.5em;
+		}
+
+		.logo-box {
+			position: relative;
+			display: inline-block;
+			float: left;
+			width: 70px;
+			height: 100%;
+			padding: 10px 0;
+			// z-index: 1;
+
+			@include media($smaller) {
+				width: 50px;
+			}
+
+			a.logo {
+				display: block;
+				background: url('../img/nzhl-logo-white-nb-fillb-100x100.png') center no-repeat;
+				background-size: contain;
+				width: 100%;
+				height: 100%;
+				border: 1px solid black;
+				border-style: hidden;
+				border-radius: 50%;
+			}
+		}
+
+		a.name {
+			font-size: 20px;
+			font-weight: 800;
+			color: $nav-color;
+			text-decoration: none;
+			margin-left: 15px;
+			top: 49%;
+			transform: translateY(-50%);
+			position: absolute;
+			font-family: $h1-stack;
+
+			@media(max-width: 550px) {
+				width: 150px;
+				font-size: 17px;
+			}
+			@include media($smaller) {
+				width: 100px;
+				font-size: 12px;
+			}
+		}
 
 		div#header-search {
-			position: absolute;
-			right: 0;
+			position: relative;
+			float: right;
+			margin-top: 32px;
+			margin-left: 3.5vw;
+
+			@include media($nav-break) {
+				position: absolute;
+				right: 75px;
+			}
 
 			div#search-icon {
-				display: none;
+				display: block;
+				opacity: 1;
+				position: relative;
+				color: $bg-color;
+				font-size: 22px;
+				line-height: 22px;
+				cursor: pointer;
 
-				@include media($nav-break) {
-					display: block;
-					opacity: 1;
-					position: relative;
-					color: #fff;
-					font-size: 30px;
-					margin: 15px 35px;
+				&:hover {
+					color: $red;
+				}
 
-					@include media($small) {
-						font-size: 26px;
-						margin: 12px 35px;
-					}
-					@include media($smaller) {
-						font-size: 22px;
-						margin: 8px 26px;
-					}
-					@include media($xsmall) {
-						font-size: 20px;
-						margin: 7px 26px;
-					}
-
-					&:before {
-						content: '\f002';
-						font-family: 'FontAwesome';
-						transition: all 0.5s;
-						transition-delay: 0.15s;
-					}
+				@include media($small) {
+					// font-size: 26px;
+					// margin: 12px 35px;
+				}
+				@include media($smaller) {
+					// font-size: 22px;
+					// margin: 8px 26px;
+				}
+				@include media($xsmall) {
+					// font-size: 20px;
+					// margin: 7px 26px;
+				}
+				&:before {
+					content: '\f002';
+					font-family: 'FontAwesome';
+					// transition: all 0.5s;
+					// transition-delay: 0.15s;
 				}
 			}
 
 			#searchform {
+				display: none;
+				opacity: 0;
+				// transition: all 0s;
+				// transition-delay: 0s;
 				transition: all 0.5s;
 				transition-delay: 0.15s;
-
-				@include media($nav-break) {
-					display: none;
-					opacity: 0;
-					transform: translateX(20px);
-
-					transition: all 0s;
-					transition-delay: 0s;
-				}
 
 				input[type=text] {
 					height: 30px;
@@ -89,7 +161,7 @@ header.page-header {
 					border: none;
 
 					@include media($nav-break) {
-						opacity: 0;
+						// opacity: 0;
 					}
 				}
 
@@ -124,14 +196,15 @@ header.page-header {
 		div#header-search.active {
 
 			div#search-icon {
-				display: none;
+				// display: none;
 			}
 
 			#searchform {
 				display: block!important;
 				opacity: 1!important;
 				position: fixed;
-				left: -20px;
+				left: 0;
+				top: 0;
 				width: 100%;
 				height: 100%;
 				z-index: 100;
@@ -145,55 +218,56 @@ header.page-header {
 					position: fixed;
 					left: 0;
 					width: 100%;
-					height: 85px;
-					background-color: #fff;
-					padding: 3px 91px 3px 24px;
+					height: 90px;
+					background-color: $bg-color;
+					box-shadow: 0px 3px 10px #333;
+					padding: 3px 91px 10px 24px;
 					margin: 0;
 
 					font-size: 40px;
 					font-weight: $header-weight;
-					font-family: $h1-stack;
+					font-family: $font-stack;
 					letter-spacing: $font-spacing;
-					color: $text-color;
+					color: #000;
 
 					transition: all 0.5s;
 					transition-delay: 0.15s;
 
 					@include media($small) {
-						font-size: 30px;
-						height: 66px;
-						padding-right: 86px;
+						// font-size: 30px;
+						// height: 66px;
+						// padding-right: 86px;
 					}
 					@include media($smaller) {
-						font-size: 22px;
-						height: 54px;
-						padding-right: 66px;
+						// font-size: 22px;
+						// height: 54px;
+						// padding-right: 66px;
 					}
 					@include media($xsmall) {
-						font-size: 20px;
-						height: 49px;
+						// font-size: 20px;
+						// height: 49px;
 					}
 				}
 
 				.fa.fa-search {
-					color: #3E46FF;
+					color: $red;
 					font-size: 30px;
-					top: 24px;
+					top: 27px;
 					right: 35px;
 					left: auto;
 
 					@include media($small) {
-						font-size: 26px;
-						top: 20px;
+						// font-size: 26px;
+						// top: 20px;
 					}
 					@include media($smaller) {
-						font-size: 22px;
-						top: 15px;
-						right: 26px;
+						// font-size: 22px;
+						// top: 15px;
+						// right: 26px;
 					}
 					@include media($xsmall) {
-						font-size: 20px;
-						top: 13px;
+						// font-size: 20px;
+						// top: 13px;
 					}
 
 					input[type=submit] {
@@ -206,34 +280,34 @@ header.page-header {
 
 		a {
 			@include media($nav-break) {
-				display:block;
-				margin: 151px 32px 0 0;
-				text-align:right;
-				float: right;
-				font-weight: 600;
-				font-size: 1.6em;
-				font-family: $h1-stack;
-				letter-spacing: $font-spacing;
-				text-decoration: none;
-				color: $text-color;
+				// display:block;
+				// margin: 151px 32px 0 0;
+				// text-align:right;
+				// float: right;
+				// font-weight: 600;
+				// font-size: 1.6em;
+				// font-family: $h1-stack;
+				// letter-spacing: $font-spacing;
+				// text-decoration: none;
+				// color: $text-color;
 
 				&:focus {
-					outline: none;
+					// outline: none;
 				}
 			}
 
 			@include media($small) {
-				margin: 141px 32px 0 0;
+				// margin: 141px 32px 0 0;
 			}
 
 			@include media($smaller) {
-				margin: 107px 32px 0 0;
-				font-size: 1.4em;
+				// margin: 107px 32px 0 0;
+				// font-size: 1.4em;
 			}
 
 			@include media($xsmall) {
-				margin: 95px 32px 0 0;
-				font-size: 1.2em;
+				// margin: 95px 32px 0 0;
+				// font-size: 1.2em;
 			}
 
 		}

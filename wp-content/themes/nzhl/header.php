@@ -20,7 +20,6 @@ echo getenv('WP_ENV');
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<script src="//use.typekit.net/vul4hnx.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	<script>
@@ -42,23 +41,40 @@ echo getenv('WP_ENV');
 	<?php tha_body_top(); ?>
 
 		<?php tha_header_before(); ?>
-		<header id="masthead" class="page-header" role="banner">
+
+		<?php if (is_front_page()) { ?>
+		<div id="banner" class="parallax-window" data-parallax="scroll" data-image-src="wp-content/themes/nzhl/assets/img/wallpaper-pics/wallpaper-3.jpg" data-position="center center" data-speed="0.3" role="banner"></div>
+		<div id="banner-logo"></div>
+		<header id="masthead" class="page-header with-banner">
+		<?php } else { ?>
+		<header id="masthead" class="page-header">
+		<?php } ?>
+
 			<?php tha_header_top(); ?>
 
 			<div class="topbox">
 				<div class="logo-box">
-					<a href='<?php echo get_site_url(); ?>'></a>
+					<a class="logo" href='<?php echo get_site_url(); ?>'></a>
 				</div>
+				<a class="name" href='<?php echo get_site_url(); ?>'>The New Zealand Hobbit League</a>
 
-				<!-- <div id="header-search"> -->
-					<!-- <div id="search-icon"> -->
+				<div id="header-search">
+					<div id="search-icon">
 						<!-- <span class="dashicons dashicons-search"></span> -->
-					<!-- </div>/#header-search-icon -->
+					</div><!-- header-search-icon -->
 
-					<?php //get_search_form(); ?>
-				<!-- </div>/#header-search -->
+					<?php get_search_form(); ?>
+				</div><!-- #header-search -->
 
-				<a id ="navmenu" href="#">Menu</a>
+				<!-- <a id ="navmenu" href="#">Menu</a> -->
+				<!-- <div id="device_menu_trigger"> -->
+					<div id="nav-icon">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					</div>
+				<!-- </div> -->
 
 				<nav class="nav-collapse" id="hideshow">
 					<?php

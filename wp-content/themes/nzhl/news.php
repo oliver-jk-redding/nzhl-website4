@@ -15,7 +15,7 @@ get_header(); ?>
 			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 				<?php get_template_part( 'page-templates/partials/content', 'news' ); ?>
-				
+
 			<?php endwhile; ?>
 
 			<?php get_template_part( 'page-templates/partials/content', 'pagination' ); ?>

@@ -155,8 +155,8 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_register_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
 		wp_enqueue_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
 
-		wp_register_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
+		// wp_register_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
+		// wp_enqueue_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
 
 		wp_register_script( 'dataTables.js', get_template_directory_uri() . '/assets/js/vendor/dataTables.js', array( 'jquery' ), '1.10.11', true );
 		wp_enqueue_script( 'dataTables.js', get_template_directory_uri() . '/assets/js/vendor/dataTables.js', array( 'jquery' ), '1.10.11', true );
@@ -172,6 +172,8 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_enqueue_style( 'some_like_it_neat-style',  get_template_directory_uri() . '/assets/css/style.css' );
 		wp_enqueue_style( 'ss_social_circle',  get_template_directory_uri() . '/assets/fonts/webfonts/ss-social-circle.css' );
 		wp_enqueue_style( 'tooltipster',  get_template_directory_uri() . '/assets/css/vendor/tooltipster.css' );
+		wp_register_style('et-googleFonts', 'https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans:400,700');
+		wp_enqueue_style( 'et-googleFonts');
 
 		else :
 			// Vendor Scripts
@@ -200,8 +202,8 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_enqueue_script( 'bootstrap-dropdown.js', get_template_directory_uri() . '/assets/js/vendor/bootstrap-dropdown.js', array( 'jquery' ), '2.8.2', true );
 
 
-		wp_register_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
+		// wp_register_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
+		// wp_enqueue_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
 
 		wp_register_script( 'matchHeight.js', get_template_directory_uri() . '/assets/js/vendor/matchHeight/matchHeight.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'matchHeight.js', get_template_directory_uri() . '/assets/js/vendor/matchHeight/matchHeight.js', array( 'jquery' ), '2.8.2', true );
@@ -216,6 +218,8 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 		wp_enqueue_style( 'some_like_it_neat-style',  get_template_directory_uri() . '/assets/css/style.css' );
 		wp_enqueue_style( 'ss_social_circle',  get_template_directory_uri() . '/assets/fonts/webfonts/ss-social-circle.css' );
 		wp_enqueue_style( 'tooltipster',  get_template_directory_uri() . '/assets/css/vendor/tooltipster.css' );
+		wp_register_style('et-googleFonts', 'https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans:400,700');
+		wp_enqueue_style( 'et-googleFonts');
 
 		endif;
 
@@ -261,45 +265,23 @@ function some_like_it_neat_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => 'Sidebar Contact Page',
-			'id'            => 'sidebar-contactpage',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h4 class="widget-title">',
-			'after_title'   => '</h4>',
-			)
-		);
-
-	register_sidebar(
-		array(
 			'name'          => 'Sidebar Front Page',
 			'id'            => 'sidebar-frontpage',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
-			'before_title'  => '<h4 class="widget-title">',
-			'after_title'   => '</h4>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 			)
 		);
 
 	register_sidebar(
 		array(
-			'name'          => 'Sidebar Social',
-			'id'            => 'sidebar-social',
-			'before_widget' => '',
-			'after_widget'  => '',
-			'before_title'  => '',
-			'after_title'   => '',
-			)
-		);
-
-	register_sidebar(
-		array(
-			'name'          => 'News Page',
-			'id'            => 'sidebar-newspage',
-			'before_widget' => '<li id="option-%2$s" class="">',
-			'after_widget' 	=> "</li>",
-			'before_title' 	=> '<h4 class="widget-title-remove">',
-			'after_title' 	=> '</h4>',
+			'name'          => 'Blog Page',
+			'id'            => 'sidebar-blog',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 			)
 		);
 }
@@ -444,129 +426,128 @@ if ( ! function_exists( 'some_like_it_neat_optional_scripts' ) ) :
 	<?php
 }
 
-add_action('init', 'timeline_register');
+// add_action('init', 'timeline_register');
 // Our custom post type function for the timeline
-function timeline_register() {
+// function timeline_register() {
 
-	$labels = array(
-		'name' => _x('Timeline', 'post type general name'),
-		'singular_name' => _x('Milestone', 'post type singular name'),
-		'add_new' => _x('Add New', 'Milestone'),
-		'add_new_item' => __('Add New Milestone'),
-		'edit_item' => __('Edit Milestone'),
-		'new_item' => __('New Milestone'),
-		'view_item' => __('View Milestones'),
-		'search_items' => __('Search Milestones'),
-		'not_found' =>  __('Nothing found'),
-		'not_found_in_trash' => __('Nothing found in Trash'),
-		'parent_item_colon' => ''
-		);
+// 	$labels = array(
+// 		'name' => _x('Timeline', 'post type general name'),
+// 		'singular_name' => _x('Milestone', 'post type singular name'),
+// 		'add_new' => _x('Add New', 'Milestone'),
+// 		'add_new_item' => __('Add New Milestone'),
+// 		'edit_item' => __('Edit Milestone'),
+// 		'new_item' => __('New Milestone'),
+// 		'view_item' => __('View Milestones'),
+// 		'search_items' => __('Search Milestones'),
+// 		'not_found' =>  __('Nothing found'),
+// 		'not_found_in_trash' => __('Nothing found in Trash'),
+// 		'parent_item_colon' => ''
+// 		);
 
-	$args = array(
-		'labels' => $labels,
-		'description' => 'description',
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'query_var' => true,
-		'menu_icon' => get_stylesheet_directory_uri() . '',
-		'rewrite' => true,
-		'capability_type' => 'post',
-		'hierarchical' => false,
-		'menu_position' => null,
-		'menu_icon' => 'dashicons-clock',
-		'supports' => array(
-			'title', 'editor', 'author', 'thumbnail',
-			'custom-fields', 'revisions', 'page-attributes', 'post-formats'
-			),
-		);
+// 	$args = array(
+// 		'labels' => $labels,
+// 		'description' => 'description',
+// 		'public' => true,
+// 		'publicly_queryable' => true,
+// 		'show_ui' => true,
+// 		'query_var' => true,
+// 		'menu_icon' => get_stylesheet_directory_uri() . '',
+// 		'rewrite' => true,
+// 		'capability_type' => 'post',
+// 		'hierarchical' => false,
+// 		'menu_position' => null,
+// 		'menu_icon' => 'dashicons-clock',
+// 		'supports' => array(
+// 			'title', 'editor', 'author', 'thumbnail',
+// 			'custom-fields', 'revisions', 'page-attributes', 'post-formats'
+// 			),
+// 		);
 
-	register_post_type( 'timeline' , $args );
-}
+// 	register_post_type( 'timeline' , $args );
+// }
 
-add_action('init', 'jobs_register');
+// add_action('init', 'jobs_register');
 
-add_action('init', 'events_register');
+// add_action('init', 'events_register');
 // Our custom post type function for the new events section
-function events_register() {
+// function events_register() {
 
-	$labels = array(
-		'name' => _x('Events', 'post type general name'),
-		'singular_name' => _x('Event', 'post type singular name'),
-		'add_new' => _x('Add New', 'Event'),
-		'add_new_item' => __('Add New Event'),
-		'edit_item' => __('Edit Event'),
-		'new_item' => __('New Event'),
-		'view_item' => __('View Event'),
-		'search_items' => __('Search Event'),
-		'not_found' =>  __('Nothing found'),
-		'not_found_in_trash' => __('Nothing found in Trash'),
-		'parent_item_colon' => ''
-		);
+// 	$labels = array(
+// 		'name' => _x('Events', 'post type general name'),
+// 		'singular_name' => _x('Event', 'post type singular name'),
+// 		'add_new' => _x('Add New', 'Event'),
+// 		'add_new_item' => __('Add New Event'),
+// 		'edit_item' => __('Edit Event'),
+// 		'new_item' => __('New Event'),
+// 		'view_item' => __('View Event'),
+// 		'search_items' => __('Search Event'),
+// 		'not_found' =>  __('Nothing found'),
+// 		'not_found_in_trash' => __('Nothing found in Trash'),
+// 		'parent_item_colon' => ''
+// 		);
 
-	$args = array(
-		'labels' => $labels,
-		'description' => 'description',
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'query_var' => true,
-		'menu_icon' => get_stylesheet_directory_uri() . '',
-		'rewrite' => true,
-		'capability_type' => 'post',
-		'hierarchical' => 1077,
-		'menu_position' => null,
-		'menu_icon' => 'dashicons-calendar-alt',
-		'supports' => array(
-			'title', 'author', 'thumbnail',
-			'custom-fields', 'revisions', 'page-attributes',
-			'post-formats'
-			),
-		);
+// 	$args = array(
+// 		'labels' => $labels,
+// 		'description' => 'description',
+// 		'public' => true,
+// 		'publicly_queryable' => true,
+// 		'show_ui' => true,
+// 		'query_var' => true,
+// 		'menu_icon' => get_stylesheet_directory_uri() . '',
+// 		'rewrite' => true,
+// 		'capability_type' => 'post',
+// 		'hierarchical' => 1077,
+// 		'menu_position' => null,
+// 		'menu_icon' => 'dashicons-calendar-alt',
+// 		'supports' => array(
+// 			'title', 'author', 'editor', 'thumbnail', 'revisions', 'page-attributes',
+// 			'post-formats'
+// 			),
+// 		);
 
-	register_post_type( 'events' , $args );
-}
+// 	register_post_type( 'events' , $args );
+// }
 
   	// add_action('init', 'eventtables_register');
 // Our custom post type function for the new events section
-function eventtables_register() {
+// function eventtables_register() {
 
-	$labels = array(
-		'name' => _x('Eventtables', 'post type general name'),
-		'singular_name' => _x('Eventtable', 'post type singular name'),
-		'add_new' => _x('Add New', 'Eventtable'),
-		'add_new_item' => __('Add New Eventtable'),
-		'edit_item' => __('Edit Eventtable'),
-		'new_item' => __('New Eventtable'),
-		'view_item' => __('View Eventtable'),
-		'search_items' => __('Search Eventtable'),
-		'not_found' =>  __('Nothing found'),
-		'not_found_in_trash' => __('Nothing found in Trash'),
-		'parent_item_colon' => ''
-		);
+// 	$labels = array(
+// 		'name' => _x('Eventtables', 'post type general name'),
+// 		'singular_name' => _x('Eventtable', 'post type singular name'),
+// 		'add_new' => _x('Add New', 'Eventtable'),
+// 		'add_new_item' => __('Add New Eventtable'),
+// 		'edit_item' => __('Edit Eventtable'),
+// 		'new_item' => __('New Eventtable'),
+// 		'view_item' => __('View Eventtable'),
+// 		'search_items' => __('Search Eventtable'),
+// 		'not_found' =>  __('Nothing found'),
+// 		'not_found_in_trash' => __('Nothing found in Trash'),
+// 		'parent_item_colon' => ''
+// 		);
 
-	$args = array(
-		'labels' => $labels,
-		'description' => 'description',
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'query_var' => true,
-		'menu_icon' => get_stylesheet_directory_uri() . '',
-		'rewrite' => true,
-		'capability_type' => 'post',
-		'hierarchical' => false,
-		'menu_position' => null,
-		'menu_icon' => 'dashicons-schedule',
-		'supports' => array(
-			'title', 'author', 'thumbnail',
-			'custom-fields', 'revisions', 'page-attributes',
-			'post-formats'
-			),
-		);
+// 	$args = array(
+// 		'labels' => $labels,
+// 		'description' => 'description',
+// 		'public' => true,
+// 		'publicly_queryable' => true,
+// 		'show_ui' => true,
+// 		'query_var' => true,
+// 		'menu_icon' => get_stylesheet_directory_uri() . '',
+// 		'rewrite' => true,
+// 		'capability_type' => 'post',
+// 		'hierarchical' => false,
+// 		'menu_position' => null,
+// 		'menu_icon' => 'dashicons-schedule',
+// 		'supports' => array(
+// 			'title', 'author', 'thumbnail',
+// 			'custom-fields', 'revisions', 'page-attributes',
+// 			'post-formats'
+// 			),
+// 		);
 
-	register_post_type( 'eventtables' , $args );
-}
+// 	register_post_type( 'eventtables' , $args );
+// }
 
 	// Add IDs to Header Tags
 add_filter( 'the_content', 'add_ids_to_header_tags' );
@@ -602,16 +583,28 @@ function friendlyURL($string){
 	return strtolower(trim($string, '-'));
 }
 
-add_filter( 'the_content_more_link', 'modify_read_more_link' );
-function modify_read_more_link() {
-	return '<a class="more-link" href="' . get_permalink() . '">Read more ...</a>';
-}
+// add_filter( 'excerpt_more', 'modify_read_more_link' );
+// function modify_read_more_link() {
+// 	return '<a class="more-link" href="' . get_permalink() . '">Read more ...</a>';
+// }
 
 add_filter('excerpt_more', 'modify__excerpt_read_more_link');
 function modify__excerpt_read_more_link($more) {
 	global $post;
 	return '... <a class="more-link" href="' . get_permalink() . '">Read more</a>';
 }
+
+// Changing excerpt length
+add_filter('excerpt_length', 'new_excerpt_length');
+function new_excerpt_length($length) {
+	return 50;
+}
+
+// Changing excerpt more
+// function new_excerpt_more($more) {
+// return '...';
+// }
+// add_filter('excerpt_more', 'new_excerpt_more');
 
 add_action('wp_head', 'add_favicons');
 function add_favicons() {?>
@@ -685,6 +678,7 @@ function add_favicons() {?>
 	function searchfilter($query) {
 
 		if ($query->is_search && !is_admin() ) {
+			$query->set('post_type', 'post');
 			$query->set('posts_per_page', 12);
 		}
 
@@ -723,6 +717,140 @@ add_filter( 'wp_calculate_image_srcset', function( $sources )
 	return $sources;
 
 }, PHP_INT_MAX );
+
+function date_to_string($date) {
+	$date = explode('-', $date);
+	$monthName = DateTime::createFromFormat('!m', $date[1]);
+	$monthName = $monthName->format('F');
+	$dateString = $date[0].' '.$monthName.' '.$date[2];
+	return $dateString;
+}
+
+function date_range_to_string($startDate, $endDate) {
+	if($startDate < $endDate) {
+		$startDate = explode('-', $startDate);
+		$endDate = explode('-', $endDate);
+		$equal = '';
+		if($startDate[1] == $endDate[1] && $startDate[2] == $endDate[2]) {
+			$equal = 'month and year';
+		}
+		elseif($startDate[2] == $endDate[2]) {
+			$equal = 'year';
+		}
+		$startMonthName = DateTime::createFromFormat('!m', $startDate[1]);
+		$startMonthName = $startMonthName->format('F');
+		$endMonthName = DateTime::createFromFormat('!m', $endDate[1]);
+		$endMonthName = $endMonthName->format('F');
+		if($equal == 'month and year') {
+			$dateString = $startDate[0].'-'.$endDate[0].' '.$startMonthName.' '.$startDate[2];
+		}
+		elseif($equal == 'year') {
+			$dateString = $startDate[0].' '.$startMonthName.' - '.$endDate[0].' '.$endMonthName.' '.$startDate[2];
+		}
+		else {
+			$dateString = $startDate[0].' '.$startMonthName.' '.$startDate[2].' - '.$endDate[0].' '.$endMonthName.' '.$endDate[2];
+		}
+	}
+	else {
+		$dateString = date_to_string($startDate);
+	}
+	return $dateString;
+}
+
+// if (function_exists('register_field_group')) {
+// 	register_field_group(array (
+// 		'id' => 'acf_event-properties',
+// 		'title' => 'Event Properties',
+// 		'fields' => array (
+// 			array (
+// 				'key' => 'field_5622633c684cf',
+// 				'label' => 'Event Start Date',
+// 				'name' => 'event_date',
+// 				'type' => 'date_picker',
+// 				'required' => 1,
+// 				'date_format' => 'yy-mm-dd',
+// 				'display_format' => 'dd/mm/yy',
+// 				'first_day' => 1,
+// 			),
+// 			array (
+// 				'key' => 'field_6733744D795dg',
+// 				'label' => 'Event End Date',
+// 				'name' => 'event_end_date',
+// 				'type' => 'date_picker',
+// 				'required' => 0,
+// 				'date_format' => 'yy-mm-dd',
+// 				'display_format' => 'dd/mm/yy',
+// 				'first_day' => 1,
+// 				'instructions' => 'If event is a one-day event, leave this blank.'
+// 			),
+// 		),
+// 		'location' => array (
+// 			array (
+// 				array (
+// 					'param' => 'post_taxonomy',
+// 					'operator' => '!=',
+// 					'value' => 'Event',
+// 					'order_no' => 0,
+// 					'group_no' => 0,
+// 				),
+// 			),
+// 		),
+// 		'options' => array (
+// 			'position' => 'side',
+// 			'layout' => 'default',
+// 			'hide_on_screen' => array (
+// 			),
+// 		),
+// 		'menu_order' => 0,
+// 	));
+// }
+
+// if (function_exists('register_field_group')) {
+// 	register_field_group(array (
+// 		'id' => 'acf_featured-image',
+// 		'title' => 'Featured Image',
+// 		'fields' => array (
+// 			array (
+// 				'key' => 'field_562cbea91702c',
+// 				'label' => 'Featured Image',
+// 				'name' => 'featured_image',
+// 				'type' => 'image',
+// 				'save_format' => 'id',
+// 				'preview_size' => 'thumbnail',
+// 				'library' => 'all',
+// 				'required' => 1
+// 			),
+// 		),
+// 		'location' => array (
+// 			array (
+// 				array (
+// 					'param' => 'post_type',
+// 					'operator' => '==',
+// 					'value' => 'Event',
+// 					'order_no' => 0,
+// 					'group_no' => 0,
+// 				),
+// 			),
+// 			array (
+// 				array (
+// 					'param' => 'post_type',
+// 					'operator' => '==',
+// 					'value' => 'post',
+// 					'order_no' => 0,
+// 					'group_no' => 1,
+// 				),
+// 			),
+// 		),
+// 		'options' => array (
+// 			'position' => 'side',
+// 			'layout' => 'default',
+// 			'hide_on_screen' => array (
+// 			),
+// 		),
+// 		'menu_order' => 0,
+// 	));
+
+// }
 
 
 

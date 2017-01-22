@@ -9,7 +9,6 @@
 <div id="home">
 
   <div class="content">
-    <div class="splash-image">hi there MATE</div>
 		<?php //if( get_field('header_image') ): ?>
 			<!-- <div class="intro-image"> -->
 				<?php //echo '<img src="' . get_field('header_image') . '">'; ?>

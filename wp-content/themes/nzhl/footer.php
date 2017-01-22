@@ -11,17 +11,17 @@
 </main><!-- #main -->
 <?php tha_content_after(); ?>
 <?php tha_footer_before(); ?>
-<footer class="site-footer full">
-	<div class="page-container">
+<footer class="site-footer">
+  <div class="footer-container">
 
-		<p>&copy; New Zealand Hobbit League</p>
+    <ul>
+      <li><a href="mailto:hobbitleague@gmail.com" target="_top">Contact</a></li>
+      <li><a href="https://www.facebook.com/groups/826723854039078/" target="_blank">Facebook</a></li>
+    </ul>
 
-		<ul>
-	<li><a href="/contact/">Contact</a></li>
+  	<p>&copy; The New Zealand Hobbit League</p>
 
-</ul>
-
-</div>
+  </div>
 </footer>
 <?php tha_footer_after(); ?>
 </div><!-- .wrap -->

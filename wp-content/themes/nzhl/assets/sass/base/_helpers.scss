@@ -1,7 +1,8 @@
 html {
 	position: relative;
-	z-index: -2;
-	background-color: #1f1f14;
+	// z-index: -2;
+	background-color: $bg-color;
+	background-image: url(../img/middle-earth-map2.jpg);
 }
 
 body {
