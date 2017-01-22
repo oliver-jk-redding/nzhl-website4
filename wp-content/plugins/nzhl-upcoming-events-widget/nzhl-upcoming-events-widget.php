@@ -113,7 +113,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		$widget_string = $before_widget;
 
 		// TODO: Here is where you manipulate your widget's values based on their input fields
-		query_posts('category_name=Event&orderby=date&order=DESC&posts_per_page=3');
+		query_posts('category_name=Event&orderby=date&order=DESC&posts_per_page=2');
 
 		$widget_heading = "<div class='side-content events-widget nzhl-widget'>
 		<h3>Upcoming Events</h3>";

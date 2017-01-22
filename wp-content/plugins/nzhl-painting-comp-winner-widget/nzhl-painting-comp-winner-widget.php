@@ -121,16 +121,16 @@ class NZHL_Painting_Comp_Winner extends WP_Widget {
 		$widget_heading = "<div class='side-content painting-comp-winner-widget nzhl-widget'>
 		<h3>Monthly Painting Competition</h3>";
 
-	  $thumb_url = 'http://localhost:8080/wp-content/uploads/2017/01/orc.jpg';
+	  $thumb_url = 'http://localhost:8080/wp-content/uploads/2017/01/dain.jpg';
 	  $firstName = 'Matt';
 	  $lastName = 'Ridgley';
 	  $name = $lastName ? '<span>'.$firstName.'</span>' . " " . '<span>'.$lastName.'</span>' : '<span>'.$firstName.'</span>';
 
-		$widget_string .= $widget_heading."<a class='wg-painting-comp-winner-container' href='http:".home_url()."/?page_id=18'>
+		$widget_string .= $widget_heading."<a class='wg-painting-comp-winner-container' href='/gallery/'>
 		<img class='wg-painting-comp-winner-img' src='".$thumb_url."' alt='NZHL Monthly Painting Competition Winning Entry'>
 		</a>
 		<p class='congrats-message'>Congratulations to ". $name . " for winning ".$currentMonth."'s painting competition!</p>
-		<p class='enter-link'>Think you can do better? Click <a href='http:".home_url()."/?page_id=18'>here</a> to find out how to enter next month's competition.</p>
+		<p class='enter-link'>Think you can do better? Click <a href='http:".home_url()."/gallery/'>here</a> to find out how to enter next month's competition.</p>
 		</div>";
 
 		ob_start();

@@ -116,21 +116,21 @@ class NZHL_Tournament_Winner extends WP_Widget {
 
 		// query_posts('category_name=Event&orderby=date&order=DESC&posts_per_page=3');
 
-		$currentYear = Date('Y');
+		$currentYear = date("Y",strtotime("-1 year"));
 
 		$widget_heading = "<div class='side-content tournament-winner-widget nzhl-widget'>
 		<h3>".$currentYear." League Champion</h3>";
 
-	  $thumb_url = 'http://localhost:8080/wp-content/uploads/2017/01/matt.jpg';
-	  $firstName = 'Matt';
-	  $lastName = 'Ridgley';
-	  $name = $lastName ? '<span>'.$firstName.'</span>' . " " . '<span>'.$lastName.'</span>' : '<span>'.$firstName.'</span>';
+	  $thumb_url = 'http://localhost:8080/wp-content/uploads/2017/01/santa.jpg';
+	  $firstName = 'Gandalf';
+	  $lastName = 'Claus';
+	  $name = $lastName ? $firstName.' '.$lastName : $firstName;
 
-		$widget_string .= $widget_heading."<a class='wg-tournament-winner-container' href='http:".home_url()."/?page_id=18'>
-		<img class='wg-tournament-winner-img' src='".$thumb_url."' alt='NZHL Monthly Painting Competition Winning Entry'>
-		</a>
-		<p class='congrats-message'>Congratulations to ". $name . " for winning this month's Tournamentetition!</p>
-		<p class='enter-link'>Think you can do better? Click <a href='http:".home_url()."/?page_id=18'>here</a> to find out how to enter next month's competition.</p>
+		$widget_string .= $widget_heading."<div class='wg-tournament-winner-container'>
+		<img class='wg-tournament-winner-img' src='".$thumb_url."' alt='NZHL Monthly League Champion'>
+		</div>
+		<p class='congrats-message'>". $name . "</p>
+		<p class='quote'><span>\"What is this new devilry?\"</span><span>\"A Balrog. A demon of the ancient world. This foe is beyond any of you. Run!\"</span></p>
 		</div>";
 
 		ob_start();
