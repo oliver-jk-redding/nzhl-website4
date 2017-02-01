@@ -2996,8 +2996,13 @@ footer.site-footer {
 .pagination {
   margin-top: 15px;
   text-align: center; }
-  .pagination .page-numbers {
-    margin: 0 10px;
-    font-size: 18px; }
+  .pagination .page-numbers:not(.dots) {
+    margin: 0;
+    padding: 8px 13px 10px 13px;
+    background-color: #4d4d4d;
+    color: #fff;
+    font-size: 14px; }
+    .pagination .page-numbers:not(.dots):hover, .pagination .page-numbers:not(.dots).current {
+      background-color: #cd0d12; }
 
 /*# sourceMappingURL=../maps/style.css.map */

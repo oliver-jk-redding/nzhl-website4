@@ -1,8 +1,14 @@
 .pagination {
   margin-top: 15px;
   text-align: center;
-  .page-numbers {
-    margin: 0 10px;
-    font-size: 18px;
+  .page-numbers:not(.dots) {
+    margin: 0;
+    padding: 8px 13px 10px 13px;
+    background-color: $mid-grey;
+    color: #fff;
+    font-size: 14px;
+    &:hover, &.current {
+      background-color: $red;
+    }
   }
 }

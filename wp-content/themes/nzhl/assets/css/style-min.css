@@ -432,4 +432,5 @@ footer.site-footer ul li a{margin:0;font-size:16px;text-decoration:none}footer.s
 .post-content .post-details{display:block;width:100%;padding:10px 0;padding-bottom:20px;position:relative;height:auto}
 .post-content .post-details .post-excerpt p{color:#000;margin-top:0;margin-bottom:5px}
 .post-content .post-details .post-excerpt p .more-link{color:#cd0d12}.post-content .post-details .post-excerpt p .more-link:hover{text-decoration:underline}
-.pagination{margin-top:15px;text-align:center}.pagination .page-numbers{margin:0 10px;font-size:18px}
+.pagination{margin-top:15px;text-align:center}.pagination .page-numbers:not(.dots){margin:0;padding:8px 13px 10px 13px;background-color:#4d4d4d;color:#fff;font-size:14px}
+.pagination .page-numbers:not(.dots):hover,.pagination .page-numbers:not(.dots).current{background-color:#cd0d12}

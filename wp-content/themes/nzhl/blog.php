@@ -34,14 +34,16 @@ get_header(); ?>
       <?php wp_reset_postdata(); ?>
 
     <?php else : ?>
+
       <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+
     <?php endif; ?>
 
-  </div>
+  </div> <!-- content -->
 
   <?php get_sidebar('blog'); ?>
 
-</div>
+</div> <!-- #blog -->
 
 </div>
 
