@@ -80,8 +80,10 @@
 					}
 					div .wg-event-title {
 						display: inline-block;
+						font-family: "Noto Serif", Arial, sans-serif;
 						width: auto;
 						background-color: $red;
+						color: $bg-color;
 						font-size: 20px;
 						margin: 10px 0;
 						padding: 0 5px;

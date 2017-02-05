@@ -139,7 +139,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
 
 			$event_info .= "<div class='wg-event-container'>
 			<a class='wg-event-details' href='" . get_permalink() . "'>
-			<div><h4 class='wg-event-title'>" . get_the_title() . "</h4></div>
+			<div><p class='wg-event-title'>" . get_the_title() . "</p></div>
 			<div><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span></div>
 			<div><span class='wg-event-location'>" . get_field('location') . "</span></div>
 			<div><span class='wg-event-link'>More info</span></div>

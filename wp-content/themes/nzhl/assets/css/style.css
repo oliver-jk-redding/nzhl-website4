@@ -2804,8 +2804,10 @@ ul.main-nav {
           transform: scale3d(1.1, 1.1, 1); }
         .sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container .wg-event-details div .wg-event-title {
           display: inline-block;
+          font-family: "Noto Serif", Arial, sans-serif;
           width: auto;
           background-color: #cd0d12;
+          color: #f8f8f8;
           font-size: 20px;
           margin: 10px 0;
           padding: 0 5px;
