@@ -2341,7 +2341,7 @@ header.page-header {
       position: relative;
       float: right;
       margin-top: 32px;
-      margin-left: 2.7vw; }
+      margin-left: 1.3vw; }
       @media screen and (max-width: 1024px) {
         header.page-header .topbox div#header-search {
           position: absolute;
@@ -2461,12 +2461,9 @@ ul.main-nav {
       max-height: 500px; } }
   ul.main-nav li {
     display: inline-block;
-    float: left;
-    margin: 0 1.3vw; }
+    float: left; }
     ul.main-nav li.current_page_item a, ul.main-nav li.current-page-ancestor a, ul.main-nav li.current-menu-ancestor a, ul.main-nav li.current-menu-parent a {
       color: #cd0d12; }
-    ul.main-nav li:last-child {
-      margin-right: 0; }
     @media screen and (max-width: 1024px) {
       ul.main-nav li {
         display: block;
@@ -2485,7 +2482,10 @@ ul.main-nav {
       color: #ebebe0;
       font-family: "Noto Sans", Arial, sans-serif;
       line-height: 90px;
-      display: block; }
+      display: block;
+      padding: 0 1.3vw; }
+      ul.main-nav li a:last-child {
+        margin-right: 0; }
       @media screen and (max-width: 1024px) {
         ul.main-nav li a {
           color: black;
