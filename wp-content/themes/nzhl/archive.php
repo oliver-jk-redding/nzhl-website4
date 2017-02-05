@@ -69,8 +69,6 @@ get_header(); ?>
 				endif;
 			?>
 
-			<?php /* Start the Loop */ ?>
-
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'page-templates/partials/content', 'post' ); ?>

@@ -26,18 +26,26 @@
 
  .content {
  	@include span-columns(8);
- 	padding: 0 0 20px 0;
+ 	padding: 0;
  	@include media($med) {
  		@include span-columns(12);
  		padding: 0;
  	}
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: none;
  }
 
  .sidebar {
  	@include span-columns(4);
-  padding: 30px 50px 30px 10px;
+  padding: 30px 0 0 25px;
  	@include media($med) {
  		@include span-columns(12);
  		padding-bottom: 150px;
  	}
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: none;
  }

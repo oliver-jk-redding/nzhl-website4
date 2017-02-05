@@ -81,7 +81,7 @@ echo getenv('WP_ENV');
 					wp_nav_menu(
 						array(
 							'theme_location' => 'primary-navigation',
-			                'items_wrap' => '<ul data-breakpoint=" '. esc_attr( get_theme_mod( 'some_like_it_neat_mobile_min_width', '768' ) ) .' " id="%1$s" class="%2$s main-nav">%3$s</ul>', // Adding data-breakpoint for FlexNav
+			        'items_wrap' => '<ul data-breakpoint=" '. esc_attr( get_theme_mod( 'some_like_it_neat_mobile_min_width', '768' ) ) .' " id="%1$s" class="%2$s main-nav">%3$s</ul>', // Adding data-breakpoint for FlexNav
 			                )
 						);
 						?>

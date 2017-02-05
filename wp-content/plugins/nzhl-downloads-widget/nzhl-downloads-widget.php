@@ -4,16 +4,16 @@
  *
  * The WordPress Widget Boilerplate is an organized, maintainable boilerplate for building widgets using WordPress best practices.
  *
- * @package   NZHL Upcoming Events
+ * @package   NZHL Downloads
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
  * @copyright 2014 Your Name or Company Name
  *
  * @wordpress-plugin
- * Plugin Name:       NZHL Upcoming Events
+ * Plugin Name:       NZHL Downloads
  * Plugin URI:        http://oliverredding.com
- * Description:       NZHL Upcoming Events Widget for Sidebar
+ * Description:       NZHL Downloads Widget for Sidebar
  * Version:           1.0.0
  * Author:            Ollie Redding
  * Author URI:        http://oliverredding.com
@@ -29,7 +29,7 @@ if ( ! defined ( 'ABSPATH' ) ) {
 	exit;
 }
 // TODO: change 'Widget_Name' to the name of your plugin
-class NZHL_Upcoming_Events extends WP_Widget {
+class NZHL_Downloads extends WP_Widget {
     /**
      * @TODO - Rename "widget-name" to the name your your widget
      *
@@ -44,7 +44,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
      *
      * @var      string
      */
-    protected $widget_slug = 'nzhl-upcoming-events-widget';
+    protected $widget_slug = 'nzhl-downloads-widget';
     /*--------------------------------------------------*/
 	/* Constructor
 	/*--------------------------------------------------*/
@@ -61,10 +61,10 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		// TODO: update description
 		parent::__construct(
 			$this->get_widget_slug(),
-			__( 'NZHL_Upcoming_Events', $this->get_widget_slug() ),
+			__( 'NZHL_Downloads', $this->get_widget_slug() ),
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
-				'description' => __( 'A widget which shows a list of the upcoming events for the next year.', $this->get_widget_slug() )
+				'description' => __( 'A widget which shows a list of the Downloads for the next year.', $this->get_widget_slug() )
 				)
 			);
 		// Register admin styles and scripts
@@ -112,46 +112,14 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		extract( $args, EXTR_SKIP );
 		$widget_string = $before_widget;
 
-		$query = [
-			'category_name' => 'Events',
-			'posts_per_page' => 2,
-			'meta_key' => 'event_date',
-			'orderby' => 'meta_value',
-			'order' => 'ASC',
-			'meta_type' => 'DATE'
-		];
-		query_posts($query);
+		$widget_heading = "<h3><a href='/downloads/'>Downloads</a></h3>";
 
-		$widget_heading = "<h3><a href='/events/'>Upcoming Events</a></h3>";
+		$home_page_id = get_option( 'page_on_front' );
 
-		$event_info = '';
+		$calendar_link = "<a href='".get_field('nzhl_calendar', $home_page_id)."' download class='download-link'>Download the NZHL <b>".date('Y')." Calendar</b></a>";
+		$rankings_link = "<a href='".get_field('nzhl_rankings_table', $home_page_id)."' download class='download-link'>Download the NZHL <b>".date('Y')." Table Rankings</b></a>";
 
-		if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-			$thumb_id = get_post_thumbnail_id();
-			if($thumb_id) {
-			  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-			  $thumb_url = $thumb_url_array[0];
-			}
-			else {
-			  $thumb_url = '/wp-content/themes/nzhl/assets/img/middle-earth-map-with-logo2.jpg';
-			}
-
-			$event_info .= "<div class='wg-event-container'>
-			<a class='wg-event-details' href='" . get_permalink() . "'>
-			<div><h4 class='wg-event-title'>" . get_the_title() . "</h4></div>
-			<div><span class='wg-event-date'>" . date_range_to_string(get_field('event_date'), get_field('event_end_date')) . "</span></div>
-			<div><span class='wg-event-location'>" . get_field('location') . "</span></div>
-			<div><span class='wg-event-link'>More info</span></div>
-			</a>
-			<div class='wg-event-img' style='background-image: url(" . $thumb_url . ");'></div>
-			</div>";
-
-		endwhile; endif;
-
-		$events_page_link = "<a href='/events/' class='events-link'><b>See more events&hellip;</b></a>";
-
-		$widget_string .= $widget_heading.$event_info.$events_page_link;
+		$widget_string .= $widget_heading.$events_page_link.$calendar_link.$rankings_link;
 
 		ob_start();
 		include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );
@@ -246,4 +214,4 @@ class NZHL_Upcoming_Events extends WP_Widget {
 	} // end register_widget_scripts
 } // end class
 // TODO: Remember to change 'Widget_Name' to match the class name definition
-add_action( 'widgets_init', create_function( '', 'register_widget("NZHL_Upcoming_Events");' ) );
+add_action( 'widgets_init', create_function( '', 'register_widget("NZHL_Downloads");' ) );

@@ -26,9 +26,6 @@ function fixHeader() {
 			'margin-top': '100vh',
 			'padding-top': '120px'
 		});
-		$('.sidebar').css({
-			'padding-top': '120px'
-		});
 	}
 	else {
 		$('#masthead').css({
@@ -38,9 +35,6 @@ function fixHeader() {
 		});
 		$('.page-container').css({
 			'margin-top': 0,
-			'padding-top': '20px'
-		});
-		$('.sidebar').css({
 			'padding-top': '20px'
 		});
 	}

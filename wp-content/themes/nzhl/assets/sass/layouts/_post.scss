@@ -33,11 +33,10 @@
         display: inline;
         padding: 0;
         font-size: 28px;
-        // color: $red;
         transition: all 0.3s ease;
       }
       .post-author, .post-location {
-        // color: $bg-color;
+        color: $mid-grey;
         font-size: 12px;
         margin-left: 10px;
         vertical-align: super;
@@ -55,6 +54,34 @@
       // padding: 15px 20px;
       padding-top: 0;
       transition: all 0.3s ease;
+      color: $mid-grey;
+    }
+    .post-categories {
+      position: absolute;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      right: 0;
+      bottom: 19px;
+      display: inline-block;
+      li {
+        display: inline-block;
+        margin: 0 2px;
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          display: block;
+          padding: 1px 10px;
+          color: $dark-grey;
+          list-style: none;
+          background-color: $yellow;
+          font-size: 12px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
     &:hover {
       .post-title h3, .post-author, .post-location, .post-date {
@@ -82,30 +109,6 @@
       &:hover {
         -webkit-transform: scale3d(1.1, 1.1, 1);
         transform: scale3d(1.1, 1.1, 1);
-      }
-    }
-    .post-categories {
-      position: absolute;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      right: 0;
-      bottom: 0;
-      display: inline-block;
-      li {
-        display: inline-block;
-        margin: 0 2px;
-        a {
-          display: block;
-          padding: 1px 10px;
-          color: $dark-grey;
-          list-style: none;
-          background-color: $yellow;
-          font-size: 12px;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
       }
     }
   }

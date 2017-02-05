@@ -65,7 +65,7 @@ ul.main-nav {
 	li {
 		display: inline-block;
 		float: left;
-		margin: 0 2vw;
+		margin: 0 1.3vw;
 		// margin: 0 28px;
 		&.current_page_item a, &.current-page-ancestor a, &.current-menu-ancestor a, &.current-menu-parent a {
 			color: $link-color;
@@ -147,7 +147,7 @@ ul.main-nav {
 			top: calc(100% + -15px);
 			left: auto;
 			// left: -51px;
-			width: 150px;
+			width: 180px;
 			background: $box-color;
 			padding: 7px 0 11px 0;
 			margin: 0;
@@ -170,7 +170,7 @@ ul.main-nav {
 			}
 
 			li {
-				padding: 8px 19px;
+				display: block;
 				margin: 0;
 				line-height: 1em;
 				width: 100%;
@@ -181,6 +181,8 @@ ul.main-nav {
 				}
 
 				a {
+					display: block;
+					padding: 8px 19px;
 					font-weight: 500;
 					font-size: 15px;
 					letter-spacing: $font-spacing;

@@ -7,27 +7,23 @@
 
 get_header(); ?>
 
-<div id="news">
+<div id="blog">
 
 	<div class="content">
 
-		<?php if ( $category_name == 'news') : ?>
-			<h1>News</h1>
-		<?php else : ?>
-			<h1>Opportunities</h1>
-		<?php endif; ?>
+		<h2>Blog</h2>
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'page-templates/partials/content', 'single' ); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-				endwhile; // end of the loop. ?>
+			<?php get_template_part( 'page-templates/partials/content', 'single' ); ?>
 
-		</div><!-- #content -->
+		<?php endwhile; // end of the loop. ?>
 
-		<?php get_sidebar(); ?>
+	</div><!-- #content -->
 
-	</div><!-- #full -->
+	<?php get_sidebar(); ?>
+
+</div><!-- #full -->
 
 </div>
 

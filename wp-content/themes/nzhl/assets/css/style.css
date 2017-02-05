@@ -2161,6 +2161,9 @@ a.btn:hover, a.btn:active {
 .hide {
   display: none !important; }
 
+#main {
+  font-size: 0; }
+
 /*
  * Grid
  */
@@ -2197,7 +2200,11 @@ a.btn:hover, a.btn:active {
   display: block;
   margin-right: 2.35765%;
   width: 65.88078%;
-  padding: 0 0 20px 0; }
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: none; }
   .content:last-child {
     margin-right: 0; }
   @media screen and (max-width: 790px) {
@@ -2215,7 +2222,11 @@ a.btn:hover, a.btn:active {
   display: block;
   margin-right: 2.35765%;
   width: 31.76157%;
-  padding: 30px 50px 30px 10px; }
+  padding: 30px 0 0 25px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  float: none; }
   .sidebar:last-child {
     margin-right: 0; }
   @media screen and (max-width: 790px) {
@@ -2330,7 +2341,7 @@ header.page-header {
       position: relative;
       float: right;
       margin-top: 32px;
-      margin-left: 3.5vw; }
+      margin-left: 2.7vw; }
       @media screen and (max-width: 1024px) {
         header.page-header .topbox div#header-search {
           position: absolute;
@@ -2451,7 +2462,7 @@ ul.main-nav {
   ul.main-nav li {
     display: inline-block;
     float: left;
-    margin: 0 2vw; }
+    margin: 0 1.3vw; }
     ul.main-nav li.current_page_item a, ul.main-nav li.current-page-ancestor a, ul.main-nav li.current-menu-ancestor a, ul.main-nav li.current-menu-parent a {
       color: #cd0d12; }
     ul.main-nav li:last-child {
@@ -2500,14 +2511,14 @@ ul.main-nav {
       position: absolute;
       top: calc(100% + -15px);
       left: auto;
-      width: 150px;
+      width: 180px;
       background: #E7E7E7;
       padding: 7px 0 11px 0;
       margin: 0;
       box-shadow: 0 0 15px 0 #888;
       transition: all 0.3s ease; }
       ul.main-nav li.menu-item-has-children ul.sub-menu li {
-        padding: 8px 19px;
+        display: block;
         margin: 0;
         line-height: 1em;
         width: 100%;
@@ -2515,6 +2526,8 @@ ul.main-nav {
         ul.main-nav li.menu-item-has-children ul.sub-menu li:last-child {
           border-bottom: none; }
         ul.main-nav li.menu-item-has-children ul.sub-menu li a {
+          display: block;
+          padding: 8px 19px;
           font-weight: 500;
           font-size: 15px;
           letter-spacing: normal;
@@ -2629,8 +2642,9 @@ ul.main-nav {
       #home .content h2 a:hover {
         color: #cd0d12; }
   #home .content .more-posts-link {
-    display: inline-block;
     position: relative;
+    display: block;
+    width: 160px;
     font-size: 18px;
     background-color: #4d4d4d;
     color: #f8f8f8;
@@ -2638,12 +2652,11 @@ ul.main-nav {
     text-align: center;
     margin-bottom: 10px;
     transition: all 0.3s ease;
-    float: right;
-    margin-top: 20px; }
+    margin: 20px auto; }
     #home .content .more-posts-link:hover {
       background-color: #cd0d12; }
 
-#blog .content h1 {
+#blog .content h1, #blog .content h2 {
   font-weight: 700;
   font-family: "Noto Sans", Arial, sans-serif;
   font-size: 22px;
@@ -2652,6 +2665,82 @@ ul.main-nav {
   padding-bottom: 26px;
   color: #333333; }
 
+#blog .content .post {
+  border-top: solid 1px #E7E7E7;
+  padding-top: 5px; }
+  #blog .content .post .entry-header {
+    position: relative; }
+    #blog .content .post .entry-header .entry-title {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      font-size: 0; }
+      #blog .content .post .entry-header .entry-title h1 {
+        font-family: "Noto Serif", Arial, sans-serif;
+        display: inline;
+        padding: 0;
+        font-size: 28px;
+        font-weight: 100; }
+      #blog .content .post .entry-header .entry-title .entry-author, #blog .content .post .entry-header .entry-title .entry-location {
+        color: #4d4d4d;
+        font-size: 12px;
+        margin-left: 10px;
+        vertical-align: super; }
+    #blog .content .post .entry-header .entry-location {
+      text-transform: uppercase; }
+    #blog .content .post .entry-header .entry-date {
+      display: block;
+      font-size: 14px;
+      padding: 15px 0;
+      padding-top: 0;
+      transition: all 0.3s ease;
+      color: #4d4d4d; }
+    #blog .content .post .entry-header .post-categories {
+      position: absolute;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      right: 0;
+      bottom: 19px;
+      display: inline-block; }
+      #blog .content .post .entry-header .post-categories li {
+        display: inline-block;
+        margin: 0 2px; }
+        #blog .content .post .entry-header .post-categories li:last-child {
+          margin-right: 0; }
+        #blog .content .post .entry-header .post-categories li a {
+          display: block;
+          padding: 1px 10px;
+          color: #333333;
+          list-style: none;
+          background-color: #ddcf16;
+          font-size: 12px; }
+          #blog .content .post .entry-header .post-categories li a:hover {
+            text-decoration: underline; }
+  #blog .content .post .entry-image-container {
+    display: block;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative; }
+    #blog .content .post .entry-image-container .entry-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; }
+  #blog .content .post .entry-content {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    padding-bottom: 20px;
+    position: relative;
+    height: auto; }
+    #blog .content .post .entry-content p {
+      color: #000;
+      margin: 10px 0 20px 0; }
+
 /*--------------------------------------------------------------
 	6.5 Sidebar
 	--------------------------------------------------------------*/
@@ -2659,16 +2748,14 @@ ul.main-nav {
  * Sidebar
  */
 .sidebar {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: relative;
   height: 100%;
-  padding-top: 120px;
+  padding-top: 0;
   color: black !important; }
   .sidebar .widget {
     margin-bottom: 10px;
     border-bottom: solid 1px #E7E7E7; }
-    .sidebar .widget h3 {
+    .sidebar .widget h3, .sidebar .widget h4 {
       padding: 5px;
       padding-bottom: 26px;
       border-bottom: solid 1px #E7E7E7;
@@ -2678,12 +2765,12 @@ ul.main-nav {
       font-family: "Noto Sans", Arial, sans-serif;
       font-size: 22px;
       color: #333333; }
-      .sidebar .widget h3 a {
+      .sidebar .widget h3 a, .sidebar .widget h4 a {
         font-weight: 700;
         font-family: "Noto Sans", Arial, sans-serif;
         font-size: 22px;
         color: #333333; }
-        .sidebar .widget h3 a:hover {
+        .sidebar .widget h3 a:hover, .sidebar .widget h4 a:hover {
           color: #cd0d12; }
     .sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container {
       position: relative;
@@ -2717,6 +2804,7 @@ ul.main-nav {
           transform: scale3d(1.1, 1.1, 1); }
         .sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container .wg-event-details div .wg-event-title {
           display: inline-block;
+          width: auto;
           background-color: #cd0d12;
           font-size: 20px;
           margin: 10px 0;
@@ -2726,13 +2814,15 @@ ul.main-nav {
           display: inline-block;
           background-color: #333333;
           font-size: 12px;
-          padding: 0 5px; }
+          padding: 0 5px;
+          margin-bottom: 5px; }
         .sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container .wg-event-details div .wg-event-location {
           display: inline-block;
           background-color: #4d4d4d;
           font-size: 14px;
           clear: both;
-          padding: 0 5px; }
+          padding: 0 5px;
+          margin-bottom: 5px; }
         .sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container .wg-event-details div .wg-event-link {
           color: #000;
           font-size: 12px;
@@ -2742,19 +2832,35 @@ ul.main-nav {
           .sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container .wg-event-details div .wg-event-link:hover {
             background-color: #cd0d12;
             color: #f8f8f8; }
-    .sidebar .widget.nzhl-upcoming-events-widget-class .download-link {
+    .sidebar .widget.nzhl-upcoming-events-widget-class .events-link {
+      display: block;
+      padding: 10px 30px;
+      text-align: center;
+      margin-bottom: 10px;
+      background-color: #ddcf16;
+      color: #333333;
+      transition: all 0.3s ease;
+      font-size: 16px; }
+      .sidebar .widget.nzhl-upcoming-events-widget-class .events-link:hover {
+        background-color: #cd0d12;
+        color: #fff; }
+    .sidebar .widget.nzhl-downloads-widget-class h3, .sidebar .widget.nzhl-downloads-widget-class h4 {
+      border-bottom: none;
+      padding-bottom: 0; }
+    .sidebar .widget.nzhl-downloads-widget-class .download-link {
       display: block;
       background-color: #4d4d4d;
       color: #f8f8f8;
       padding: 10px 30px;
       text-align: center;
       margin-bottom: 10px;
-      transition: all 0.3s ease; }
-      .sidebar .widget.nzhl-upcoming-events-widget-class .download-link:hover {
+      transition: all 0.3s ease;
+      font-size: 16px; }
+      .sidebar .widget.nzhl-downloads-widget-class .download-link:hover {
         background-color: #cd0d12; }
     .sidebar .widget.nzhl-painting-comp-winner-widget-class, .sidebar .widget.nzhl-tournament-winner-widget-class {
-      background-color: #ddcf16; }
-      .sidebar .widget.nzhl-painting-comp-winner-widget-class h3, .sidebar .widget.nzhl-tournament-winner-widget-class h3 {
+      background-color: #afa411; }
+      .sidebar .widget.nzhl-painting-comp-winner-widget-class h3, .sidebar .widget.nzhl-painting-comp-winner-widget-class h4, .sidebar .widget.nzhl-tournament-winner-widget-class h3, .sidebar .widget.nzhl-tournament-winner-widget-class h4 {
         padding: 5px 10px;
         padding-bottom: 0px;
         margin-bottom: 11px;
@@ -2763,7 +2869,7 @@ ul.main-nav {
       .sidebar .widget.nzhl-painting-comp-winner-widget-class .wg-painting-comp-winner-container, .sidebar .widget.nzhl-painting-comp-winner-widget-class .wg-tournament-winner-container, .sidebar .widget.nzhl-tournament-winner-widget-class .wg-painting-comp-winner-container, .sidebar .widget.nzhl-tournament-winner-widget-class .wg-tournament-winner-container {
         position: relative;
         display: block;
-        width: 96%;
+        width: 100%;
         padding: 0;
         margin: 0 auto;
         overflow: hidden;
@@ -2788,7 +2894,6 @@ ul.main-nav {
       .sidebar .widget.nzhl-painting-comp-winner-widget-class .congrats-message, .sidebar .widget.nzhl-tournament-winner-widget-class .congrats-message {
         padding: 10px 10px 15px 10px;
         margin: 0px;
-        margin-top: 5px;
         line-height: 22px;
         font-size: 18px;
         text-align: center;
@@ -2810,8 +2915,8 @@ ul.main-nav {
           .sidebar .widget.nzhl-painting-comp-winner-widget-class .enter-link a:hover, .sidebar .widget.nzhl-painting-comp-winner-widget-class .quote a:hover, .sidebar .widget.nzhl-tournament-winner-widget-class .enter-link a:hover, .sidebar .widget.nzhl-tournament-winner-widget-class .quote a:hover {
             color: white; }
     .sidebar .widget.nzhl-tournament-winner-widget-class {
-      background-color: #cd0d12; }
-      .sidebar .widget.nzhl-tournament-winner-widget-class h3 {
+      background-color: #6d070a; }
+      .sidebar .widget.nzhl-tournament-winner-widget-class h3, .sidebar .widget.nzhl-tournament-winner-widget-class h4 {
         color: #E7E7E7; }
       .sidebar .widget.nzhl-tournament-winner-widget-class .wg-tournament-winner-container .wg-tournament-winner-img {
         width: 100%;
@@ -2835,7 +2940,7 @@ ul.main-nav {
       margin: 0;
       border-bottom: none;
       margin-bottom: 50px; }
-      .sidebar .widget.widget_categories h3, .sidebar .widget.widget_recent_entries h3, .sidebar .widget.widget_archive h3 {
+      .sidebar .widget.widget_categories h3, .sidebar .widget.widget_categories h4, .sidebar .widget.widget_recent_entries h3, .sidebar .widget.widget_recent_entries h4, .sidebar .widget.widget_archive h3, .sidebar .widget.widget_archive h4 {
         text-align: left;
         padding-left: 50px; }
       .sidebar .widget.widget_categories ul, .sidebar .widget.widget_recent_entries ul, .sidebar .widget.widget_archive ul {
@@ -2926,6 +3031,7 @@ footer.site-footer {
         font-size: 28px;
         transition: all 0.3s ease; }
       .post-content .post-heading .post-title .post-author, .post-content .post-heading .post-title .post-location {
+        color: #4d4d4d;
         font-size: 12px;
         margin-left: 10px;
         vertical-align: super;
@@ -2937,7 +3043,30 @@ footer.site-footer {
       font-size: 14px;
       padding: 15px 0;
       padding-top: 0;
-      transition: all 0.3s ease; }
+      transition: all 0.3s ease;
+      color: #4d4d4d; }
+    .post-content .post-heading .post-categories {
+      position: absolute;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      right: 0;
+      bottom: 19px;
+      display: inline-block; }
+      .post-content .post-heading .post-categories li {
+        display: inline-block;
+        margin: 0 2px; }
+        .post-content .post-heading .post-categories li:last-child {
+          margin-right: 0; }
+        .post-content .post-heading .post-categories li a {
+          display: block;
+          padding: 1px 10px;
+          color: #333333;
+          list-style: none;
+          background-color: #ddcf16;
+          font-size: 12px; }
+          .post-content .post-heading .post-categories li a:hover {
+            text-decoration: underline; }
     .post-content .post-heading:hover .post-title h3, .post-content .post-heading:hover .post-author, .post-content .post-heading:hover .post-location, .post-content .post-heading:hover .post-date {
       color: #cd0d12; }
   .post-content .post-image-container {
@@ -2957,26 +3086,6 @@ footer.site-footer {
       transform: scale3d(1, 1, 1); }
       .post-content .post-image-container .post-image:hover {
         transform: scale3d(1.1, 1.1, 1); }
-    .post-content .post-image-container .post-categories {
-      position: absolute;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      right: 0;
-      bottom: 0;
-      display: inline-block; }
-      .post-content .post-image-container .post-categories li {
-        display: inline-block;
-        margin: 0 2px; }
-        .post-content .post-image-container .post-categories li a {
-          display: block;
-          padding: 1px 10px;
-          color: #333333;
-          list-style: none;
-          background-color: #ddcf16;
-          font-size: 12px; }
-          .post-content .post-image-container .post-categories li a:hover {
-            text-decoration: underline; }
   .post-content .post-details {
     display: block;
     width: 100%;
@@ -2997,12 +3106,15 @@ footer.site-footer {
   margin-top: 15px;
   text-align: center; }
   .pagination .page-numbers:not(.dots) {
-    margin: 0;
+    margin: 0 2px;
     padding: 8px 13px 10px 13px;
     background-color: #4d4d4d;
     color: #fff;
     font-size: 14px; }
     .pagination .page-numbers:not(.dots):hover, .pagination .page-numbers:not(.dots).current {
       background-color: #cd0d12; }
+  .pagination .dots {
+    font-size: 16px;
+    margin: 0 2px; }
 
 /*# sourceMappingURL=../maps/style.css.map */
