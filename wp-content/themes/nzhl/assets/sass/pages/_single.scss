@@ -1,6 +1,7 @@
 #blog {
   .content {
     .post {
+      position: relative;
       border-top: solid 1px #E7E7E7;
       padding-top: 5px;
       .entry-header {
@@ -84,16 +85,54 @@
         display: block;
         width: 100%;
         padding: 10px 0;
-        padding-bottom: 20px;
+        padding-bottom: 60px;
         position: relative;
         height: auto;
         p {
           color: #000;
           margin: 10px 0 20px 0;
         }
+        .share {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          p {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 45px;
+            margin: 0;
+            a {
+              .icons {
+                margin: 0 3px;
+                &.ss-facebook {
+                  color: #3b5998;
+                }
+                &.ss-twitter {
+                  color: #55acee;;
+                }
+                &.ss-mail {
+                  color: $red;;
+                }
+              }
+              &:hover {
+                vertical-align: 2px;
+              }
+            }
+          }
+        }
       }
-      .share {
-
+      footer.entry-meta {
+        .edit-link {
+          position: absolute;
+          // right: 0;
+          left: 0;
+          bottom: 15px;
+          a {
+            font-weight: 700;
+          }
+        }
       }
     }
   }

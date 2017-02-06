@@ -34,29 +34,28 @@
 
 	<div class="entry-content" itemprop="articleBody">
 
-	<?php the_content(); ?>
-
-	</div><!-- .entry-content -->
+  	<?php the_content(); ?>
 
     <div class="share">
-
       <?php
         $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='. get_permalink();
         $twitterURL = 'https://twitter.com/intent/tweet?text='. get_the_title() .'&amp;url='. get_permalink();
       ?>
-      <p>Share:
+      <p>
         <a href="<?php echo $facebookURL ?>" target="_blank"><i class="icons ss-facebook"></i></a>
         <a href="<?php echo $twitterURL ?>" target="_blank"><i class="icons ss-twitter"></i></a>
         <a href="mailto:?subject=<?php bloginfo('name'); ?>: <?php the_title('','',true)?>&amp;body=<?php
         the_title('','',true); ?> .... Read More here: <?php the_permalink(); ?>" title="Email to a friend/
         colleague"><i class="icons ss-mail"></i></a>
     	</p>
-
     </div>
+
+  </div><!-- .entry-content -->
+
 
 	<footer class="entry-meta" itemprop="keywords" >
 
-	<?php edit_post_link( __( 'Edit', 'some-like-it-neat' ), '<span class="edit-link">', '</span>' ); ?>
+	<?php edit_post_link( __( 'Edit post', 'some-like-it-neat' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-meta -->
 	<?php tha_entry_bottom(); ?>

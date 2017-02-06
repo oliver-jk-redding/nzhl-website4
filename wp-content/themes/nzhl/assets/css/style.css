@@ -2161,9 +2161,6 @@ a.btn:hover, a.btn:active {
 .hide {
   display: none !important; }
 
-#main {
-  font-size: 0; }
-
 /*
  * Grid
  */
@@ -2666,6 +2663,7 @@ ul.main-nav {
   color: #333333; }
 
 #blog .content .post {
+  position: relative;
   border-top: solid 1px #E7E7E7;
   padding-top: 5px; }
   #blog .content .post .entry-header {
@@ -2734,12 +2732,39 @@ ul.main-nav {
     display: block;
     width: 100%;
     padding: 10px 0;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
     position: relative;
     height: auto; }
     #blog .content .post .entry-content p {
       color: #000;
       margin: 10px 0 20px 0; }
+    #blog .content .post .entry-content .share {
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
+      #blog .content .post .entry-content .share p {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        line-height: 45px;
+        margin: 0; }
+        #blog .content .post .entry-content .share p a .icons {
+          margin: 0 3px; }
+          #blog .content .post .entry-content .share p a .icons.ss-facebook {
+            color: #3b5998; }
+          #blog .content .post .entry-content .share p a .icons.ss-twitter {
+            color: #55acee; }
+          #blog .content .post .entry-content .share p a .icons.ss-mail {
+            color: #cd0d12; }
+        #blog .content .post .entry-content .share p a:hover {
+          vertical-align: 2px; }
+  #blog .content .post footer.entry-meta .edit-link {
+    position: absolute;
+    left: 0;
+    bottom: 15px; }
+    #blog .content .post footer.entry-meta .edit-link a {
+      font-weight: 700; }
 
 /*--------------------------------------------------------------
 	6.5 Sidebar

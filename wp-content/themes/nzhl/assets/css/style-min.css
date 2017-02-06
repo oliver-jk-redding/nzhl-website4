@@ -315,7 +315,7 @@ html{position:relative;background-color:#f8f8f8;background-image:url(../img/midd
 body{position:relative;min-height:100vh}.content-area{min-height:446px;padding-bottom:150px}
 .full{padding-bottom:150px}img{max-width:100%;padding:0 0 20px 0}a.btn{background:#e7e7e7;color:#333;padding:.8em 1.5em;display:inline-block;text-decoration:none}
 a.btn:hover,a.btn:active{text-decoration:none;color:#cd0d12}.dis-b{display:block}
-.hide{display:none !important}#main{font-size:0}.page-container{position:relative;background-color:#f8f8f8;box-shadow:0 0 70px #888;padding:30px 50px;padding-top:120px;max-width:1000px;margin-left:auto;margin-right:auto}
+.hide{display:none !important}.page-container{position:relative;background-color:#f8f8f8;box-shadow:0 0 70px #888;padding:30px 50px;padding-top:120px;max-width:1000px;margin-left:auto;margin-right:auto}
 .page-container::after{clear:both;content:"";display:table}
 @media screen and (max-width:1200px){.page-container{padding:0 1.5em}}.full{float:left;display:block;margin-right:2.35765%;width:100%}
 .full:last-child{margin-right:0}.full .content{width:100%}.content{float:left;display:block;margin-right:2.35765%;width:65.88078%;padding:0;position:relative;display:inline-block;vertical-align:top;float:none}
@@ -376,8 +376,8 @@ ul.main-nav li.menu-item-has-children ul.sub-menu li.current_page_item a,ul.main
 #home .content h2{padding:5px;padding-bottom:26px;text-align:center}#home .content h2 a{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;color:#333}
 #home .content h2 a:hover{color:#cd0d12}#home .content .more-posts-link{position:relative;display:block;width:160px;font-size:18px;background-color:#4d4d4d;color:#f8f8f8;padding:10px 30px;text-align:center;margin-bottom:10px;transition:all .3s ease;margin:20px auto}
 #home .content .more-posts-link:hover{background-color:#cd0d12}#blog .content h1,#blog .content h2{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;text-align:center;padding:5px;padding-bottom:26px;color:#333}
-#blog .content .post{border-top:solid 1px #e7e7e7;padding-top:5px}#blog .content .post .entry-header{position:relative}
-#blog .content .post .entry-header .entry-title{display:block;width:100%;padding:10px 0;font-size:0}
+#blog .content .post{position:relative;border-top:solid 1px #e7e7e7;padding-top:5px}
+#blog .content .post .entry-header{position:relative}#blog .content .post .entry-header .entry-title{display:block;width:100%;padding:10px 0;font-size:0}
 #blog .content .post .entry-header .entry-title h1{font-family:"Noto Serif",Arial,sans-serif;display:inline;padding:0;font-size:28px;font-weight:100}
 #blog .content .post .entry-header .entry-title .entry-author,#blog .content .post .entry-header .entry-title .entry-location{color:#4d4d4d;font-size:12px;margin-left:10px;vertical-align:super}
 #blog .content .post .entry-header .entry-location{text-transform:uppercase}#blog .content .post .entry-header .entry-date{display:block;font-size:14px;padding:15px 0;padding-top:0;transition:all .3s ease;color:#4d4d4d}
@@ -388,8 +388,13 @@ ul.main-nav li.menu-item-has-children ul.sub-menu li.current_page_item a,ul.main
 #blog .content .post .entry-header .post-categories li a:hover{text-decoration:underline}
 #blog .content .post .entry-image-container{display:block;width:100%;height:300px;overflow:hidden;position:relative}
 #blog .content .post .entry-image-container .entry-image{width:100%;height:100%;display:block;background-size:cover;background-repeat:no-repeat;background-position:center}
-#blog .content .post .entry-content{display:block;width:100%;padding:10px 0;padding-bottom:20px;position:relative;height:auto}
-#blog .content .post .entry-content p{color:#000;margin:10px 0 20px 0}.sidebar{position:relative;height:100%;padding-top:0;color:black !important}
+#blog .content .post .entry-content{display:block;width:100%;padding:10px 0;padding-bottom:60px;position:relative;height:auto}
+#blog .content .post .entry-content p{color:#000;margin:10px 0 20px 0}#blog .content .post .entry-content .share{position:absolute;bottom:0;width:100%}
+#blog .content .post .entry-content .share p{display:block;width:100%;text-align:center;font-size:30px;line-height:45px;margin:0}
+#blog .content .post .entry-content .share p a .icons{margin:0 3px}#blog .content .post .entry-content .share p a .icons.ss-facebook{color:#3b5998}
+#blog .content .post .entry-content .share p a .icons.ss-twitter{color:#55acee}#blog .content .post .entry-content .share p a .icons.ss-mail{color:#cd0d12}
+#blog .content .post .entry-content .share p a:hover{vertical-align:2px}#blog .content .post footer.entry-meta .edit-link{position:absolute;left:0;bottom:15px}
+#blog .content .post footer.entry-meta .edit-link a{font-weight:700}.sidebar{position:relative;height:100%;padding-top:0;color:black !important}
 .sidebar .widget{margin-bottom:10px;border-bottom:solid 1px #e7e7e7}.sidebar .widget h3,.sidebar .widget h4{padding:5px;padding-bottom:26px;border-bottom:solid 1px #e7e7e7;margin-bottom:25px;text-align:center;font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;color:#333}
 .sidebar .widget h3 a,.sidebar .widget h4 a{font-weight:700;font-family:"Noto Sans",Arial,sans-serif;font-size:22px;color:#333}
 .sidebar .widget h3 a:hover,.sidebar .widget h4 a:hover{color:#cd0d12}.sidebar .widget.nzhl-upcoming-events-widget-class .wg-event-container{position:relative;background:black;height:0;width:100%;padding-bottom:56.25%;margin-bottom:10px;overflow:hidden}
