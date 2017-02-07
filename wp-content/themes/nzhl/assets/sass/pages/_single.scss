@@ -1,6 +1,6 @@
 #blog {
   .content {
-    .post {
+    article.post {
       position: relative;
       border-top: solid 1px #E7E7E7;
       padding-top: 5px;
@@ -126,11 +126,64 @@
       footer.entry-meta {
         .edit-link {
           position: absolute;
-          // right: 0;
           left: 0;
           bottom: 15px;
+          font-size: 16px;
           a {
             font-weight: 700;
+          }
+        }
+      }
+    }
+    nav.post-navigation {
+      margin-top: 40px;
+      margin-bottom: 100px;
+      h2 { display: none; }
+      .nav-links {
+        .nav-previous, .nav-next {
+          display: inline-block;
+          a {
+            position: relative;
+            display: block;
+            background-color: $mid-grey;
+            color: #fff;
+            padding: 8px 20px 10px 20px;
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            &:hover {
+              background-color: $red;
+            }
+            &:before, &:after {
+              position: absolute;
+              top: 49%;
+              transform: translateY(-51%);
+            }
+          }
+        }
+        .nav-previous {
+          float: left;
+            a {
+              padding-left: 35px;
+              &:before {
+                content: '\f100';
+                font-family: 'FontAwesome';
+                left: 15px;
+              }
+            }
+        }
+        .nav-next {
+          float: right;
+          a {
+            padding-right: 35px;
+            &:after {
+              content: '\f101';
+              font-family: 'FontAwesome';
+              right: 15px;
+            }
           }
         }
       }

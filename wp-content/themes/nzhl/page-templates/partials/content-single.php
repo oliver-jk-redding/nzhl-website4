@@ -53,9 +53,9 @@
   </div><!-- .entry-content -->
 
 
-	<footer class="entry-meta" itemprop="keywords" >
+	<footer class="entry-meta" itemprop="keywords">
 
-	<?php edit_post_link( __( 'Edit post', 'some-like-it-neat' ), '<span class="edit-link">', '</span>' ); ?>
+  	<?php edit_post_link( __( 'Edit post', 'some-like-it-neat' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-meta -->
 	<?php tha_entry_bottom(); ?>
