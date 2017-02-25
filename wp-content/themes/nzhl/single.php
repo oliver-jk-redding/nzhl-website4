@@ -19,6 +19,8 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
+    <?php comments_template(); ?>
+
 	</div><!-- #content -->
 
 	<?php get_sidebar(); ?>

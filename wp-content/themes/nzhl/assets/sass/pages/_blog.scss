@@ -1,6 +1,6 @@
 #blog {
-  .content {
-    h1, h2 {
+  > .content {
+    > h1, > h2 {
       font-weight: $header-weight;
       font-family: $font-stack;
       font-size: 22px;

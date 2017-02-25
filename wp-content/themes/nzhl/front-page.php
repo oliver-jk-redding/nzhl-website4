@@ -18,7 +18,7 @@ get_header();?>
     <h1 style="display: none;">The New Zealand Hobbit League</h1>
     <h2><a href='/blog'>Latest Posts</a></h2>
 
-    <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=3' ); ?>
+    <?php $the_query = new WP_Query( 'post_type=post&posts_per_page=5' ); ?>
 
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
