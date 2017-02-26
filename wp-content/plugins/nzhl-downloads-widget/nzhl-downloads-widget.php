@@ -119,7 +119,7 @@ class NZHL_Downloads extends WP_Widget {
 		$calendar_link = "<a href='".get_field('nzhl_calendar', $home_page_id)."' download class='download-link'>Download the NZHL <b>".date('Y')." Calendar</b></a>";
 		$rankings_link = "<a href='".get_field('nzhl_rankings_table', $home_page_id)."' download class='download-link'>Download the NZHL <b>".date('Y')." Table Rankings</b></a>";
 
-		$widget_string .= $widget_heading.$events_page_link.$calendar_link.$rankings_link;
+		$widget_string .= $widget_heading.$calendar_link.$rankings_link;
 
 		ob_start();
 		include( plugin_dir_path( __FILE__ ) . 'views/widget.php' );

@@ -10,6 +10,19 @@ body {
 	min-height: 100vh;
 }
 
+.wp-caption {
+	max-width: 100%;
+	> img {
+		margin: 0;
+	}
+	> .wp-caption-text {
+		font-size: $font-base-reduced;
+		color: $mid-grey!important;
+		margin-bottom: 0;
+		text-align: center;
+	}
+}
+
 .content-area {
 	min-height: 446px;
 	padding-bottom: 150px;
@@ -17,11 +30,6 @@ body {
 
 .full {
 	padding-bottom: 150px;
-}
-
-img {
-	max-width: 100%;
-	padding: 0 0 20px 0;
 }
 
 a.btn {

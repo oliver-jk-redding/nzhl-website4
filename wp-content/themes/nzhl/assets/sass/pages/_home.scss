@@ -10,6 +10,7 @@
         font-family: $font-stack;
         font-size: 22px;
         color: $dark-grey;
+        text-decoration: none;
         &:hover {
           color: $red;
         }
@@ -29,6 +30,7 @@
       margin: 20px auto;
       &:hover {
         background-color: $red;
+        text-decoration: none;
       }
     }
   }

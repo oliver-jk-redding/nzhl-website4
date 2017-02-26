@@ -65,6 +65,7 @@ ul.main-nav {
 	li {
 		display: inline-block;
 		float: left;
+		margin: 0;
 		&.current_page_item a, &.current-page-ancestor a, &.current-menu-ancestor a, &.current-menu-parent a {
 			color: $link-color;
 		}

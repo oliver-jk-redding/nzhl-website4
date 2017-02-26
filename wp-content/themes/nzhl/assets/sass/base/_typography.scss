@@ -15,18 +15,20 @@ h1, h2, h3, h4, h5, h6 {
 
 // Headings
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	margin: 0;
-}
-
-h1 {
-	font-family: "Noto Serif", Arial, sans-serif;
-	display: inline;
 	padding: 0;
-	font-size: 28px;
+	font-family: $font-stack;
 	font-weight: 100;
 }
+
+h1 { font-size: 28px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: $font-base; }
+h5 { font-size: $font-base-reduced; }
+h6 { font-size: $font-base-reduced; }
 
 // Body text
 
@@ -35,13 +37,24 @@ p, li {
 	font-size: $font-base;
 	font-weight: $font-weight;
 	color: $text-color;
+	color: #000;
 	line-height: $line-height;
 	letter-spacing: $font-spacing;
-	list-style: none;
+}
+
+p {
+	margin: 10px 0 20px 0;
+}
+
+li {
+	margin: 5px 0 10px 0;
+	&:last-child {
+		margin-bottom: 20px;
+	}
 }
 
 strong {
-	font-weight: 400;
+	font-weight: 600;
 }
 
 em {
@@ -51,17 +64,27 @@ em {
 a {
 	font-family: $font-stack;
 	font-weight: 300;
-	color: $text-color;
+	color: $link-color;
 	letter-spacing: $font-spacing;
 	text-decoration: none;
 
 	&:hover {
-		color: $link-color;
+		text-decoration: underline;
 	}
 
 	&:focus {
 		outline: none;
 	}
+}
+
+// Images
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
 }
 
 // Other text
@@ -70,27 +93,20 @@ a {
 	font-weight: 300;
 }
 
-#sidebar-news li {
-	a {
-		font-size: $font-base;
-		font-family: $font-stack;
- 		font-weight: 300;
- 		color: $text-color;
- 		line-height: 24px;
- 		letter-spacing: $font-spacing;
- 		text-decoration: none;
-
- 		&:hover, &:active {
- 			color: $link-color
- 		}
-	}
+blockquote {
+	background-color: $light-grey;
+  border-left: solid $red;
+  font-style: italic;
+  padding: 5px 20px 1px 20px;
+  width: calc(100% - 40px);
 }
 
 table tr td {
-	font-size: 16px;
+	font-size: $font-base;
 	font-weight: 300;
 	color: $text-color;
 	line-height: 24px;
+	border: 1px solid black;
 
 	@include media($small) {
 		width: 100%;
