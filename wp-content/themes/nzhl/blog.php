@@ -9,9 +9,7 @@ get_header(); ?>
     <h1><?php the_title(); ?></h1>
 
     <?php
-      $page_number = 1;
-      $paged = get_query_var('paged');
-      if( $paged > 1) { $page_number = $paged; }
+      $page_number = get_query_var('paged', 1);
 
       $query = array(
         'post_type'=>'post',

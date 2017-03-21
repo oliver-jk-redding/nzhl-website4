@@ -423,7 +423,7 @@ if ( ! function_exists( 'some_like_it_neat_optional_scripts' ) ) :
 }
 
 add_action('init', 'events_register');
-// Our custom post type function for the new events section
+// Our custom post type function for the events section
 function events_register() {
 
 	$labels = array(

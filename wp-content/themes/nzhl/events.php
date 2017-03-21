@@ -3,39 +3,48 @@
 
 get_header(); ?>
 
-	<div id="events" class="full">
+<div id="events">
 
-		<div class="content">
-			<h1><?php the_title(); ?></h1>
+	<div class="content">
+		<h1><?php the_title(); ?></h1>
 
-			<?php $args = array(
-				'post_type' => array( 'eventtables' )
-			);
+		<?php
+		  $page_number = get_query_var('paged', 1);
 
-			$the_query = new WP_Query( $args ); ?>
+		  $query = array(
+		    'post_type'=>'Events',
+		    'posts_per_page'=>5,
+		    'paged'=>$page_number
+		  );
+		  $the_query = new WP_Query( $query );
+		?>
 
-			<?php if ( $the_query->have_posts() ) : ?>
+		$the_query = new WP_Query( $args ); ?>
 
-				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+		<?php if ( $the_query->have_posts() ) : ?>
 
-					<?php $parent_post_name = $post->post_name;?>
+			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-					<?php include( 'page-templates/partials/content-events.php' ); ?>
-				
-				<?php endwhile; ?>
+				<?php include( 'page-templates/partials/content-events.php' ); ?>
 
-					<?php get_template_part( 'page-templates/partials/content', 'pagination' ); ?>
+			<?php endwhile; ?>
 
-				<?php wp_reset_postdata(); ?>
+			<?php get_template_part( 'page-templates/partials/content', 'pagination' ); ?>
 
-			<?php else : ?>
-				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-			<?php endif; ?>
+			<?php wp_reset_postdata(); ?>
 
-		</div>
+		<?php else : ?>
 
-	<?php get_sidebar('contact'); ?>
+			<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 
-	</div>
+		<?php endif; ?>
+
+	</div> <!-- content -->
+
+	<?php get_sidebar('blog'); ?>
+
+</div> <!-- #events -->
 
 </div>
+
+<?php get_footer(); ?>
