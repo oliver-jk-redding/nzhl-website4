@@ -2698,7 +2698,7 @@ ul.main-nav {
       background-color: #cd0d12;
       text-decoration: none; }
 
-#blog > .content > h1, #blog > .content > h2 {
+#blog > .content > h1, #blog > .content > h2, #events > .content > h1, #events > .content > h2 {
   display: block;
   font-weight: 700;
   font-family: "Noto Sans", Arial, sans-serif;
@@ -3180,7 +3180,7 @@ footer.site-footer {
       padding-top: 0;
       transition: all 0.3s ease;
       color: #4d4d4d; }
-    .post-content .post-heading .post-categories {
+    .post-content .post-heading .post-categories, .post-content .post-heading .post-type {
       position: absolute;
       list-style: none;
       padding: 0;
@@ -3188,19 +3188,20 @@ footer.site-footer {
       right: 0;
       bottom: 19px;
       display: inline-block; }
-      .post-content .post-heading .post-categories li {
+      .post-content .post-heading .post-categories li, .post-content .post-heading .post-categories span, .post-content .post-heading .post-type li, .post-content .post-heading .post-type span {
         display: inline-block;
-        margin: 0 2px; }
-        .post-content .post-heading .post-categories li:last-child {
+        margin: 0 2px;
+        line-height: 24px; }
+        .post-content .post-heading .post-categories li:last-child, .post-content .post-heading .post-categories span:last-child, .post-content .post-heading .post-type li:last-child, .post-content .post-heading .post-type span:last-child {
           margin-right: 0; }
-        .post-content .post-heading .post-categories li a {
+        .post-content .post-heading .post-categories li a, .post-content .post-heading .post-categories span a, .post-content .post-heading .post-type li a, .post-content .post-heading .post-type span a {
           display: block;
           padding: 1px 10px;
           color: #333333;
           list-style: none;
           background-color: #ddcf16;
           font-size: 12px; }
-          .post-content .post-heading .post-categories li a:hover {
+          .post-content .post-heading .post-categories li a:hover, .post-content .post-heading .post-categories span a:hover, .post-content .post-heading .post-type li a:hover, .post-content .post-heading .post-type span a:hover {
             text-decoration: underline; }
     .post-content .post-heading:hover .post-title, .post-content .post-heading:hover .post-title h3, .post-content .post-heading:hover .post-author, .post-content .post-heading:hover .post-location, .post-content .post-heading:hover .post-date {
       color: #cd0d12;

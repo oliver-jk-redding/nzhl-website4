@@ -672,10 +672,13 @@ function date_range_to_string($startDate, $endDate) {
 function arrange_events_by_event_date($query) {
 	global $wp_query;
 
-	if ( !$query->is_main_query() )
-		return;
+	// if ( !$query->is_main_query() || is_admin() )
+		// return;
+	// error_log('in func');
+	// error_log('query var: '.json_encode($wp_query->query_vars));
 
-	if(get_query_var('category_name') == 'events') {
+	if(get_query_var('post_type') == 'Events') {
+		error_log('this is event');
 		$query-> set('meta_key', 'event_date');
 		$query-> set('orderby', 'meta_value');
 		$query-> set('order' ,'ASC');

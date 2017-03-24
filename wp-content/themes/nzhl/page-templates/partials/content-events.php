@@ -18,21 +18,13 @@
 
   <div class="post-heading">
     <a class="post-title" href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3>
-    <?php if(strpos(get_the_category_list(), "Events") == true) { ?>
-      <span class="post-location"><?php echo get_field('location'); ?></span></a>
-    <?php } else { ?>
-      <span class="post-author">by <?php echo get_the_author(); ?></span></a>
-    <?php } ?>
-    <?php if(strpos(get_the_category_list(), "Events") == true) { ?>
-      <?php if(get_field('event_end_date')) { ?>
+    <span class="post-location"><?php echo get_field('location'); ?></span></a>
+    <?php if(get_field('event_end_date')) { ?>
         <a class="post-date" href="<?php the_permalink(); ?>"><?php echo date_range_to_string(get_field('event_date'), get_field('event_end_date')); ?></a>
-      <?php } else { ?>
-        <a class="post-date" href="<?php the_permalink(); ?>"><?php echo date_to_string(get_field('event_date')); ?></a>
-      <?php } ?>
     <?php } else { ?>
-      <a class="post-date" href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a>
+        <a class="post-date" href="<?php the_permalink(); ?>"><?php echo date_to_string(get_field('event_date')); ?></a>
     <?php } ?>
-    <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
+    <div class="post-type"><span><a href="/events">Event</a></span></div>
   </div>
 
   <?php if($thumb_id) : ?>
