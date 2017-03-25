@@ -10,13 +10,33 @@ get_header(); ?>
 
 		<?php
 		  $page_number = get_query_var('paged', 1);
+		  $date = date('Ymd');
+		  $comparator = '>=';
+		  $order = 'ASC';
 
-		  $query = array(
-		    'post_type'=>'Events',
+		  if(get_the_title() == 'Past Events') {
+		  	$comparator = '<=';
+		  	$order = 'DESC';
+		  }
+
+		  $args = array(
+		    'post_type'=>'events',
 		    'posts_per_page'=>5,
-		    'paged'=>$page_number
+		    'paged'=>$page_number,
+		    'meta_key'=>'event_date',
+		    'meta_type'=>'DATE',
+		    'orderby'=>'meta_value_num',
+		    'order'=>$order,
+		    'meta_query' => array(
+          array(
+            'key' => 'event_date',
+            'value' => $date,
+            'compare' => $comparator
+          )
+      	),
 		  );
-		  $the_query = new WP_Query( $query );
+
+		  $the_query = new WP_Query( $args );
 		?>
 
 		$the_query = new WP_Query( $args ); ?>
