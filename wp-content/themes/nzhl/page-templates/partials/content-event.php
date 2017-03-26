@@ -3,55 +3,65 @@
  * @package some_like_it_neat
  */
 ?>
+
+<?php
+  $thumb_id = get_post_thumbnail_id();
+  if($thumb_id) {
+    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+    $thumb_url = $thumb_url_array[0];
+  }
+?>
+
 <?php tha_entry_before(); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemType="http://schema.org/BlogPosting">
-	<?php tha_entry_top(); ?>
-	<header class="entry-header">
-		<h1 class="entry-title" itemprop="name" ><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
+  <?php tha_entry_top(); ?>
 
-	<div class="entry-content">
-		<p>
-			<?php echo get_field('event_location'); ?>, <?php echo get_field('event_start_date'); ?>
-		</p>
-		<?php
-		if( have_rows('event_organisers') ): ?>
-			<p>Main Organisers: 
-		    <?php while ( have_rows('event_organisers') ) : the_row(); ?>
-		        <a href="<?php the_sub_field('organiser_email'); ?>" target="_blank"><?php the_sub_field('organiser_name'); ?></a> 
-		    <?php endwhile;
-		else :
-		    // no rows found
-		endif; ?>
-		</p>
+  <header class="entry-header">
+    <div class="entry-title" itemprop="name" >
+      <h1><?php the_title(); ?></h1>
+      <span class="entry-location"><?php echo get_field('location'); ?></span>
+    </div>
+    <?php if(get_field('event_end_date')) { ?>
+        <a class="entry-date" href="<?php the_permalink(); ?>"><?php echo date_range_to_string(get_field('event_date'), get_field('event_end_date')); ?></a>
+    <?php } else { ?>
+        <a class="entry-date" href="<?php the_permalink(); ?>"><?php echo date_to_string(get_field('event_date')); ?></a>
+    <?php } ?>
+    <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
+  </header><!-- .entry-header -->
 
-		<?php echo get_field('event_abstract'); ?>
-		
+  <?php if($thumb_id) : ?>
+    <div class="entry-image-container">
+      <div class="entry-image" style="background-image: url(<?php echo $thumb_url; ?>);"></div>
+    </div>
+  <?php endif; ?>
 
-	</div><!-- .entry-content -->
-	<div class="clearboth"></div>
+  <div class="entry-content" itemprop="articleBody">
+
+    <?php the_content(); ?>
 
     <div class="share">
-    	 
-        <?php 
-        $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='. get_permalink(); 
+      <?php
+        $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='. get_permalink();
         $twitterURL = 'https://twitter.com/intent/tweet?text='. get_the_title() .'&amp;url='. get_permalink();
-        $linkedinURL = 'http://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink();
-        ?>
-        <p>Share:
+      ?>
+      <p>
         <a href="<?php echo $facebookURL ?>" target="_blank"><i class="icons ss-facebook"></i></a>
         <a href="<?php echo $twitterURL ?>" target="_blank"><i class="icons ss-twitter"></i></a>
-        <a href="<?php echo $linkedinURL ?>" target="_blank"><i class="icons ss-linkedin"></i></a>
-        <a href="mailto:?subject=<?php bloginfo('name'); ?>: <?php the_title('','',true)?>&amp;body=<?php 
+        <a href="mailto:?subject=<?php bloginfo('name'); ?>: <?php the_title('','',true)?>&amp;body=<?php
         the_title('','',true); ?> .... Read More here: <?php the_permalink(); ?>" title="Email to a friend/
         colleague"><i class="icons ss-mail"></i></a>
-    	</p>
+      </p>
     </div>
 
-	<footer class="entry-meta" itemprop="keywords" >
+  </div><!-- .entry-content -->
 
-	<?php edit_post_link( __( 'Edit', 'some-like-it-neat' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
-	<?php tha_entry_bottom(); ?>
+
+  <footer class="entry-meta" itemprop="keywords">
+
+    <?php edit_post_link( __( 'Edit post', 'some-like-it-neat' ), '<span class="edit-link">', '</span>' ); ?>
+
+  </footer><!-- .entry-meta -->
+  <?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
 <?php tha_entry_after(); ?>

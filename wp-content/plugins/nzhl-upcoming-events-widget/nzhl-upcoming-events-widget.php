@@ -112,15 +112,33 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		extract( $args, EXTR_SKIP );
 		$widget_string = $before_widget;
 
-		$query = [
-			'category_name' => 'Events',
-			'posts_per_page' => 2,
-			'meta_key' => 'event_date',
-			'orderby' => 'meta_value',
-			'order' => 'ASC',
-			'meta_type' => 'DATE'
-		];
-		query_posts($query);
+		$today = date('Ymd');
+	  $args = array(
+	    'post_type' => 'events',
+	    'posts_per_page' => 2,
+	    'meta_key' => 'event_date',
+	    'meta_type' => 'DATE',
+	    'orderby' => 'meta_value_num',
+	    'order' => 'ASC',
+	    'meta_query' => array(
+        array(
+          'key' => 'event_date',
+          'value' => $today,
+          'compare' => '>='
+        )
+    	)
+    );
+
+		// $query = [
+		// 	'category_name' => 'Events',
+		// 	'posts_per_page' => 2,
+		// 	'meta_key' => 'event_date',
+		// 	'orderby' => 'meta_value',
+		// 	'order' => 'ASC',
+		// 	'meta_type' => 'DATE'
+		// ];
+
+		query_posts($args);
 
 		$widget_heading = "<h3><a href='/events/'>Upcoming Events</a></h3>";
 

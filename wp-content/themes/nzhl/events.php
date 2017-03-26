@@ -9,8 +9,9 @@ get_header(); ?>
 		<h1><?php the_title(); ?></h1>
 
 		<?php
+			$posts_per_page = get_option( 'posts_per_page' );
 		  $page_number = get_query_var('paged', 1);
-		  $date = date('Ymd');
+		  $today = date('Ymd');
 		  $comparator = '>=';
 		  $order = 'ASC';
 
@@ -20,17 +21,17 @@ get_header(); ?>
 		  }
 
 		  $args = array(
-		    'post_type'=>'events',
-		    'posts_per_page'=>5,
-		    'paged'=>$page_number,
-		    'meta_key'=>'event_date',
-		    'meta_type'=>'DATE',
-		    'orderby'=>'meta_value_num',
-		    'order'=>$order,
+		    'post_type' => 'events',
+		    'posts_per_page' => $posts_per_page,
+		    'paged' => $page_number,
+		    'meta_key' => 'event_date',
+		    'meta_type' => 'DATE',
+		    'orderby' => 'meta_value_num',
+		    'order' => $order,
 		    'meta_query' => array(
           array(
             'key' => 'event_date',
-            'value' => $date,
+            'value' => $today,
             'compare' => $comparator
           )
       	),

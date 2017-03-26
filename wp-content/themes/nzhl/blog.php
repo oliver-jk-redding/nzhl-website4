@@ -9,11 +9,12 @@ get_header(); ?>
     <h1><?php the_title(); ?></h1>
 
     <?php
+      $posts_per_page = get_option( 'posts_per_page' );
       $page_number = get_query_var('paged', 1);
 
       $query = array(
         'post_type'=>'post',
-        'posts_per_page'=>5,
+        'posts_per_page'=>$posts_per_page,
         'paged'=>$page_number
       );
       $the_query = new WP_Query( $query );

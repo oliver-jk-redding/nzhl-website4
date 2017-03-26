@@ -1,7 +1,6 @@
  $ = jQuery;
 
 activateScrollListener();
-console.log('pathname: ', location.pathname);
 
 function activateScrollListener() {
 	if(location.pathname == ('/') && $(window).width() > 790) {

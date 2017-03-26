@@ -315,7 +315,8 @@ if ( ! function_exists( 'dg_add_flexnav' ) ) :
  */
 if ( ! function_exists( 'some_like_it_neat_post_navigation' ) ) :
 	function some_like_it_neat_post_navigation() {
-		if ( function_exists( 'get_the_post_navigation' ) && is_singular() ) {
+		$post_type = get_query_var('post_type');
+		if ( function_exists( 'get_the_post_navigation' ) && is_singular() && $post_type != 'events' ) {
 			echo get_the_post_navigation(
 				array(
 					'prev_text'    => __( '%title', 'some-like-it-neat' ),
@@ -454,7 +455,7 @@ function events_register() {
 		'menu_position' => null,
 		'menu_icon' => 'dashicons-calendar-alt',
 		'supports' => array(
-			'title', 'editor', 'thumbnail', 'revisions', 'post-formats'
+			'title', 'editor', 'thumbnail', 'revisions', 'post-formats', 'comments'
 		),
 	);
 

@@ -20,7 +20,7 @@
   <header class="entry-header">
 		<div class="entry-title" itemprop="name" >
       <h1><?php the_title(); ?></h1>
-      <span class="entry-author">by <?php echo get_the_author(); ?></span></a>
+      <span class="entry-author">by <?php echo get_the_author(); ?></span>
     </div>
   	<span class="entry-date" itemprop="datePublished"><?php echo get_the_date(); ?></span>
     <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>

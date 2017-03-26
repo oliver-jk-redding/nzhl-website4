@@ -1,6 +1,6 @@
-#blog {
+#blog, #events {
   .content {
-    article.post {
+    article.post, article.events {
       position: relative;
       border-top: solid 1px #E7E7E7;
       padding-top: 5px;
