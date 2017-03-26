@@ -28,7 +28,7 @@ get_header(); ?>
 	<?php
 	endwhile; // end of the loop. ?>
 
-	<?php get_sidebar('contact'); ?>
+	<?php get_sidebar('front'); ?>
 
 </div>
 

@@ -23,9 +23,9 @@
       <span class="entry-location"><?php echo get_field('location'); ?></span>
     </div>
     <?php if(get_field('event_end_date')) { ?>
-        <a class="entry-date" href="<?php the_permalink(); ?>"><?php echo date_range_to_string(get_field('event_date'), get_field('event_end_date')); ?></a>
+        <span class="entry-date" href="<?php the_permalink(); ?>"><?php echo date_range_to_string(get_field('event_date'), get_field('event_end_date')); ?></a>
     <?php } else { ?>
-        <a class="entry-date" href="<?php the_permalink(); ?>"><?php echo date_to_string(get_field('event_date')); ?></a>
+        <span class="entry-date" href="<?php the_permalink(); ?>"><?php echo date_to_string(get_field('event_date')); ?></a>
     <?php } ?>
     <?php if(strpos(get_the_category_list(), "Uncategorised") === false) { the_category(); }?>
   </header><!-- .entry-header -->
