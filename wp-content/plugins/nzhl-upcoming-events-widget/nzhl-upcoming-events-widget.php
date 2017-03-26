@@ -113,7 +113,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		$widget_string = $before_widget;
 
 		$today = date('Ymd');
-	  $args = array(
+	  $query = array(
 	    'post_type' => 'events',
 	    'posts_per_page' => 2,
 	    'meta_key' => 'event_date',
@@ -138,7 +138,7 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		// 	'meta_type' => 'DATE'
 		// ];
 
-		query_posts($args);
+		query_posts($query);
 
 		$widget_heading = "<h3><a href='/events/'>Upcoming Events</a></h3>";
 
