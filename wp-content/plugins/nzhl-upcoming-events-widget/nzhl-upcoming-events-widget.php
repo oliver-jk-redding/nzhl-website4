@@ -178,7 +178,6 @@ class NZHL_Upcoming_Events extends WP_Widget {
 		$cache[ $args['widget_id'] ] = $widget_string;
 		wp_cache_set( $this->get_widget_slug(), $cache, 'widget' );
 		print $widget_string;
-		// error_log('WIDGET PAINTING COMP STRING: '.$widget_string);
 	} // end widget
 
 
