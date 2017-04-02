@@ -3252,7 +3252,9 @@ footer.site-footer {
         display: inline-block;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); }
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 300px; }
   .slideshow .slider-nav {
     width: calc(100% - 80px); }
     .slideshow .slider-nav .slider-thumb {

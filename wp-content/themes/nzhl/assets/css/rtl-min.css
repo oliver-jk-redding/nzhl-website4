@@ -485,7 +485,7 @@ footer.site-footer ul li a{margin:0;font-size:16px;color:#333}footer.site-footer
 .post-content .post-details .post-excerpt p{color:#000;margin-top:0;margin-bottom:5px}
 .post-content .post-details .post-excerpt p .more-link{color:#cd0d12}.post-content .post-details .post-excerpt p .more-link:hover{text-decoration:underline}
 .slideshow{margin:0 auto;width:100%}.slideshow .slider-for{width:100%}.slideshow .slider-for .slider-item{text-align:center;height:300px}
-.slideshow .slider-for .slider-item .slider-image img{position:absolute;display:inline-block;top:50%;left:50%;transform:translate(-50%,-50%)}
+.slideshow .slider-for .slider-item .slider-image img{position:absolute;display:inline-block;top:50%;left:50%;transform:translate(-50%,-50%);max-width:100%;max-height:300px}
 .slideshow .slider-nav{width:calc(100% - 80px)}.slideshow .slider-nav .slider-thumb{background-repeat:no-repeat;background-size:cover;background-position:center;height:100px;margin:0 5px}
 .slideshow .slick-initialized .slick-slide{display:block}.slideshow .slick-slide{display:none;float:left;height:100%;min-height:1px}
 .slideshow .slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0}
