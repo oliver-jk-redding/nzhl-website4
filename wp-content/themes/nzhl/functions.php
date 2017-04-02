@@ -137,30 +137,17 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 
 		if ( SCRIPT_DEBUG || WP_DEBUG ) :
 			// Vendor Scripts
-			wp_register_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-
-		wp_register_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-		wp_enqueue_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-
 		wp_register_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
 		wp_enqueue_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
 
 		wp_register_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 
-		wp_register_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
-
 		wp_register_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
 		wp_enqueue_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
 
-		// wp_register_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
-		// wp_enqueue_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
-
-		wp_register_script( 'dataTables.js', get_template_directory_uri() . '/assets/js/vendor/dataTables.js', array( 'jquery' ), '1.10.11', true );
-		wp_enqueue_script( 'dataTables.js', get_template_directory_uri() . '/assets/js/vendor/dataTables.js', array( 'jquery' ), '1.10.11', true );
-
+		wp_register_script( 'slick.js', get_template_directory_uri() . '/assets/js/vendor/slick/slick/slick.js', array( 'jquery' ), '1.6.0', true );
+		wp_enqueue_script( 'slick.js', get_template_directory_uri() . '/assets/js/vendor/slick/slick/slick.js', array( 'jquery' ), '1.6.0', true );
 
 		wp_register_script( 'main.js', get_template_directory_uri() . '/assets/js/vendor/main.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'main.js', get_template_directory_uri() . '/assets/js/vendor/main.js', array( 'jquery' ), '2.8.2', true );
@@ -168,7 +155,6 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 			// wp_enqueue_script( 'development-js', get_template_directory_uri() . '/assets/js/development.js', array( 'jquery' ), '1.0.0', false );
 
 			// Main Style
-		wp_enqueue_style( 'some_like_it_neat-datatables',  get_template_directory_uri() . '/assets/css/dataTables.css' );
 		wp_enqueue_style( 'some_like_it_neat-style',  get_template_directory_uri() . '/assets/css/style.css' );
 		wp_enqueue_style( 'ss_social_circle',  get_template_directory_uri() . '/assets/fonts/webfonts/ss-social-circle.css' );
 		wp_enqueue_style( 'tooltipster',  get_template_directory_uri() . '/assets/css/vendor/tooltipster.css' );
@@ -177,37 +163,20 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 
 		else :
 			// Vendor Scripts
-			wp_register_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'modernizr-js', get_template_directory_uri() . '/assets/js/vendor/modernizr/modernizr.js', array( 'jquery' ), '2.8.2', true );
-
-		wp_register_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-		wp_enqueue_script( 'selectivizr-js', get_template_directory_uri() . '/assets/js/vendor/selectivizr/selectivizr.js', array( 'jquery' ), '1.0.2b', true );
-
 		wp_register_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
 		wp_enqueue_script( 'flexnav-js', get_template_directory_uri() . '/assets/js/vendor/flexnav/jquery.flexnav.js', array( 'jquery' ), '1.3.3', true );
 
 		wp_register_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'hoverintent-js', get_template_directory_uri() . '/assets/js/vendor/hoverintent/jquery.hoverIntent.js', array( 'jquery' ), '1.0.0', true );
 
-		wp_register_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'accordion.js', get_template_directory_uri() . '/assets/js/vendor/accordion/accordion.js', array( 'jquery' ), '2.8.2', true );
-
 		wp_register_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
 		wp_enqueue_script( 'parallax.js', get_template_directory_uri() . '/assets/js/vendor/parallax/parallax.js', array( 'jquery' ), '1.4.2', true );
 
-		wp_register_script( 'isotope.js', get_template_directory_uri() . '/assets/js/vendor/isotope/isotope.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'isotope.js', get_template_directory_uri() . '/assets/js/vendor/isotope/isotope.js', array( 'jquery' ), '2.8.2', true );
+		wp_register_script( 'slick.js', get_template_directory_uri() . '/assets/js/vendor/slick/slick/slick.js', array( 'jquery' ), '1.6.0', true );
+		wp_enqueue_script( 'slick.js', get_template_directory_uri() . '/assets/js/vendor/slick/slick/slick.js', array( 'jquery' ), '1.6.0', true );
 
 		wp_register_script( 'bootstrap-dropdown.js', get_template_directory_uri() . '/assets/js/vendor/bootstrap-dropdown.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'bootstrap-dropdown.js', get_template_directory_uri() . '/assets/js/vendor/bootstrap-dropdown.js', array( 'jquery' ), '2.8.2', true );
-
-
-		// wp_register_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
-		// wp_enqueue_script( 'jquery.sticky-kit.js', get_template_directory_uri() . '/assets/js/vendor/sticky-kit-master/jquery.sticky-kit.js', array( 'jquery' ), '2.8.2', true );
-
-		wp_register_script( 'matchHeight.js', get_template_directory_uri() . '/assets/js/vendor/matchHeight/matchHeight.js', array( 'jquery' ), '2.8.2', true );
-		wp_enqueue_script( 'matchHeight.js', get_template_directory_uri() . '/assets/js/vendor/matchHeight/matchHeight.js', array( 'jquery' ), '2.8.2', true );
-
 
 		wp_register_script( 'main.js', get_template_directory_uri() . '/assets/js/vendor/main.js', array( 'jquery' ), '2.8.2', true );
 		wp_enqueue_script( 'main.js', get_template_directory_uri() . '/assets/js/vendor/main.js', array( 'jquery' ), '2.8.2', true );
@@ -225,11 +194,6 @@ if ( ! function_exists( 'some_like_it_neat_scripts' ) ) :
 
 		// Dashicons
 		wp_enqueue_style( 'dashicons' );
-
-			// if ( is_page( 'news' ) ) {
-			// 	wp_enqueue_script( 'jquery-masonry' );
-			// }
-
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -460,31 +424,6 @@ function events_register() {
 	);
 
 	register_post_type( 'events' , $args );
-}
-
-	// Add IDs to Header Tags
-// add_filter( 'the_content', 'add_ids_to_header_tags' );
-function add_ids_to_header_tags( $content ) {
-	if ( ! is_single() ) {
-		return $content;
-	}
-	$pattern = '#(?P<full_tag><(?P<tag_name>h\d)(?P<tag_extra>[^>]*)>(?P<tag_contents>[^<]*)</h\d>)#i';
-	if ( preg_match_all( $pattern, $content, $matches, PREG_SET_ORDER ) ) {
-		$find = array();
-		$replace = array();
-		foreach( $matches as $match ) {
-			if ( strlen( $match['tag_extra'] ) && false !== stripos( $match['tag_extra'], 'id=' ) ) {
-				continue;
-			}
-			$find[]    = $match['full_tag'];
-			$id        = sanitize_title( $match['tag_contents'] );
-			$id_attr   = sprintf( ' id="%s"', $id );
-			$extra     = sprintf( ' <a class="deep-link" href="#%s"></a>', $id );
-			$replace[] = sprintf( '<%1$s%2$s%3$s>%4$s%5$s</%1$s>', $match['tag_name'], $match['tag_extra'], $id_attr, $match['tag_contents'], $extra );
-		}
-		$content = str_replace( $find, $replace, $content );
-	}
-	return $content;
 }
 
 function friendlyURL($string){

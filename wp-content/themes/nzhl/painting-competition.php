@@ -6,7 +6,6 @@ get_header(); ?>
 <div id="painting_comp">
 
 	<div class="content">
-		<h1><?php the_title(); ?></h1>
 
 		<?php
 			$posts_per_page = -1;
@@ -15,24 +14,25 @@ get_header(); ?>
 		  $order = 'ASC';
 		  $mime_types = array('image/jpeg', 'image/png');
 		  $tags = array($year, $month);
+		  $cat = 'painting_comp';
 
 		  $args = array(
-		    'post_type' => 'attachment',
-				'post_status' => 'inherit',
-				'post_mime_type' => $mime_types,
-		    'posts_per_page' => $posts_per_page,
-		    'tax_query' => array(
-		    	'relation' => 'AND',
+		    'post_type' 			=> 'attachment',
+				'post_status' 		=> 'inherit',
+				'post_mime_type' 	=> $mime_types,
+		    'posts_per_page' 	=> $posts_per_page,
+		    'tax_query' 			=> array(
+		    	'relation' 			=> 'AND',
 		    	array(
-		    		'taxonomy' => 'attachment_category',
-		    		'field'    => 'slug',
-		    		'terms'    => 'painting_comp'
+		    		'taxonomy'		=> 'attachment_category',
+		    		'field'    		=> 'slug',
+		    		'terms'    		=> $cat
 		    	),
 	    		array(
-	    			'taxonomy' => 'attachment_tag',
-	    			'field'    => 'slug',
-	    			'terms'    => $tags,
-	    			'operator' => 'AND'
+	    			'taxonomy' 		=> 'attachment_tag',
+	    			'field'    		=> 'slug',
+	    			'terms'    		=> $tags,
+	    			'operator' 		=> 'AND'
 	    		)
 	    	)
 		  );
@@ -40,29 +40,25 @@ get_header(); ?>
 		  $the_query = new WP_Query( $args );
 		?>
 
-		$the_query = new WP_Query( $args ); ?>
+		<h1><?php echo $month . ' ' . $year . ' Painting Competition'; ?></h1>
 
 		<?php if ( $the_query->have_posts() ) : ?>
 
-			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-				<?php // include( 'page-templates/partials/content-events.php' ); ?>
-
-			<?php endwhile; ?>
+			<?php include( 'page-templates/partials/content-slideshow.php' ); ?>
 
 			<?php wp_reset_postdata(); ?>
 
 		<?php else : ?>
 
-			<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+			<p><?php _e( 'Sorry, no images have been uploaded yet for this month.' ); ?></p>
 
 		<?php endif; ?>
 
 	</div> <!-- content -->
 
-	<?php get_sidebar('blog'); ?>
+	<?php get_sidebar('painting_comp'); ?>
 
-</div> <!-- #events -->
+</div> <!-- #painting_comp -->
 
 </div>
 
