@@ -14,6 +14,7 @@
       <div class="slider-item">
         <a class="slider-image" href="<?php echo wp_get_attachment_url(); ?>" target="_blank">
           <?php echo wp_get_attachment_image(get_the_ID(), 'medium'); ?>
+          <?php if(isset(get_post()->winner)) { echo '<span>Winner!</span>'; } ?>
         </a>
       </div>
     <?php endwhile; ?>

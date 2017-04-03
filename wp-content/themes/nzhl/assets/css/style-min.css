@@ -490,8 +490,9 @@ footer.site-footer ul li a{margin:0;font-size:16px;color:#333}footer.site-footer
 .slideshow .slick-initialized .slick-slide{display:block}.slideshow .slick-slide{display:none;float:left;height:100%;min-height:1px}
 .slideshow .slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0}
 .slideshow .slick-slider{margin:30px auto 30px}.slideshow .slick-slider{position:relative;display:block;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
-.slideshow .slick-prev,.slideshow .slick-next{font-size:0;line-height:0;position:absolute;top:50%;transform:translateY(-50%);display:block;width:40px;height:40px;padding:0;cursor:pointer;color:transparent;border:0;outline:0;background:transparent;z-index:1000}
-.slideshow .slick-prev{left:-40px}.slideshow .slick-next{right:-40px}.slideshow .slick-prev:before,.slideshow .slick-next:before{font-family:'dashicons';font-size:40px;line-height:1;opacity:.75;color:#333;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.slideshow .slick-prev,.slideshow .slick-next{font-size:0;line-height:0;position:absolute;top:50%;transform:translateY(-50%);display:block;width:30px;height:30px;padding:0;cursor:pointer;color:transparent;border:0;outline:0;background:transparent;z-index:1000;background-color:#333;border-radius:100%}
+.slideshow .slick-prev:hover,.slideshow .slick-next:hover{background-color:#cd0d12}
+.slideshow .slick-prev{left:-40px}.slideshow .slick-next{right:-40px}.slideshow .slick-prev:before,.slideshow .slick-next:before{font-family:'dashicons';font-size:20px;line-height:1;opacity:.75;color:white;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .slideshow .slick-prev::before{content:"\f341"}.slideshow .slick-next::before{content:"\f345"}
 .pagination{margin-top:15px;text-align:center}.pagination .page-numbers:not(.dots){margin:0 2px;padding:8px 13px 10px 13px;background-color:#4d4d4d;color:#fff;font-size:14px}
 .pagination .page-numbers:not(.dots):hover,.pagination .page-numbers:not(.dots).current{background-color:#cd0d12}

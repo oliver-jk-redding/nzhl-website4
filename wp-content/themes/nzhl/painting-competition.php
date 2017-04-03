@@ -38,6 +38,20 @@ get_header(); ?>
 		  );
 
 		  $the_query = new WP_Query( $args );
+
+		  // Add the winning entry to the front of the array so it displays first.
+		  // Also add a property of 'winner' to the winning entry post.
+		  foreach($the_query->posts as $index => &$post) {
+		  	$tags = wp_get_post_terms($post->ID,'attachment_tag');
+		  	foreach($tags as $tag) {
+		  		if( $tag->slug == 'winner' ) {
+		  			$winner = array_splice($the_query->posts, $index, 1);
+		  			array_unshift($the_query->posts, $winner[0]);
+		  			$post->winner = true;
+		  		}
+		  	}
+		  }
+		  rewind_posts();
 		?>
 
 		<h1><?php echo $month . ' ' . $year . ' Painting Competition'; ?></h1>

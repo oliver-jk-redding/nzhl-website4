@@ -71,8 +71,8 @@
       top: 50%;
       transform: translateY(-50%);
       display: block;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       padding: 0;
       cursor: pointer;
       color: transparent;
@@ -80,6 +80,9 @@
       outline: none;
       background: transparent;
       z-index: 1000;
+      background-color: $dark_grey;
+      border-radius: 100%;
+      &:hover { background-color: $red; }
   }
   .slick-prev {
       left: -40px;
@@ -89,10 +92,10 @@
   }
   .slick-prev:before, .slick-next:before {
       font-family: 'dashicons';
-      font-size: 40px;
+      font-size: 20px;
       line-height: 1;
       opacity: .75;
-      color: $dark_grey;
+      color: white;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
   }
